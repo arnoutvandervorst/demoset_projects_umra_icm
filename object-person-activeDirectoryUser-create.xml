@@ -1,0 +1,1573 @@
+<UmraProject class="cUmFormProject">
+    <InitialProject></InitialProject>
+    <Script class="cActionItemCollection">
+        <Base class="cUmraObArray">
+            <ObjectArray>
+                <ArrayElement class="cActionItemScriptExecuteProject">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ProjectName>attributes-person-activeDirectoryUser-cn</ProjectName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptExecuteProject">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ProjectName>attributes-person-activeDirectoryUser-samaccountname</ProjectName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptExecuteProject">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ProjectName>attributes-person-activeDirectoryUser-displayname</ProjectName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptExecuteProject">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ProjectName>attributes-person-activeDirectoryUser-givenname</ProjectName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptExecuteProject">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ProjectName>attributes-person-activeDirectoryUser-sn</ProjectName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptExecuteProject">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ProjectName>attributes-person-activeDirectoryUser-mail</ProjectName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemOperationUserAdCreate">
+                    <Base class="cActionItemOperation">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>1</ErrorControl>
+                            <ErrorControlLabel>error</ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                        <Explanation><![CDATA[Create a user account in Active Directory. The account is created in a Active Directory domain, organizational unit or other container. Optionally, you can specify the domain controller on which the user creation is created. 
+
+With this action you can not create local user accounts on non domain controllers or computer running Windows NT4.]]></Explanation>
+                        <PropertyArray class="cUmraPsPropertyArray">
+                            <Base class="cUmPropertyArray">
+                                <Base class="cUmraObArray">
+                                    <ObjectArray>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101000</Id>
+                                            <Name>Domain</Name>
+                                            <Type>1</Type>
+                                            <Description>The name of the domain (DNS or NETBIOS style, e.g. tools4ever.com or TOOLS4EVER) where the account will be created. Optionally you can specify the property 'Organizational Unit-Container'. If you specify a value for this property, do not specify a value for property 'LDAP-container' since this specification takes precedence.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>trias.local</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101001</Id>
+                                            <Name>Organizational Unit-Container</Name>
+                                            <Type>1</Type>
+                                            <Description>The name of the Organizational Unit-Container where the user account must be created (example: Students or Students\Group1). If you specify a value for this property, you should also specify a value for the 'Domain' property.  If you specify a value for this property, do not specify a value for property 'LDAP-container' since that specification overrules this specification.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101002</Id>
+                                            <Name>LDAP Container</Name>
+                                            <Type>1</Type>
+                                            <Description>The LDAP name of the organizational unit or container where the user account must be created (example: cn=Users, cn=Tools4ever, cn=Com). You must specify either a value for this property or values for the properties 'Domain' and 'Organizational Unit-Container'. If values for both methods are specified, this method takes precedence.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>OU=Accounts,OU=Organization,DC=trias,DC=local</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101003</Id>
+                                            <Name>Domain (controller)</Name>
+                                            <Type>1</Type>
+                                            <Description>Optional: The name of the domain controller or domain, used to access to the domain, container or organizational unit where the account must be created. If this value is not specified or the name of a domain is specified, the application creates the account on a domain controller that is to be determined by Active Directory (serverless binding). If a domain controller is specified, the account is explicitly created on the specified controller (server binding). In both cases, Active Directory will replicate the account information to all domain controllers in the Active Directory forests and domains.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>DC01</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101004</Id>
+                                            <Name>Name generation algorithm</Name>
+                                            <Type>1</Type>
+                                            <Description>The algorithm used to generate the username and full name of the user account. In general the variables %FirstName%, %MiddleName% and %LastName% are used to generate values for the variables %UserName% and %FullName% which are assigned to various name attributes.</Description>
+                                            <ExportMode>0</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101005</Id>
+                                            <Name>SAM-Account-Name</Name>
+                                            <Type>1</Type>
+                                            <Description>The user logon name (pre-Windows 2000) without the (NETBIOS) domain name. In most cases the SAM-Account-Name is equal to the prefix of the User-Principal-Name and specified by the general user name variable. The name must be unique within the domain.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%UserName%</ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%samaccountname%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101006</Id>
+                                            <Name>User-Principal-Name</Name>
+                                            <Type>1</Type>
+                                            <Description>The User-Principal-Name (UPN) is an Internet-style login name for the user. The UPN is the preferred logon name for Active Directory users. Users should be using their UPNs to log on to the domain. The UPN has the format 'account_name@domain.com', where 'account_name' is the upn-prefix and 'domain.com' is the upn-suffix. In most cases the User-Principal-Name prefix is specified by the general user name variable.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%userprincipalname%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101007</Id>
+                                            <Name>CommonName</Name>
+                                            <Type>1</Type>
+                                            <Description>The 'CommonName' corresponds with the full name of the user account. This name is most common used in Windows' user interfaces when showing names.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%FullName%</ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%cn%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101008</Id>
+                                            <Name>DisplayName</Name>
+                                            <Type>1</Type>
+                                            <Description>The 'DisplayName' in most cases corresponds with the full name of the user account.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%displayname%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101009</Id>
+                                            <Name>Given-name</Name>
+                                            <Type>1</Type>
+                                            <Description>The Given-name corresponds with the first name of the user account. The Given-name is an optional attribute of Active Directory user accounts.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%givenname%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101010</Id>
+                                            <Name>Initials</Name>
+                                            <Type>1</Type>
+                                            <Description>The 'Initials'-field name corresponds with the middle name of the user account. The 'Initials'-field is an optional attribute of Active Directory user accounts.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%initials%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101011</Id>
+                                            <Name>Surname</Name>
+                                            <Type>1</Type>
+                                            <Description>The 'Surname' corresponds with the last name of the user account. The 'Surname' is an optional attribute of Active Directory user accounts.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%sn%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101020</Id>
+                                            <Name>Password generator</Name>
+                                            <Type>1</Type>
+                                            <Description>A password can be generated automatically. The 'Password generator' specifies how the password is generated, e.g. password length, password complexity requirements, password output variable etc. When this property is specified the password is generated automatically. The password output variable (default: %Password%) should correspond with the variable generated by the password generator.</Description>
+                                            <ExportMode>0</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101021</Id>
+                                            <Name>Password</Name>
+                                            <Type>1</Type>
+                                            <Description>The password of the user account.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%Password%</ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%Password%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101022</Id>
+                                            <Name>Description</Name>
+                                            <Type>1</Type>
+                                            <Description>A user comment. The field can contain a text of any length.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101025</Id>
+                                            <Name>Home directory</Name>
+                                            <Type>1</Type>
+                                            <Description>The path of the home directory of the user account. Note that the home directory is not created because of this specification. Instead, it specifies the home directory in the Active Directory. You can create the home directory, by adding the action 'Create Directory' to the script.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101026</Id>
+                                            <Name>Home directory drive</Name>
+                                            <Type>1</Type>
+                                            <Description>The drive letter assigned to the user's home directory for logon purposes. The drive letter must be specified as &lt;driver-letter&gt;:, for example E: or F:.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101023</Id>
+                                            <Name>User profile</Name>
+                                            <Type>1</Type>
+                                            <Description>A path to the user's profile. Note that this specification does not create the profile directory. Instead, it specifies the profile's path in the SAM user account database. You can create the profile directory, by adding the action 'Create Directory' to the script.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101024</Id>
+                                            <Name>Logon script</Name>
+                                            <Type>1</Type>
+                                            <Description>The path for the user's logon script file. The script file can be a .CMD file, an .EXE file, or a .BAT file.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101030</Id>
+                                            <Name>User must change password at next logon</Name>
+                                            <Type>3</Type>
+                                            <Description>The password is expired. Default value: 'Yes' (password has been expired). Use this property to force the user to change the password at the next logon. Note that the user can logon using the current password.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>TRUE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101031</Id>
+                                            <Name>User cannot change password</Name>
+                                            <Type>3</Type>
+                                            <Description>The user cannot change password. Default value: 'No' (user can change password). When the user cannot change the password, only the administrator can change the password.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>FALSE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101032</Id>
+                                            <Name>Password never expires</Name>
+                                            <Type>3</Type>
+                                            <Description>The password should never expire on the account. Default value: 'No' (password does expire).</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>FALSE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101033</Id>
+                                            <Name>Store password using reversible encryption</Name>
+                                            <Type>3</Type>
+                                            <Description>An password specific option. If you have users logging on to your Windows 2000 network from Apple computers, select this option for those user accounts.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>FALSE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101034</Id>
+                                            <Name>Account disabled</Name>
+                                            <Type>3</Type>
+                                            <Description>The user's account is disabled. Default value: 'No'. If a user account is disabled, the account does exist but cannot be used to logon to the network.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>FALSE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101035</Id>
+                                            <Name>Smart card is required for interactive logon</Name>
+                                            <Type>3</Type>
+                                            <Description>Default value: 'No'. Specify 'Yes' to securely store public and private keys, passwords, and other types of personal information for this user account. There must be a smart card reader attached to the user's computer, and they must have a personal identification number (PIN) to be able to log on to the network.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>FALSE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101036</Id>
+                                            <Name>Account is trusted for delegation</Name>
+                                            <Type>3</Type>
+                                            <Description>Default value: 'No'. Specify 'Yes' to give a user the ability to assign responsibility for management and administration of a portion of the domain namespace to another user, group, or organization.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>FALSE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101037</Id>
+                                            <Name>Account is sensitive and cannot be delegated</Name>
+                                            <Type>3</Type>
+                                            <Description>Default value: 'No'. Specify 'Yes' if this account cannot be assigned for delegation by another account.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>FALSE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101038</Id>
+                                            <Name>Use DES encryption types for this account</Name>
+                                            <Type>3</Type>
+                                            <Description>Default value: 'No'. Specify 'Yes' if if you need the Data Encryption Standard (DES). DES supports multiple levels of encryption, including MPPE Standard (40-bit), MPPE Standard (56-bit), MPPE Strong (128-bit), IPSec DES (40-bit), IPSec 56-bit DES, and IPSec Triple DES (3DES). For more information on any of these encryption types, see Windows 2000 Help.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>FALSE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101039</Id>
+                                            <Name>Don't require Kerberos preauthentication</Name>
+                                            <Type>3</Type>
+                                            <Description>Default value: 'No'. Specify 'Yes' if the account uses another implementation of the Kerberos protocol. Not all implementations or deployments of the Kerberos protocol use this feature. The Kerberos Key Distribution Center uses ticket-granting tickets for obtaining network authentication in a domain. The time at which the Key Distribution Center issues a ticket-granting ticket is important to the Kerberos protocol. Windows 2000 uses other mechanisms to synchronize time, so using the Kerberos preauthentication option works well.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>FALSE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101040</Id>
+                                            <Name>Computer account</Name>
+                                            <Type>3</Type>
+                                            <Description>This is a computer account for a MS Windows NT Workstation/Windows 2000 Professional or Windows NT Server/Windows 2000 Server that is a member of this domain. Default value: 'No'.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>FALSE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101027</Id>
+                                            <Name>Account expiration</Name>
+                                            <Type>4</Type>
+                                            <Description>The time and date when the account expires. The value can be 'Never' or a time and date.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101028</Id>
+                                            <Name>Logon hours</Name>
+                                            <Type>1</Type>
+                                            <Description>The hours the user account can log on to the domain. By default, domain logon is allowed 24 hours a day, 7 days a week.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101029</Id>
+                                            <Name>Workstations</Name>
+                                            <Type>1</Type>
+                                            <Description>Optional: the names of the workstations from which the user can log on (8 maximum), separated by commas.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101052</Id>
+                                            <Name>General - Office</Name>
+                                            <Type>1</Type>
+                                            <Description>This is the person's office location, including the building and office address or number.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101053</Id>
+                                            <Name>General - Telephone number</Name>
+                                            <Type>1</Type>
+                                            <Description>The person's phone number.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101054</Id>
+                                            <Name>General - E-mail</Name>
+                                            <Type>1</Type>
+                                            <Description>The person's e-mail address. The e-mail address appears with the universal principal name suffix (for example, someone@microsoft.com).</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101055</Id>
+                                            <Name>General - Web-page</Name>
+                                            <Type>1</Type>
+                                            <Description>The person's home page URL, either on the Internet or in the local intranet site.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101056</Id>
+                                            <Name>Address - Street</Name>
+                                            <Type>1</Type>
+                                            <Description>The person's street address in this space.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101057</Id>
+                                            <Name>Address - P.O. Box</Name>
+                                            <Type>1</Type>
+                                            <Description>The person's Post Office box number in this space.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101058</Id>
+                                            <Name>Address - City</Name>
+                                            <Type>1</Type>
+                                            <Description>The city where this person is located.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101059</Id>
+                                            <Name>Address - State/province</Name>
+                                            <Type>1</Type>
+                                            <Description>The state or province where this person is located.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101060</Id>
+                                            <Name>Address - Zip/Postal Code</Name>
+                                            <Type>1</Type>
+                                            <Description>The zip or postal code applicable for the person.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101061</Id>
+                                            <Name>Address - Country/region</Name>
+                                            <Type>1</Type>
+                                            <Description>This person's country or region</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101062</Id>
+                                            <Name>Telephone number - home</Name>
+                                            <Type>1</Type>
+                                            <Description>The home telephone number for this person.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101063</Id>
+                                            <Name>Telephone number - pager</Name>
+                                            <Type>1</Type>
+                                            <Description>The pager number for this person.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101064</Id>
+                                            <Name>Telephone number - mobile</Name>
+                                            <Type>1</Type>
+                                            <Description>The mobile or cellular phone number for this user.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101065</Id>
+                                            <Name>Telephone number - fax</Name>
+                                            <Type>1</Type>
+                                            <Description>The person's fax machine number here.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101066</Id>
+                                            <Name>Telephone number - IP phone</Name>
+                                            <Type>1</Type>
+                                            <Description>This person's IP telephony number.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101067</Id>
+                                            <Name>Telephone - Notes</Name>
+                                            <Type>1</Type>
+                                            <Description>Descriptive information to add any comments for this person.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101069</Id>
+                                            <Name>Organization - Department</Name>
+                                            <Type>1</Type>
+                                            <Description>The department for this person</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101068</Id>
+                                            <Name>Organization - Title</Name>
+                                            <Type>1</Type>
+                                            <Description>The title for this person</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101070</Id>
+                                            <Name>Organization - Company</Name>
+                                            <Type>1</Type>
+                                            <Description>The company for this person</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101092</Id>
+                                            <Name>User Object Distinguished Name</Name>
+                                            <Type>1</Type>
+                                            <Description>The Object Distinguished Name of the new user account. This property is an 'output only' property and is generated by the application automatically. The 'User Object Distinguished Name' is created by the Active Directory automatically when the user account is created. Once the user account is created, you can store the Object Distinguished Name in a variable (%UserODN%) and use the variable in subsequent actions.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%UserODN%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101090</Id>
+                                            <Name>User Security Identifier (SID)</Name>
+                                            <Type>6</Type>
+                                            <Description>The security identifier (SID) of the new user account. This property is an 'output only' property and is generated by the application automatically. The 'User Security Identifier' (SID) is created by the Active Directory automatically when the user account is created. The SID is used when setting permissions, for instance on home directories, Exchange mailboxes etc. Once the user account is created, you can store the SID in a variable (%UserSid%) and use this variable to setup permissions.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%UserSid%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>101091</Id>
+                                            <Name>User Object</Name>
+                                            <Type>7</Type>
+                                            <Description>An internal data structure representing the user account. This property is an 'output only' property and is generated automatically. This property can be used in other script actions, for instance to create an Exchange mailbox and setup group memberships.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%UserObject%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                    </ObjectArray>
+                                </Base>
+                            </Base>
+                        </PropertyArray>
+                    </Base>
+                    <UsernameGenerationAlgorithm class="cUgAlgorithm">
+                        <Name></Name>
+                        <UserComment></UserComment>
+                        <Base class="cUmraObArray">
+                            <ObjectArray/>
+                        </Base>
+                    </UsernameGenerationAlgorithm>
+                    <PasswordGenerator class="cPasswordGenerator" Version="1">
+                        <PasswordVariableName>%Password%</PasswordVariableName>
+                        <MinLength>7</MinLength>
+                        <MaxLength>7</MaxLength>
+                        <MinLowerCase>0</MinLowerCase>
+                        <MaxLowerCase>5</MaxLowerCase>
+                        <MinUpperCase>0</MinUpperCase>
+                        <MaxUpperCase>5</MaxUpperCase>
+                        <MinNumeric>1</MinNumeric>
+                        <MaxNumeric>1</MaxNumeric>
+                        <MinSpecial>1</MinSpecial>
+                        <MaxSpecial>1</MaxSpecial>
+                        <HidePasswordVariableValueFlag>FALSE</HidePasswordVariableValueFlag>
+                    </PasswordGenerator>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptForEach">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <TableVariableName>%table_objectattributes%</TableVariableName>
+                    <ProjectName>attributes-person-activeDirectoryUser</ProjectName>
+                    <ColumnVariablesMap>
+                        <TextItem>%objectattribute_name%</TextItem>
+                        <TextItem>%objectattribute_value%</TextItem>
+                        <TextItem>%objectattribute_isupdated%</TextItem>
+                    </ColumnVariablesMap>
+                    <ReturnVariableNames/>
+                    <StopLoopOnErrorFlag>FALSE</StopLoopOnErrorFlag>
+                    <TerminationCondition class="cVariableConditionCollection">
+                        <Base class="cUmraObArray">
+                            <ObjectArray/>
+                        </Base>
+                        <InvertResultFlag>FALSE</InvertResultFlag>
+                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
+                        <Comment></Comment>
+                    </TerminationCondition>
+                    <VariableFilter class="cUmVariableFilter">
+                        <VariableFilterMode>0</VariableFilterMode>
+                        <VariableSpecification/>
+                    </VariableFilter>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptForEach">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <TableVariableName>%table_objectrelations%</TableVariableName>
+                    <ProjectName>relations</ProjectName>
+                    <ColumnVariablesMap>
+                        <TextItem>%object_id_child%</TextItem>
+                        <TextItem>%object_displayvalue_child%</TextItem>
+                        <TextItem>%object_type_child%</TextItem>
+                        <TextItem>%object_id_parent%</TextItem>
+                        <TextItem>%object_displayvalue_parent%</TextItem>
+                        <TextItem>%object_type_parent%</TextItem>
+                        <TextItem>%relation_type%</TextItem>
+                    </ColumnVariablesMap>
+                    <ReturnVariableNames/>
+                    <StopLoopOnErrorFlag>FALSE</StopLoopOnErrorFlag>
+                    <TerminationCondition class="cVariableConditionCollection">
+                        <Base class="cUmraObArray">
+                            <ObjectArray/>
+                        </Base>
+                        <InvertResultFlag>FALSE</InvertResultFlag>
+                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
+                        <Comment></Comment>
+                    </TerminationCondition>
+                    <VariableFilter class="cUmVariableFilter">
+                        <VariableFilterMode>0</VariableFilterMode>
+                        <VariableSpecification/>
+                    </VariableFilter>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptGoTo">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <GoToLabel>end</GoToLabel>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptVarious">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label>error</Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ScriptActionType>2</ScriptActionType>
+                    <ParameterNumeric>0</ParameterNumeric>
+                    <ParameterText></ParameterText>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptVarious">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label>end</Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ScriptActionType>2</ScriptActionType>
+                    <ParameterNumeric>0</ParameterNumeric>
+                    <ParameterText></ParameterText>
+                </ArrayElement>
+            </ObjectArray>
+        </Base>
+        <ScriptInfo></ScriptInfo>
+        <EmbeddedNameGenerationFlag>FALSE</EmbeddedNameGenerationFlag>
+        <LogVariablesFlag>FALSE</LogVariablesFlag>
+        <DynActionDatabaseSyncId class="cUmraDynActionSetSyncId">
+            <Stamp>369</Stamp>
+            <Id>2E4VM#jwzN0kE86IKm4kcAs</Id>
+        </DynActionDatabaseSyncId>
+        <VariableInfoCollection class="cVariableInfoCollection">
+            <Base class="cUmraObArray">
+                <ObjectArray/>
+            </Base>
+        </VariableInfoCollection>
+    </Script>
+    <AccessSettings class="cFormAccess">
+        <Base class="cJvrSec">
+            <Mask>6</Mask>
+            <DACL class="cJvrSecAcl">
+                <ProtectedFlag>FALSE</ProtectedFlag>
+                <ResetChildPermissionsFlags>TRUE</ResetChildPermissionsFlags>
+                <DaclDefaultedFlag>TRUE</DaclDefaultedFlag>
+                <Base class="cUmraObArray">
+                    <ObjectArray>
+                        <ArrayElement class="cJvrSecAce">
+                            <Base class="cJvrSecAceBase">
+                                <AceType>0</AceType>
+                                <AceFlags>0</AceFlags>
+                                <Mask>48</Mask>
+                                <Account class="cJvrSecAccount">
+                                    <Mask>5</Mask>
+                                    <AccountName>Administrators</AccountName>
+                                    <AccountNameVariable></AccountNameVariable>
+                                    <AccountClassName></AccountClassName>
+                                    <AccountSid class="cJvrSecSid">
+                                        <InitializedFlag>TRUE</InitializedFlag>
+                                        <SID>BIAAAAAAAUAIAAAAgIAAAAs</SID>
+                                    </AccountSid>
+                                </Account>
+                            </Base>
+                        </ArrayElement>
+                        <ArrayElement class="cJvrSecAce">
+                            <Base class="cJvrSecAceBase">
+                                <AceType>0</AceType>
+                                <AceFlags>0</AceFlags>
+                                <Mask>48</Mask>
+                                <Account class="cJvrSecAccount">
+                                    <Mask>5</Mask>
+                                    <AccountName>NT Authority\Network Service</AccountName>
+                                    <AccountNameVariable></AccountNameVariable>
+                                    <AccountClassName></AccountClassName>
+                                    <AccountSid class="cJvrSecSid">
+                                        <InitializedFlag>TRUE</InitializedFlag>
+                                        <SID>BEAAAAAAAUAFAAAA</SID>
+                                    </AccountSid>
+                                </Account>
+                            </Base>
+                        </ArrayElement>
+                    </ObjectArray>
+                </Base>
+            </DACL>
+            <Group class="cJvrSecAccount">
+                <Mask>4</Mask>
+                <AccountName></AccountName>
+                <AccountNameVariable></AccountNameVariable>
+                <AccountClassName></AccountClassName>
+                <AccountSid class="cJvrSecSid">
+                    <InitializedFlag>TRUE</InitializedFlag>
+                    <SID>BIAAAAAAAUAIAAAAgIAAAAs</SID>
+                </AccountSid>
+            </Group>
+            <Owner class="cJvrSecAccount">
+                <Mask>4</Mask>
+                <AccountName></AccountName>
+                <AccountNameVariable></AccountNameVariable>
+                <AccountClassName></AccountClassName>
+                <AccountSid class="cJvrSecSid">
+                    <InitializedFlag>TRUE</InitializedFlag>
+                    <SID>BIAAAAAAAUAIAAAAgIAAAAs</SID>
+                </AccountSid>
+            </Owner>
+            <SecurityDescriptorControlBitsOfInterest>0</SecurityDescriptorControlBitsOfInterest>
+            <SecurityDescriptorControlBitsToSetwner>0</SecurityDescriptorControlBitsToSetwner>
+            <Base class="cUmData" Version="1">
+                <HiddenFlag>FALSE</HiddenFlag>
+            </Base>
+        </Base>
+    </AccessSettings>
+    <HelpInfoUrl></HelpInfoUrl>
+    <ScriptTimeOutSec>900</ScriptTimeOutSec>
+    <LocalProjectFlag>FALSE</LocalProjectFlag>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\ac3b1dc0-9e8b-4c85-ae8c-a60a50eeefb7.usp</LocalProjectFileName>
+    <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
+    <Scheduler class="cUmraWndSchedulerSpec">
+        <InputDataSpecificationParameter>0</InputDataSpecificationParameter>
+        <Scheduler/>
+    </Scheduler>
+    <Base class="cUmFormNoScriptProject">
+        <ProjectName>object-person-activeDirectoryUser-create</ProjectName>
+        <DisplayName>object-person-activeDirectoryUser-create</DisplayName>
+        <UUID>A3xO$uonFykrMaqCQ5+73Cs</UUID>
+        <ProjectComment></ProjectComment>
+        <ProjectLabels/>
+        <ShowInProjectsBarFlag>FALSE</ShowInProjectsBarFlag>
+        <UpdatePreviewFlag>TRUE</UpdatePreviewFlag>
+        <UpdatePreviewOnActivate>TRUE</UpdatePreviewOnActivate>
+        <PopupMessagesShown>2</PopupMessagesShown>
+        <BuildNumber>1671</BuildNumber>
+        <Form class="cForm">
+            <Base class="cUmraObArray">
+                <ObjectArray/>
+            </Base>
+            <ScreenDrawParam class="cFormScreenDrawParam">
+                <LeftMargin>10</LeftMargin>
+                <RightMargin>10</RightMargin>
+                <TopMargin>10</TopMargin>
+                <VerticalSpacing>0</VerticalSpacing>
+                <BackgroundColor>16777215</BackgroundColor>
+            </ScreenDrawParam>
+            <GlobalFontPoolFlag>TRUE</GlobalFontPoolFlag>
+            <PrivateFontPool class="cFormFontPool">
+                <Base class="cUmraObArray">
+                    <ObjectArray>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>0</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-22</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-16</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>0</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>0</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-44</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-44</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-44</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>0</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-44</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-44</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                    </ObjectArray>
+                </Base>
+            </PrivateFontPool>
+        </Form>
+    </Base>
+    <TableDataSpec class="cUmraWndTableDataSpec">
+        <UmraTableDefinition/>
+        <Base class="cUmraTableSpec">
+            <ColumnsDefinition class="cUmraTableColumnsDef">
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </ColumnsDefinition>
+            <ColumnsSpecification class="cUmraTableColumnsSpec">
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </ColumnsSpecification>
+            <EmbeddedDataFlag>FALSE</EmbeddedDataFlag>
+            <Base class="cUmraTableData">
+                <ColumnCount>0</ColumnCount>
+                <ColumnNames/>
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </Base>
+        </Base>
+    </TableDataSpec>
+    <FileDataSpec class="cUmraWndFileDataSpec">
+        <DataFileParam class="cDataFileParam">
+            <Base class="cDataFileParseInfo">
+                <Separators>
+                    <TextItem>,</TextItem>
+                </Separators>
+                <TextQualifier>"</TextQualifier>
+                <DelimitedFlag>TRUE</DelimitedFlag>
+                <FixedWidthPositions/>
+                <FirstRowFieldNamesFlag>FALSE</FirstRowFieldNamesFlag>
+                <FieldCanContainMultipleLinesFlag>FALSE</FieldCanContainMultipleLinesFlag>
+            </Base>
+            <FileName></FileName>
+            <FileHeaderColumnNames/>
+            <AddRowNumberFlag>TRUE</AddRowNumberFlag>
+        </DataFileParam>
+        <Base class="cUmraTableSpec">
+            <ColumnsDefinition class="cUmraTableColumnsDef">
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </ColumnsDefinition>
+            <ColumnsSpecification class="cUmraTableColumnsSpec">
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </ColumnsSpecification>
+            <EmbeddedDataFlag>FALSE</EmbeddedDataFlag>
+            <Base class="cUmraTableData">
+                <ColumnCount>0</ColumnCount>
+                <ColumnNames/>
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </Base>
+        </Base>
+    </FileDataSpec>
+    <NetworkDataSpec class="cUmraWndNetworkDataSpec">
+        <CallSet class="cTdCallSet">
+            <Base class="cUmraObArray">
+                <ObjectArray/>
+            </Base>
+        </CallSet>
+        <Base class="cUmraTableSpec">
+            <ColumnsDefinition class="cUmraTableColumnsDef">
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </ColumnsDefinition>
+            <ColumnsSpecification class="cUmraTableColumnsSpec">
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </ColumnsSpecification>
+            <EmbeddedDataFlag>FALSE</EmbeddedDataFlag>
+            <Base class="cUmraTableData">
+                <ColumnCount>0</ColumnCount>
+                <ColumnNames/>
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </Base>
+        </Base>
+    </NetworkDataSpec>
+</UmraProject>

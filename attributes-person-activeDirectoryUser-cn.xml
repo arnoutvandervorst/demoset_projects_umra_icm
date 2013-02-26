@@ -1,0 +1,2338 @@
+<UmraProject class="cUmFormProject">
+    <InitialProject></InitialProject>
+    <Script class="cActionItemCollection">
+        <Base class="cUmraObArray">
+            <ObjectArray>
+                <ArrayElement class="cActionItemScriptVarious">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label>start</Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ScriptActionType>2</ScriptActionType>
+                    <ParameterNumeric>0</ParameterNumeric>
+                    <ParameterText></ParameterText>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptGoTo">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <GoToLabel>%namingConvention%</GoToLabel>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptVarious">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label>0</Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ScriptActionType>2</ScriptActionType>
+                    <ParameterNumeric>0</ParameterNumeric>
+                    <ParameterText></ParameterText>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptGenerateName">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>1</ErrorControl>
+                            <ErrorControlLabel>error</ErrorControlLabel>
+                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
+                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
+                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <NameGenerationAlgorithm class="cUgAlgorithm">
+                        <Name>cn</Name>
+                        <UserComment></UserComment>
+                        <Base class="cUmraObArray">
+                            <ObjectArray>
+                                <ArrayElement class="cUgMethodCollection">
+                                    <OutputVariable>%cn%</OutputVariable>
+                                    <CurrentMethodIndex>1</CurrentMethodIndex>
+                                    <Base class="cUmraObArray">
+                                        <ObjectArray>
+                                            <ArrayElement class="cUgMethod">
+                                                <MethodName>method1</MethodName>
+                                                <ComposerSettings class="cUgNameComposerSettings">
+                                                    <Functions class="cUgFunctionCollection">
+                                                        <Base class="cUmraObArray">
+                                                            <ObjectArray/>
+                                                        </Base>
+                                                    </Functions>
+                                                </ComposerSettings>
+                                                <Base class="cUmraObArray">
+                                                    <ObjectArray>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%lastName%</VariableName>
+                                                            <ExampleName>Vorst</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
+                                                                                <FunctionName>Add at end</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%initials%</VariableName>
+                                                            <ExampleName>A.</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Characters to delete</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20043</FunctionIdentifier>
+                                                                                <FunctionName>Delete: All matching characters</FunctionName>
+                                                                                <FunctionDescription>Delete any character from the name that matches a character of the specified characters. Example: ~!`'"?&lt;&gt;.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Character to insert</ArgumentName>
+                                                                            <ArgumentType>2</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20028</FunctionIdentifier>
+                                                                                <FunctionName>Insert after every character</FunctionName>
+                                                                                <FunctionDescription>Insert the specified character after every character in the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%middleName%</VariableName>
+                                                            <ExampleName>van der</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionNoArguments">
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>10021</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at begin if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the beginning of the name if the name is not empty (zero characters).</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%firstName%</VariableName>
+                                                            <ExampleName>Arnout</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>)</ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
+                                                                                <FunctionName>Add at end</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[ (]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
+                                                                                <FunctionName>Add at begin</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                    </ObjectArray>
+                                                </Base>
+                                            </ArrayElement>
+                                            <ArrayElement class="cUgMethod">
+                                                <MethodName>method2</MethodName>
+                                                <ComposerSettings class="cUgNameComposerSettings">
+                                                    <Functions class="cUgFunctionCollection">
+                                                        <Base class="cUmraObArray">
+                                                            <ObjectArray/>
+                                                        </Base>
+                                                    </Functions>
+                                                </ComposerSettings>
+                                                <Base class="cUmraObArray">
+                                                    <ObjectArray>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%lastName%</VariableName>
+                                                            <ExampleName>Vorst</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
+                                                                                <FunctionName>Add at end</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%initials%</VariableName>
+                                                            <ExampleName>A.</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Characters to delete</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20043</FunctionIdentifier>
+                                                                                <FunctionName>Delete: All matching characters</FunctionName>
+                                                                                <FunctionDescription>Delete any character from the name that matches a character of the specified characters. Example: ~!`'"?&lt;&gt;.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Character to insert</ArgumentName>
+                                                                            <ArgumentType>2</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20028</FunctionIdentifier>
+                                                                                <FunctionName>Insert after every character</FunctionName>
+                                                                                <FunctionDescription>Insert the specified character after every character in the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%middleName%</VariableName>
+                                                            <ExampleName>van der</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionNoArguments">
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>10021</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at begin if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the beginning of the name if the name is not empty (zero characters).</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%firstName%</VariableName>
+                                                            <ExampleName>Arnout</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>)</ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
+                                                                                <FunctionName>Add at end</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[ (]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
+                                                                                <FunctionName>Add at begin</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartIteratorIncrementor">
+                                                            <FillCharacter>0</FillCharacter>
+                                                            <StartCharacters>2</StartCharacters>
+                                                            <FixedLengthFlag>FALSE</FixedLengthFlag>
+                                                            <LimitedNumberOfIterationsFlag>FALSE</LimitedNumberOfIterationsFlag>
+                                                            <FixedLengthCharacterCount>2</FixedLengthCharacterCount>
+                                                            <MaxIterationCount>0</MaxIterationCount>
+                                                            <Base class="cUgNamePartIterator">
+                                                                <SessionIterationCounter>1</SessionIterationCounter>
+                                                                <EmptyFirstIterationFlag>FALSE</EmptyFirstIterationFlag>
+                                                                <Base class="cUgNamePart"/>
+                                                            </Base>
+                                                        </ArrayElement>
+                                                    </ObjectArray>
+                                                </Base>
+                                            </ArrayElement>
+                                        </ObjectArray>
+                                    </Base>
+                                </ArrayElement>
+                            </ObjectArray>
+                        </Base>
+                    </NameGenerationAlgorithm>
+                    <IterationByVariableFlag>FALSE</IterationByVariableFlag>
+                    <StateInitializeIterationFlag>TRUE</StateInitializeIterationFlag>
+                    <IterationVariableName></IterationVariableName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptGoTo">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <GoToLabel>continue</GoToLabel>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptVarious">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label>P</Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ScriptActionType>2</ScriptActionType>
+                    <ParameterNumeric>0</ParameterNumeric>
+                    <ParameterText></ParameterText>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptIfThenElse">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ConditionCollection class="cVariableConditionCollection">
+                        <Base class="cUmraObArray">
+                            <ObjectArray>
+                                <ArrayElement class="cVariableCondition">
+                                    <InputVariableName>%lastNamePartner%</InputVariableName>
+                                    <InputVariableType>1</InputVariableType>
+                                    <OperatorIndex>100</OperatorIndex>
+                                    <OperatorVariableName></OperatorVariableName>
+                                    <OperatorArgumentValue/>
+                                    <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
+                                    <InvertResultFlag>FALSE</InvertResultFlag>
+                                </ArrayElement>
+                                <ArrayElement class="cVariableCondition">
+                                    <InputVariableName>%lastNamePartner%</InputVariableName>
+                                    <InputVariableType>1</InputVariableType>
+                                    <OperatorIndex>208</OperatorIndex>
+                                    <OperatorVariableName></OperatorVariableName>
+                                    <OperatorArgumentValue class="cUmDataNumeric">
+                                        <Base class="cUmData" Version="1">
+                                            <HiddenFlag>FALSE</HiddenFlag>
+                                        </Base>
+                                        <NumericValue>1</NumericValue>
+                                    </OperatorArgumentValue>
+                                    <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
+                                    <InvertResultFlag>FALSE</InvertResultFlag>
+                                </ArrayElement>
+                            </ObjectArray>
+                        </Base>
+                        <InvertResultFlag>FALSE</InvertResultFlag>
+                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
+                        <Comment></Comment>
+                    </ConditionCollection>
+                    <LabelThen>B</LabelThen>
+                    <LabelElse></LabelElse>
+                    <UseElseFlag>FALSE</UseElseFlag>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptGenerateName">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>1</ErrorControl>
+                            <ErrorControlLabel>error</ErrorControlLabel>
+                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
+                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
+                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <NameGenerationAlgorithm class="cUgAlgorithm">
+                        <Name>cn</Name>
+                        <UserComment></UserComment>
+                        <Base class="cUmraObArray">
+                            <ObjectArray>
+                                <ArrayElement class="cUgMethodCollection">
+                                    <OutputVariable>%cn%</OutputVariable>
+                                    <CurrentMethodIndex>1</CurrentMethodIndex>
+                                    <Base class="cUmraObArray">
+                                        <ObjectArray>
+                                            <ArrayElement class="cUgMethod">
+                                                <MethodName>method1</MethodName>
+                                                <ComposerSettings class="cUgNameComposerSettings">
+                                                    <Functions class="cUgFunctionCollection">
+                                                        <Base class="cUmraObArray">
+                                                            <ObjectArray/>
+                                                        </Base>
+                                                    </Functions>
+                                                </ComposerSettings>
+                                                <Base class="cUmraObArray">
+                                                    <ObjectArray>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%lastNamePartner%</VariableName>
+                                                            <ExampleName>Graaf</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
+                                                                                <FunctionName>Add at end</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%initials%</VariableName>
+                                                            <ExampleName>A.</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Characters to delete</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20043</FunctionIdentifier>
+                                                                                <FunctionName>Delete: All matching characters</FunctionName>
+                                                                                <FunctionDescription>Delete any character from the name that matches a character of the specified characters. Example: ~!`'"?&lt;&gt;.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Character to insert</ArgumentName>
+                                                                            <ArgumentType>2</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20028</FunctionIdentifier>
+                                                                                <FunctionName>Insert after every character</FunctionName>
+                                                                                <FunctionDescription>Insert the specified character after every character in the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%middleNamePartner%</VariableName>
+                                                            <ExampleName>de</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionNoArguments">
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>10021</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at begin if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the beginning of the name if the name is not empty (zero characters).</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%firstName%</VariableName>
+                                                            <ExampleName>Arnout</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>)</ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
+                                                                                <FunctionName>Add at end</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[ (]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
+                                                                                <FunctionName>Add at begin</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                    </ObjectArray>
+                                                </Base>
+                                            </ArrayElement>
+                                            <ArrayElement class="cUgMethod">
+                                                <MethodName>method2</MethodName>
+                                                <ComposerSettings class="cUgNameComposerSettings">
+                                                    <Functions class="cUgFunctionCollection">
+                                                        <Base class="cUmraObArray">
+                                                            <ObjectArray/>
+                                                        </Base>
+                                                    </Functions>
+                                                </ComposerSettings>
+                                                <Base class="cUmraObArray">
+                                                    <ObjectArray>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%lastNamePartner%</VariableName>
+                                                            <ExampleName>Graaf</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
+                                                                                <FunctionName>Add at end</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%initials%</VariableName>
+                                                            <ExampleName>A.</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Characters to delete</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20043</FunctionIdentifier>
+                                                                                <FunctionName>Delete: All matching characters</FunctionName>
+                                                                                <FunctionDescription>Delete any character from the name that matches a character of the specified characters. Example: ~!`'"?&lt;&gt;.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Character to insert</ArgumentName>
+                                                                            <ArgumentType>2</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20028</FunctionIdentifier>
+                                                                                <FunctionName>Insert after every character</FunctionName>
+                                                                                <FunctionDescription>Insert the specified character after every character in the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%middleNamePartner%</VariableName>
+                                                            <ExampleName>de</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionNoArguments">
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>10021</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at begin if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the beginning of the name if the name is not empty (zero characters).</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%firstName%</VariableName>
+                                                            <ExampleName>Arnout</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>)</ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
+                                                                                <FunctionName>Add at end</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[ (]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
+                                                                                <FunctionName>Add at begin</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartIteratorIncrementor">
+                                                            <FillCharacter>0</FillCharacter>
+                                                            <StartCharacters>2</StartCharacters>
+                                                            <FixedLengthFlag>FALSE</FixedLengthFlag>
+                                                            <LimitedNumberOfIterationsFlag>FALSE</LimitedNumberOfIterationsFlag>
+                                                            <FixedLengthCharacterCount>2</FixedLengthCharacterCount>
+                                                            <MaxIterationCount>0</MaxIterationCount>
+                                                            <Base class="cUgNamePartIterator">
+                                                                <SessionIterationCounter>1</SessionIterationCounter>
+                                                                <EmptyFirstIterationFlag>FALSE</EmptyFirstIterationFlag>
+                                                                <Base class="cUgNamePart"/>
+                                                            </Base>
+                                                        </ArrayElement>
+                                                    </ObjectArray>
+                                                </Base>
+                                            </ArrayElement>
+                                        </ObjectArray>
+                                    </Base>
+                                </ArrayElement>
+                            </ObjectArray>
+                        </Base>
+                    </NameGenerationAlgorithm>
+                    <IterationByVariableFlag>FALSE</IterationByVariableFlag>
+                    <StateInitializeIterationFlag>TRUE</StateInitializeIterationFlag>
+                    <IterationVariableName></IterationVariableName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptGoTo">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <GoToLabel>continue</GoToLabel>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptVarious">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label>BP</Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ScriptActionType>2</ScriptActionType>
+                    <ParameterNumeric>0</ParameterNumeric>
+                    <ParameterText></ParameterText>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptIfThenElse">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ConditionCollection class="cVariableConditionCollection">
+                        <Base class="cUmraObArray">
+                            <ObjectArray>
+                                <ArrayElement class="cVariableCondition">
+                                    <InputVariableName>%lastNamePartner%</InputVariableName>
+                                    <InputVariableType>1</InputVariableType>
+                                    <OperatorIndex>100</OperatorIndex>
+                                    <OperatorVariableName></OperatorVariableName>
+                                    <OperatorArgumentValue/>
+                                    <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
+                                    <InvertResultFlag>FALSE</InvertResultFlag>
+                                </ArrayElement>
+                                <ArrayElement class="cVariableCondition">
+                                    <InputVariableName>%lastNamePartner%</InputVariableName>
+                                    <InputVariableType>1</InputVariableType>
+                                    <OperatorIndex>208</OperatorIndex>
+                                    <OperatorVariableName></OperatorVariableName>
+                                    <OperatorArgumentValue class="cUmDataNumeric">
+                                        <Base class="cUmData" Version="1">
+                                            <HiddenFlag>FALSE</HiddenFlag>
+                                        </Base>
+                                        <NumericValue>1</NumericValue>
+                                    </OperatorArgumentValue>
+                                    <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
+                                    <InvertResultFlag>FALSE</InvertResultFlag>
+                                </ArrayElement>
+                            </ObjectArray>
+                        </Base>
+                        <InvertResultFlag>FALSE</InvertResultFlag>
+                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
+                        <Comment></Comment>
+                    </ConditionCollection>
+                    <LabelThen>B</LabelThen>
+                    <LabelElse></LabelElse>
+                    <UseElseFlag>FALSE</UseElseFlag>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptGenerateName">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>1</ErrorControl>
+                            <ErrorControlLabel>error</ErrorControlLabel>
+                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
+                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
+                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <NameGenerationAlgorithm class="cUgAlgorithm">
+                        <Name>cn</Name>
+                        <UserComment></UserComment>
+                        <Base class="cUmraObArray">
+                            <ObjectArray>
+                                <ArrayElement class="cUgMethodCollection">
+                                    <OutputVariable>%cn%</OutputVariable>
+                                    <CurrentMethodIndex>4097</CurrentMethodIndex>
+                                    <Base class="cUmraObArray">
+                                        <ObjectArray>
+                                            <ArrayElement class="cUgMethod">
+                                                <MethodName>method1</MethodName>
+                                                <ComposerSettings class="cUgNameComposerSettings">
+                                                    <Functions class="cUgFunctionCollection">
+                                                        <Base class="cUmraObArray">
+                                                            <ObjectArray/>
+                                                        </Base>
+                                                    </Functions>
+                                                </ComposerSettings>
+                                                <Base class="cUmraObArray">
+                                                    <ObjectArray>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%lastName%</VariableName>
+                                                            <ExampleName>Vorst</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[ - ]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20023</FunctionIdentifier>
+                                                                                <FunctionName>Add at end if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name if the name is not empty.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%middleNamePartner%</VariableName>
+                                                            <ExampleName>de</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionNoArguments">
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%lastNamePartner%</VariableName>
+                                                            <ExampleName>Graaf</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray/>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%initials%</VariableName>
+                                                            <ExampleName>A.</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Characters to delete</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20043</FunctionIdentifier>
+                                                                                <FunctionName>Delete: All matching characters</FunctionName>
+                                                                                <FunctionDescription>Delete any character from the name that matches a character of the specified characters. Example: ~!`'"?&lt;&gt;.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Character to insert</ArgumentName>
+                                                                            <ArgumentType>2</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20028</FunctionIdentifier>
+                                                                                <FunctionName>Insert after every character</FunctionName>
+                                                                                <FunctionDescription>Insert the specified character after every character in the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
+                                                                                <FunctionName>Add at begin</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%middleName%</VariableName>
+                                                            <ExampleName>van der</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionNoArguments">
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>10021</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at begin if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the beginning of the name if the name is not empty (zero characters).</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%firstName%</VariableName>
+                                                            <ExampleName>Arnout</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>)</ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
+                                                                                <FunctionName>Add at end</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[ (]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
+                                                                                <FunctionName>Add at begin</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                    </ObjectArray>
+                                                </Base>
+                                            </ArrayElement>
+                                            <ArrayElement class="cUgMethod">
+                                                <MethodName>method2</MethodName>
+                                                <ComposerSettings class="cUgNameComposerSettings">
+                                                    <Functions class="cUgFunctionCollection">
+                                                        <Base class="cUmraObArray">
+                                                            <ObjectArray/>
+                                                        </Base>
+                                                    </Functions>
+                                                </ComposerSettings>
+                                                <Base class="cUmraObArray">
+                                                    <ObjectArray>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%lastName%</VariableName>
+                                                            <ExampleName>Vorst</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[ - ]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20023</FunctionIdentifier>
+                                                                                <FunctionName>Add at end if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name if the name is not empty.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%middleNamePartner%</VariableName>
+                                                            <ExampleName>de</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionNoArguments">
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%lastNamePartner%</VariableName>
+                                                            <ExampleName>Graaf</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray/>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%initials%</VariableName>
+                                                            <ExampleName>A.</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Characters to delete</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20043</FunctionIdentifier>
+                                                                                <FunctionName>Delete: All matching characters</FunctionName>
+                                                                                <FunctionDescription>Delete any character from the name that matches a character of the specified characters. Example: ~!`'"?&lt;&gt;.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Character to insert</ArgumentName>
+                                                                            <ArgumentType>2</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20028</FunctionIdentifier>
+                                                                                <FunctionName>Insert after every character</FunctionName>
+                                                                                <FunctionDescription>Insert the specified character after every character in the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
+                                                                                <FunctionName>Add at begin</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%middleName%</VariableName>
+                                                            <ExampleName>van der</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionNoArguments">
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>10021</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at begin if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the beginning of the name if the name is not empty (zero characters).</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%firstName%</VariableName>
+                                                            <ExampleName>Arnout</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>)</ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
+                                                                                <FunctionName>Add at end</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[ (]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
+                                                                                <FunctionName>Add at begin</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartIteratorIncrementor">
+                                                            <FillCharacter>0</FillCharacter>
+                                                            <StartCharacters>2</StartCharacters>
+                                                            <FixedLengthFlag>FALSE</FixedLengthFlag>
+                                                            <LimitedNumberOfIterationsFlag>FALSE</LimitedNumberOfIterationsFlag>
+                                                            <FixedLengthCharacterCount>2</FixedLengthCharacterCount>
+                                                            <MaxIterationCount>0</MaxIterationCount>
+                                                            <Base class="cUgNamePartIterator">
+                                                                <SessionIterationCounter>1</SessionIterationCounter>
+                                                                <EmptyFirstIterationFlag>FALSE</EmptyFirstIterationFlag>
+                                                                <Base class="cUgNamePart"/>
+                                                            </Base>
+                                                        </ArrayElement>
+                                                    </ObjectArray>
+                                                </Base>
+                                            </ArrayElement>
+                                        </ObjectArray>
+                                    </Base>
+                                </ArrayElement>
+                            </ObjectArray>
+                        </Base>
+                    </NameGenerationAlgorithm>
+                    <IterationByVariableFlag>FALSE</IterationByVariableFlag>
+                    <StateInitializeIterationFlag>TRUE</StateInitializeIterationFlag>
+                    <IterationVariableName></IterationVariableName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptGoTo">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <GoToLabel>continue</GoToLabel>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptVarious">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label>PB</Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ScriptActionType>2</ScriptActionType>
+                    <ParameterNumeric>0</ParameterNumeric>
+                    <ParameterText></ParameterText>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptIfThenElse">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ConditionCollection class="cVariableConditionCollection">
+                        <Base class="cUmraObArray">
+                            <ObjectArray>
+                                <ArrayElement class="cVariableCondition">
+                                    <InputVariableName>%lastNamePartner%</InputVariableName>
+                                    <InputVariableType>1</InputVariableType>
+                                    <OperatorIndex>100</OperatorIndex>
+                                    <OperatorVariableName></OperatorVariableName>
+                                    <OperatorArgumentValue/>
+                                    <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
+                                    <InvertResultFlag>FALSE</InvertResultFlag>
+                                </ArrayElement>
+                                <ArrayElement class="cVariableCondition">
+                                    <InputVariableName>%lastNamePartner%</InputVariableName>
+                                    <InputVariableType>1</InputVariableType>
+                                    <OperatorIndex>208</OperatorIndex>
+                                    <OperatorVariableName></OperatorVariableName>
+                                    <OperatorArgumentValue class="cUmDataNumeric">
+                                        <Base class="cUmData" Version="1">
+                                            <HiddenFlag>FALSE</HiddenFlag>
+                                        </Base>
+                                        <NumericValue>1</NumericValue>
+                                    </OperatorArgumentValue>
+                                    <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
+                                    <InvertResultFlag>FALSE</InvertResultFlag>
+                                </ArrayElement>
+                            </ObjectArray>
+                        </Base>
+                        <InvertResultFlag>FALSE</InvertResultFlag>
+                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
+                        <Comment></Comment>
+                    </ConditionCollection>
+                    <LabelThen>B</LabelThen>
+                    <LabelElse></LabelElse>
+                    <UseElseFlag>FALSE</UseElseFlag>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptGenerateName">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>1</ErrorControl>
+                            <ErrorControlLabel>error</ErrorControlLabel>
+                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
+                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
+                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <NameGenerationAlgorithm class="cUgAlgorithm">
+                        <Name>cn</Name>
+                        <UserComment></UserComment>
+                        <Base class="cUmraObArray">
+                            <ObjectArray>
+                                <ArrayElement class="cUgMethodCollection">
+                                    <OutputVariable>%cn%</OutputVariable>
+                                    <CurrentMethodIndex>1</CurrentMethodIndex>
+                                    <Base class="cUmraObArray">
+                                        <ObjectArray>
+                                            <ArrayElement class="cUgMethod">
+                                                <MethodName>method1</MethodName>
+                                                <ComposerSettings class="cUgNameComposerSettings">
+                                                    <Functions class="cUgFunctionCollection">
+                                                        <Base class="cUmraObArray">
+                                                            <ObjectArray/>
+                                                        </Base>
+                                                    </Functions>
+                                                </ComposerSettings>
+                                                <Base class="cUmraObArray">
+                                                    <ObjectArray>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%lastNamePartner%</VariableName>
+                                                            <ExampleName>Graaf</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[ - ]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20023</FunctionIdentifier>
+                                                                                <FunctionName>Add at end if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name if the name is not empty.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%middleName%</VariableName>
+                                                            <ExampleName>van der</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionNoArguments">
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%lastName%</VariableName>
+                                                            <ExampleName>Vorst</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray/>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%initials%</VariableName>
+                                                            <ExampleName>A.</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Characters to delete</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20043</FunctionIdentifier>
+                                                                                <FunctionName>Delete: All matching characters</FunctionName>
+                                                                                <FunctionDescription>Delete any character from the name that matches a character of the specified characters. Example: ~!`'"?&lt;&gt;.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Character to insert</ArgumentName>
+                                                                            <ArgumentType>2</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20028</FunctionIdentifier>
+                                                                                <FunctionName>Insert after every character</FunctionName>
+                                                                                <FunctionDescription>Insert the specified character after every character in the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
+                                                                                <FunctionName>Add at begin</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%middleNamePartner%</VariableName>
+                                                            <ExampleName>de</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionNoArguments">
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>10021</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at begin if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the beginning of the name if the name is not empty (zero characters).</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%firstName%</VariableName>
+                                                            <ExampleName>Arnout</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>)</ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
+                                                                                <FunctionName>Add at end</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[ (]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
+                                                                                <FunctionName>Add at begin</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                    </ObjectArray>
+                                                </Base>
+                                            </ArrayElement>
+                                            <ArrayElement class="cUgMethod">
+                                                <MethodName>method2</MethodName>
+                                                <ComposerSettings class="cUgNameComposerSettings">
+                                                    <Functions class="cUgFunctionCollection">
+                                                        <Base class="cUmraObArray">
+                                                            <ObjectArray/>
+                                                        </Base>
+                                                    </Functions>
+                                                </ComposerSettings>
+                                                <Base class="cUmraObArray">
+                                                    <ObjectArray>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%lastNamePartner%</VariableName>
+                                                            <ExampleName>Graaf</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[ - ]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20023</FunctionIdentifier>
+                                                                                <FunctionName>Add at end if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name if the name is not empty.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%middleName%</VariableName>
+                                                            <ExampleName>van der</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionNoArguments">
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%lastName%</VariableName>
+                                                            <ExampleName>Vorst</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray/>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%initials%</VariableName>
+                                                            <ExampleName>A.</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Characters to delete</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20043</FunctionIdentifier>
+                                                                                <FunctionName>Delete: All matching characters</FunctionName>
+                                                                                <FunctionDescription>Delete any character from the name that matches a character of the specified characters. Example: ~!`'"?&lt;&gt;.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>.</ArgumentValue>
+                                                                            <ArgumentName>Character to insert</ArgumentName>
+                                                                            <ArgumentType>2</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20028</FunctionIdentifier>
+                                                                                <FunctionName>Insert after every character</FunctionName>
+                                                                                <FunctionDescription>Insert the specified character after every character in the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
+                                                                                <FunctionName>Add at begin</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%middleNamePartner%</VariableName>
+                                                            <ExampleName>de</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionNoArguments">
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>10021</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at begin if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the beginning of the name if the name is not empty (zero characters).</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%firstName%</VariableName>
+                                                            <ExampleName>Arnout</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>)</ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
+                                                                                <FunctionName>Add at end</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue><![CDATA[ (]]></ArgumentValue>
+                                                                            <ArgumentName>Text to insert</ArgumentName>
+                                                                            <ArgumentType>0</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
+                                                                                <FunctionName>Add at begin</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartIteratorIncrementor">
+                                                            <FillCharacter>0</FillCharacter>
+                                                            <StartCharacters>2</StartCharacters>
+                                                            <FixedLengthFlag>FALSE</FixedLengthFlag>
+                                                            <LimitedNumberOfIterationsFlag>FALSE</LimitedNumberOfIterationsFlag>
+                                                            <FixedLengthCharacterCount>2</FixedLengthCharacterCount>
+                                                            <MaxIterationCount>0</MaxIterationCount>
+                                                            <Base class="cUgNamePartIterator">
+                                                                <SessionIterationCounter>1</SessionIterationCounter>
+                                                                <EmptyFirstIterationFlag>FALSE</EmptyFirstIterationFlag>
+                                                                <Base class="cUgNamePart"/>
+                                                            </Base>
+                                                        </ArrayElement>
+                                                    </ObjectArray>
+                                                </Base>
+                                            </ArrayElement>
+                                        </ObjectArray>
+                                    </Base>
+                                </ArrayElement>
+                            </ObjectArray>
+                        </Base>
+                    </NameGenerationAlgorithm>
+                    <IterationByVariableFlag>FALSE</IterationByVariableFlag>
+                    <StateInitializeIterationFlag>TRUE</StateInitializeIterationFlag>
+                    <IterationVariableName></IterationVariableName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptGoTo">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <GoToLabel>continue</GoToLabel>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptVarious">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label>continue</Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ScriptActionType>2</ScriptActionType>
+                    <ParameterNumeric>0</ParameterNumeric>
+                    <ParameterText></ParameterText>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptGoTo">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <GoToLabel>end</GoToLabel>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptVarious">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label>error</Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ScriptActionType>2</ScriptActionType>
+                    <ParameterNumeric>0</ParameterNumeric>
+                    <ParameterText></ParameterText>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptExecuteProject">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ProjectName>global-error-handler</ProjectName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptVarious">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label>end</Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ScriptActionType>2</ScriptActionType>
+                    <ParameterNumeric>0</ParameterNumeric>
+                    <ParameterText></ParameterText>
+                </ArrayElement>
+            </ObjectArray>
+        </Base>
+        <ScriptInfo></ScriptInfo>
+        <EmbeddedNameGenerationFlag>FALSE</EmbeddedNameGenerationFlag>
+        <LogVariablesFlag>FALSE</LogVariablesFlag>
+        <DynActionDatabaseSyncId class="cUmraDynActionSetSyncId">
+            <Stamp>369</Stamp>
+            <Id>2E4VM#jwzN0kE86IKm4kcAs</Id>
+        </DynActionDatabaseSyncId>
+        <VariableInfoCollection class="cVariableInfoCollection">
+            <Base class="cUmraObArray">
+                <ObjectArray/>
+            </Base>
+        </VariableInfoCollection>
+    </Script>
+    <AccessSettings class="cFormAccess">
+        <Base class="cJvrSec">
+            <Mask>6</Mask>
+            <DACL class="cJvrSecAcl">
+                <ProtectedFlag>FALSE</ProtectedFlag>
+                <ResetChildPermissionsFlags>TRUE</ResetChildPermissionsFlags>
+                <DaclDefaultedFlag>TRUE</DaclDefaultedFlag>
+                <Base class="cUmraObArray">
+                    <ObjectArray>
+                        <ArrayElement class="cJvrSecAce">
+                            <Base class="cJvrSecAceBase">
+                                <AceType>0</AceType>
+                                <AceFlags>0</AceFlags>
+                                <Mask>48</Mask>
+                                <Account class="cJvrSecAccount">
+                                    <Mask>5</Mask>
+                                    <AccountName>Administrators</AccountName>
+                                    <AccountNameVariable></AccountNameVariable>
+                                    <AccountClassName></AccountClassName>
+                                    <AccountSid class="cJvrSecSid">
+                                        <InitializedFlag>TRUE</InitializedFlag>
+                                        <SID>BIAAAAAAAUAIAAAAgIAAAAs</SID>
+                                    </AccountSid>
+                                </Account>
+                            </Base>
+                        </ArrayElement>
+                        <ArrayElement class="cJvrSecAce">
+                            <Base class="cJvrSecAceBase">
+                                <AceType>0</AceType>
+                                <AceFlags>0</AceFlags>
+                                <Mask>48</Mask>
+                                <Account class="cJvrSecAccount">
+                                    <Mask>5</Mask>
+                                    <AccountName>NT Authority\Network Service</AccountName>
+                                    <AccountNameVariable></AccountNameVariable>
+                                    <AccountClassName></AccountClassName>
+                                    <AccountSid class="cJvrSecSid">
+                                        <InitializedFlag>TRUE</InitializedFlag>
+                                        <SID>BEAAAAAAAUAFAAAA</SID>
+                                    </AccountSid>
+                                </Account>
+                            </Base>
+                        </ArrayElement>
+                    </ObjectArray>
+                </Base>
+            </DACL>
+            <Group class="cJvrSecAccount">
+                <Mask>4</Mask>
+                <AccountName></AccountName>
+                <AccountNameVariable></AccountNameVariable>
+                <AccountClassName></AccountClassName>
+                <AccountSid class="cJvrSecSid">
+                    <InitializedFlag>TRUE</InitializedFlag>
+                    <SID>BIAAAAAAAUAIAAAAgIAAAAs</SID>
+                </AccountSid>
+            </Group>
+            <Owner class="cJvrSecAccount">
+                <Mask>4</Mask>
+                <AccountName></AccountName>
+                <AccountNameVariable></AccountNameVariable>
+                <AccountClassName></AccountClassName>
+                <AccountSid class="cJvrSecSid">
+                    <InitializedFlag>TRUE</InitializedFlag>
+                    <SID>BIAAAAAAAUAIAAAAgIAAAAs</SID>
+                </AccountSid>
+            </Owner>
+            <SecurityDescriptorControlBitsOfInterest>0</SecurityDescriptorControlBitsOfInterest>
+            <SecurityDescriptorControlBitsToSetwner>0</SecurityDescriptorControlBitsToSetwner>
+            <Base class="cUmData" Version="1">
+                <HiddenFlag>FALSE</HiddenFlag>
+            </Base>
+        </Base>
+    </AccessSettings>
+    <HelpInfoUrl></HelpInfoUrl>
+    <ScriptTimeOutSec>1492536</ScriptTimeOutSec>
+    <LocalProjectFlag>FALSE</LocalProjectFlag>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\a8ed683d-0662-4141-a4a8-c6ccaf6e52f4.usp</LocalProjectFileName>
+    <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
+    <Scheduler class="cUmraWndSchedulerSpec">
+        <InputDataSpecificationParameter>0</InputDataSpecificationParameter>
+        <Scheduler/>
+    </Scheduler>
+    <Base class="cUmFormNoScriptProject">
+        <ProjectName>attributes-person-activeDirectoryUser-cn</ProjectName>
+        <DisplayName>attributes-person-activeDirectoryUser-cn</DisplayName>
+        <UUID>9gW7oKmBBFEpoaMzv6mU0Ds</UUID>
+        <ProjectComment></ProjectComment>
+        <ProjectLabels/>
+        <ShowInProjectsBarFlag>FALSE</ShowInProjectsBarFlag>
+        <UpdatePreviewFlag>TRUE</UpdatePreviewFlag>
+        <UpdatePreviewOnActivate>TRUE</UpdatePreviewOnActivate>
+        <PopupMessagesShown>2</PopupMessagesShown>
+        <BuildNumber>1671</BuildNumber>
+        <Form class="cForm">
+            <Base class="cUmraObArray">
+                <ObjectArray/>
+            </Base>
+            <ScreenDrawParam class="cFormScreenDrawParam">
+                <LeftMargin>10</LeftMargin>
+                <RightMargin>10</RightMargin>
+                <TopMargin>10</TopMargin>
+                <VerticalSpacing>0</VerticalSpacing>
+                <BackgroundColor>16777215</BackgroundColor>
+            </ScreenDrawParam>
+            <GlobalFontPoolFlag>TRUE</GlobalFontPoolFlag>
+            <PrivateFontPool class="cFormFontPool">
+                <Base class="cUmraObArray">
+                    <ObjectArray>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>0</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-13</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-22</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-16</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>0</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-11</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>0</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-19</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-44</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>0</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-44</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-44</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>0</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-44</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>700</Weight>
+                            <Italic>1</Italic>
+                            <Underline>0</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                        <ArrayElement class="cFormFont">
+                            <Height>-44</Height>
+                            <Width>0</Width>
+                            <Escapement>0</Escapement>
+                            <Orientation>0</Orientation>
+                            <Weight>400</Weight>
+                            <Italic>1</Italic>
+                            <Underline>1</Underline>
+                            <StrikeOut>0</StrikeOut>
+                            <CharSet>0</CharSet>
+                            <OutPrecision>0</OutPrecision>
+                            <ClipPrecision>0</ClipPrecision>
+                            <Quality>0</Quality>
+                            <Pitch>0</Pitch>
+                            <FontName>MS Shell Dlg</FontName>
+                        </ArrayElement>
+                    </ObjectArray>
+                </Base>
+            </PrivateFontPool>
+        </Form>
+    </Base>
+    <TableDataSpec class="cUmraWndTableDataSpec">
+        <UmraTableDefinition/>
+        <Base class="cUmraTableSpec">
+            <ColumnsDefinition class="cUmraTableColumnsDef">
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </ColumnsDefinition>
+            <ColumnsSpecification class="cUmraTableColumnsSpec">
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </ColumnsSpecification>
+            <EmbeddedDataFlag>FALSE</EmbeddedDataFlag>
+            <Base class="cUmraTableData">
+                <ColumnCount>0</ColumnCount>
+                <ColumnNames/>
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </Base>
+        </Base>
+    </TableDataSpec>
+    <FileDataSpec class="cUmraWndFileDataSpec">
+        <DataFileParam class="cDataFileParam">
+            <Base class="cDataFileParseInfo">
+                <Separators>
+                    <TextItem>,</TextItem>
+                    <TextItem>,</TextItem>
+                    <TextItem>,</TextItem>
+                    <TextItem>,</TextItem>
+                    <TextItem>,</TextItem>
+                    <TextItem>,</TextItem>
+                </Separators>
+                <TextQualifier>"</TextQualifier>
+                <DelimitedFlag>TRUE</DelimitedFlag>
+                <FixedWidthPositions/>
+                <FirstRowFieldNamesFlag>FALSE</FirstRowFieldNamesFlag>
+                <FieldCanContainMultipleLinesFlag>FALSE</FieldCanContainMultipleLinesFlag>
+            </Base>
+            <FileName></FileName>
+            <FileHeaderColumnNames/>
+            <AddRowNumberFlag>TRUE</AddRowNumberFlag>
+        </DataFileParam>
+        <Base class="cUmraTableSpec">
+            <ColumnsDefinition class="cUmraTableColumnsDef">
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </ColumnsDefinition>
+            <ColumnsSpecification class="cUmraTableColumnsSpec">
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </ColumnsSpecification>
+            <EmbeddedDataFlag>FALSE</EmbeddedDataFlag>
+            <Base class="cUmraTableData">
+                <ColumnCount>0</ColumnCount>
+                <ColumnNames/>
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </Base>
+        </Base>
+    </FileDataSpec>
+    <NetworkDataSpec class="cUmraWndNetworkDataSpec">
+        <CallSet class="cTdCallSet">
+            <Base class="cUmraObArray">
+                <ObjectArray/>
+            </Base>
+        </CallSet>
+        <Base class="cUmraTableSpec">
+            <ColumnsDefinition class="cUmraTableColumnsDef">
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </ColumnsDefinition>
+            <ColumnsSpecification class="cUmraTableColumnsSpec">
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </ColumnsSpecification>
+            <EmbeddedDataFlag>FALSE</EmbeddedDataFlag>
+            <Base class="cUmraTableData">
+                <ColumnCount>0</ColumnCount>
+                <ColumnNames/>
+                <Base class="cUmraObArray">
+                    <ObjectArray/>
+                </Base>
+            </Base>
+        </Base>
+    </NetworkDataSpec>
+</UmraProject>
