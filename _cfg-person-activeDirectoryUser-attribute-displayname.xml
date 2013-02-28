@@ -285,7 +285,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%displayName%</OutputVariable>
-                                    <CurrentMethodIndex>69</CurrentMethodIndex>
+                                    <CurrentMethodIndex>0</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">

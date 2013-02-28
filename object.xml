@@ -76,19 +76,6 @@
                     </Base>
                     <ProjectName>%object_type%</ProjectName>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptGoTo">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <GoToLabel>end</GoToLabel>
-                </ArrayElement>
                 <ArrayElement class="cActionItemScriptDatabaseCommand">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
@@ -101,7 +88,11 @@
                         </Base>
                     </Base>
                     <SqlUpdate class="cUmraDbUpdate" Version="1">
-                        <OleDb/>
+                        <OleDb class="cUmraOleDbGeneral">
+                            <Base class="cUmraOleDb"/>
+                            <ConnectionString>%Conn_string_db_icm%</ConnectionString>
+                            <OleDbProviderType>32</OleDbProviderType>
+                        </OleDb>
                         <SqlCommands>
                             <TextItem><![CDATA[EXEC ICMJobObjectVersionsMarkProcessed
 %object_id%]]></TextItem>
