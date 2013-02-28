@@ -14,7 +14,7 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <ProjectName>_cfg-organizationalUnit-provision</ProjectName>
+                    <ProjectName>_cfg-organizationalFunction-activeDirectoryGroup-synchronize</ProjectName>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">
@@ -122,16 +122,16 @@
     <HelpInfoUrl></HelpInfoUrl>
     <ScriptTimeOutSec>900</ScriptTimeOutSec>
     <LocalProjectFlag>FALSE</LocalProjectFlag>
-    <LocalProjectFileName>C:\Program Files\UmraService\Projects\cfe6f29a-9dff-4b87-808f-e0d4631948a0.usp</LocalProjectFileName>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\bb8feac9-3dd8-4383-9947-0dbad548c719.usp</LocalProjectFileName>
     <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
     <Scheduler class="cUmraWndSchedulerSpec">
         <InputDataSpecificationParameter>0</InputDataSpecificationParameter>
         <Scheduler/>
     </Scheduler>
     <Base class="cUmFormNoScriptProject">
-        <ProjectName>organizationalUnit-provision</ProjectName>
-        <DisplayName>organizationalUnit-provision</DisplayName>
-        <UUID>aKv5P/fnHuEgPCO1j@BSgCs</UUID>
+        <ProjectName>_cfg-organizationalFunction-synchronize</ProjectName>
+        <DisplayName>object-person-activeDirectoryUser-create</DisplayName>
+        <UUID>Jr+j7idPDOUmH1guVj0xZAs</UUID>
         <ProjectComment></ProjectComment>
         <ProjectLabels/>
         <ShowInProjectsBarFlag>FALSE</ShowInProjectsBarFlag>
