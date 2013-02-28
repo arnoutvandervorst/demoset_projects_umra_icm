@@ -34,7 +34,7 @@
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
-                            <Label>0</Label>
+                            <Label>B</Label>
                             <ErrorControl>0</ErrorControl>
                             <ErrorControlLabel></ErrorControlLabel>
                             <ErrorVariableFlag>FALSE</ErrorVariableFlag>
@@ -64,7 +64,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%displayName%</OutputVariable>
-                                    <CurrentMethodIndex>0</CurrentMethodIndex>
+                                    <CurrentMethodIndex>69</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -149,7 +149,7 @@
                                                             <Base class="cUgNamePart"/>
                                                         </ArrayElement>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%firstName%</VariableName>
+                                                            <VariableName>%nickName%</VariableName>
                                                             <ExampleName>Arnout</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
                                                                 <Base class="cUmraObArray">
@@ -285,7 +285,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%displayName%</OutputVariable>
-                                    <CurrentMethodIndex>0</CurrentMethodIndex>
+                                    <CurrentMethodIndex>16</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -370,7 +370,7 @@
                                                             <Base class="cUgNamePart"/>
                                                         </ArrayElement>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%firstName%</VariableName>
+                                                            <VariableName>%nickName%</VariableName>
                                                             <ExampleName>Arnout</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
                                                                 <Base class="cUmraObArray">
@@ -629,7 +629,7 @@
                                                             <Base class="cUgNamePart"/>
                                                         </ArrayElement>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%firstName%</VariableName>
+                                                            <VariableName>%nickName%</VariableName>
                                                             <ExampleName>Arnout</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
                                                                 <Base class="cUmraObArray">
@@ -888,7 +888,7 @@
                                                             <Base class="cUgNamePart"/>
                                                         </ArrayElement>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%firstName%</VariableName>
+                                                            <VariableName>%nickName%</VariableName>
                                                             <ExampleName>Arnout</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
                                                                 <Base class="cUmraObArray">

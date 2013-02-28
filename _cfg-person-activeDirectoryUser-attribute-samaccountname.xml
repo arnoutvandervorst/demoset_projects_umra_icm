@@ -86,7 +86,7 @@
                                                 <Base class="cUmraObArray">
                                                     <ObjectArray>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%firstName%</VariableName>
+                                                            <VariableName>%nickName%</VariableName>
                                                             <ExampleName>Arnout</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
                                                                 <Base class="cUmraObArray">
@@ -166,7 +166,7 @@
                                                 <Base class="cUmraObArray">
                                                     <ObjectArray>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%firstName%</VariableName>
+                                                            <VariableName>%nickName%</VariableName>
                                                             <ExampleName>Arnout</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
                                                                 <Base class="cUmraObArray">
@@ -246,7 +246,7 @@
                                                 <Base class="cUmraObArray">
                                                     <ObjectArray>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%firstName%</VariableName>
+                                                            <VariableName>%nickName%</VariableName>
                                                             <ExampleName>Arnout</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
                                                                 <Base class="cUmraObArray">
