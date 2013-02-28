@@ -58,13 +58,13 @@
                         </Base>
                     </Base>
                     <NameGenerationAlgorithm class="cUgAlgorithm">
-                        <Name>displayName</Name>
+                        <Name>sn</Name>
                         <UserComment></UserComment>
                         <Base class="cUmraObArray">
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
-                                    <OutputVariable>%displayName%</OutputVariable>
-                                    <CurrentMethodIndex>6553711</CurrentMethodIndex>
+                                    <OutputVariable>%sn%</OutputVariable>
+                                    <CurrentMethodIndex>116</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -79,58 +79,6 @@
                                                 <Base class="cUmraObArray">
                                                     <ObjectArray>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%lastName%</VariableName>
-                                                            <ExampleName>Vorst</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
-                                                                            <ArgumentName>Text to insert</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
-                                                                                <FunctionName>Add at end</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%initials%</VariableName>
-                                                            <ExampleName>A.</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue>.</ArgumentValue>
-                                                                            <ArgumentName>Characters to delete</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20043</FunctionIdentifier>
-                                                                                <FunctionName>Delete: All matching characters</FunctionName>
-                                                                                <FunctionDescription>Delete any character from the name that matches a character of the specified characters. Example: ~!`'"?&lt;&gt;.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue>.</ArgumentValue>
-                                                                            <ArgumentName>Character to insert</ArgumentName>
-                                                                            <ArgumentType>2</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20028</FunctionIdentifier>
-                                                                                <FunctionName>Insert after every character</FunctionName>
-                                                                                <FunctionDescription>Insert the specified character after every character in the name.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
                                                             <VariableName>%middleName%</VariableName>
                                                             <ExampleName>van der</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
@@ -138,9 +86,9 @@
                                                                     <ObjectArray>
                                                                         <ArrayElement class="cUgFunctionNoArguments">
                                                                             <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>10021</FunctionIdentifier>
-                                                                                <FunctionName>Add blank at begin if not empty</FunctionName>
-                                                                                <FunctionDescription>Insert a blank character at the beginning of the name if the name is not empty (zero characters).</FunctionDescription>
+                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
                                                                             </Base>
                                                                         </ArrayElement>
                                                                     </ObjectArray>
@@ -149,32 +97,11 @@
                                                             <Base class="cUgNamePart"/>
                                                         </ArrayElement>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%firstName%</VariableName>
-                                                            <ExampleName>Arnout</ExampleName>
+                                                            <VariableName>%lastName%</VariableName>
+                                                            <ExampleName>Vorst</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
                                                                 <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue>)</ArgumentValue>
-                                                                            <ArgumentName>Text to insert</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
-                                                                                <FunctionName>Add at end</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue><![CDATA[ (]]></ArgumentValue>
-                                                                            <ArgumentName>Text to insert</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
-                                                                                <FunctionName>Add at begin</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
+                                                                    <ObjectArray/>
                                                                 </Base>
                                                             </Functions>
                                                             <Base class="cUgNamePart"/>
@@ -279,13 +206,13 @@
                         </Base>
                     </Base>
                     <NameGenerationAlgorithm class="cUgAlgorithm">
-                        <Name>displayName</Name>
+                        <Name>sn</Name>
                         <UserComment></UserComment>
                         <Base class="cUmraObArray">
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
-                                    <OutputVariable>%displayName%</OutputVariable>
-                                    <CurrentMethodIndex>69</CurrentMethodIndex>
+                                    <OutputVariable>%sn%</OutputVariable>
+                                    <CurrentMethodIndex>0</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -300,58 +227,6 @@
                                                 <Base class="cUmraObArray">
                                                     <ObjectArray>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%lastNamePartner%</VariableName>
-                                                            <ExampleName>Graaf</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
-                                                                            <ArgumentName>Text to insert</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
-                                                                                <FunctionName>Add at end</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%initials%</VariableName>
-                                                            <ExampleName>A.</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue>.</ArgumentValue>
-                                                                            <ArgumentName>Characters to delete</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20043</FunctionIdentifier>
-                                                                                <FunctionName>Delete: All matching characters</FunctionName>
-                                                                                <FunctionDescription>Delete any character from the name that matches a character of the specified characters. Example: ~!`'"?&lt;&gt;.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue>.</ArgumentValue>
-                                                                            <ArgumentName>Character to insert</ArgumentName>
-                                                                            <ArgumentType>2</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20028</FunctionIdentifier>
-                                                                                <FunctionName>Insert after every character</FunctionName>
-                                                                                <FunctionDescription>Insert the specified character after every character in the name.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
                                                             <VariableName>%middleNamePartner%</VariableName>
                                                             <ExampleName>de</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
@@ -359,9 +234,9 @@
                                                                     <ObjectArray>
                                                                         <ArrayElement class="cUgFunctionNoArguments">
                                                                             <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>10021</FunctionIdentifier>
-                                                                                <FunctionName>Add blank at begin if not empty</FunctionName>
-                                                                                <FunctionDescription>Insert a blank character at the beginning of the name if the name is not empty (zero characters).</FunctionDescription>
+                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
                                                                             </Base>
                                                                         </ArrayElement>
                                                                     </ObjectArray>
@@ -370,32 +245,11 @@
                                                             <Base class="cUgNamePart"/>
                                                         </ArrayElement>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%firstName%</VariableName>
-                                                            <ExampleName>Arnout</ExampleName>
+                                                            <VariableName>%lastNamePartner%</VariableName>
+                                                            <ExampleName>Graaf</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
                                                                 <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue>)</ArgumentValue>
-                                                                            <ArgumentName>Text to insert</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
-                                                                                <FunctionName>Add at end</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue><![CDATA[ (]]></ArgumentValue>
-                                                                            <ArgumentName>Text to insert</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
-                                                                                <FunctionName>Add at begin</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
+                                                                    <ObjectArray/>
                                                                 </Base>
                                                             </Functions>
                                                             <Base class="cUgNamePart"/>
@@ -500,13 +354,13 @@
                         </Base>
                     </Base>
                     <NameGenerationAlgorithm class="cUgAlgorithm">
-                        <Name>displayName</Name>
+                        <Name>sn</Name>
                         <UserComment></UserComment>
                         <Base class="cUmraObArray">
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
-                                    <OutputVariable>%displayName%</OutputVariable>
-                                    <CurrentMethodIndex>1</CurrentMethodIndex>
+                                    <OutputVariable>%sn%</OutputVariable>
+                                    <CurrentMethodIndex>6553711</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -526,14 +380,11 @@
                                                             <Functions class="cUgFunctionCollection">
                                                                 <Base class="cUmraObArray">
                                                                     <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue><![CDATA[ - ]]></ArgumentValue>
-                                                                            <ArgumentName>Text to insert</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
+                                                                        <ArrayElement class="cUgFunctionNoArguments">
                                                                             <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20023</FunctionIdentifier>
-                                                                                <FunctionName>Add at end if not empty</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at the end of the name if the name is not empty.</FunctionDescription>
+                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
                                                                             </Base>
                                                                         </ArrayElement>
                                                                     </ObjectArray>
@@ -570,88 +421,19 @@
                                                             <Base class="cUgNamePart"/>
                                                         </ArrayElement>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%initials%</VariableName>
-                                                            <ExampleName>A.</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue>.</ArgumentValue>
-                                                                            <ArgumentName>Characters to delete</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20043</FunctionIdentifier>
-                                                                                <FunctionName>Delete: All matching characters</FunctionName>
-                                                                                <FunctionDescription>Delete any character from the name that matches a character of the specified characters. Example: ~!`'"?&lt;&gt;.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue>.</ArgumentValue>
-                                                                            <ArgumentName>Character to insert</ArgumentName>
-                                                                            <ArgumentType>2</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20028</FunctionIdentifier>
-                                                                                <FunctionName>Insert after every character</FunctionName>
-                                                                                <FunctionDescription>Insert the specified character after every character in the name.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
-                                                                            <ArgumentName>Text to insert</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
-                                                                                <FunctionName>Add at begin</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
                                                             <VariableName>%middleName%</VariableName>
                                                             <ExampleName>van der</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
                                                                 <Base class="cUmraObArray">
                                                                     <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionNoArguments">
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>10021</FunctionIdentifier>
-                                                                                <FunctionName>Add blank at begin if not empty</FunctionName>
-                                                                                <FunctionDescription>Insert a blank character at the beginning of the name if the name is not empty (zero characters).</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%firstName%</VariableName>
-                                                            <ExampleName>Arnout</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
                                                                         <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue>)</ArgumentValue>
+                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
                                                                             <ArgumentName>Text to insert</ArgumentName>
                                                                             <ArgumentType>0</ArgumentType>
                                                                             <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
-                                                                                <FunctionName>Add at end</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue><![CDATA[ (]]></ArgumentValue>
-                                                                            <ArgumentName>Text to insert</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
-                                                                                <FunctionName>Add at begin</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
+                                                                                <FunctionIdentifier>20022</FunctionIdentifier>
+                                                                                <FunctionName>Add at begin if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at begin of the name if the name is not empty.</FunctionDescription>
                                                                             </Base>
                                                                         </ArrayElement>
                                                                     </ObjectArray>
@@ -759,13 +541,13 @@
                         </Base>
                     </Base>
                     <NameGenerationAlgorithm class="cUgAlgorithm">
-                        <Name>displayName</Name>
+                        <Name>sn</Name>
                         <UserComment></UserComment>
                         <Base class="cUmraObArray">
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
-                                    <OutputVariable>%displayName%</OutputVariable>
-                                    <CurrentMethodIndex>1</CurrentMethodIndex>
+                                    <OutputVariable>%sn%</OutputVariable>
+                                    <CurrentMethodIndex>4097</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -785,14 +567,11 @@
                                                             <Functions class="cUgFunctionCollection">
                                                                 <Base class="cUmraObArray">
                                                                     <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue><![CDATA[ - ]]></ArgumentValue>
-                                                                            <ArgumentName>Text to insert</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
+                                                                        <ArrayElement class="cUgFunctionNoArguments">
                                                                             <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20023</FunctionIdentifier>
-                                                                                <FunctionName>Add at end if not empty</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at the end of the name if the name is not empty.</FunctionDescription>
+                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
                                                                             </Base>
                                                                         </ArrayElement>
                                                                     </ObjectArray>
@@ -829,47 +608,6 @@
                                                             <Base class="cUgNamePart"/>
                                                         </ArrayElement>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%initials%</VariableName>
-                                                            <ExampleName>A.</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue>.</ArgumentValue>
-                                                                            <ArgumentName>Characters to delete</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20043</FunctionIdentifier>
-                                                                                <FunctionName>Delete: All matching characters</FunctionName>
-                                                                                <FunctionDescription>Delete any character from the name that matches a character of the specified characters. Example: ~!`'"?&lt;&gt;.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue>.</ArgumentValue>
-                                                                            <ArgumentName>Character to insert</ArgumentName>
-                                                                            <ArgumentType>2</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20028</FunctionIdentifier>
-                                                                                <FunctionName>Insert after every character</FunctionName>
-                                                                                <FunctionDescription>Insert the specified character after every character in the name.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
-                                                                            <ArgumentName>Text to insert</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
-                                                                                <FunctionName>Add at begin</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
                                                             <VariableName>%middleNamePartner%</VariableName>
                                                             <ExampleName>de</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
@@ -877,40 +615,19 @@
                                                                     <ObjectArray>
                                                                         <ArrayElement class="cUgFunctionNoArguments">
                                                                             <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>10021</FunctionIdentifier>
-                                                                                <FunctionName>Add blank at begin if not empty</FunctionName>
-                                                                                <FunctionDescription>Insert a blank character at the beginning of the name if the name is not empty (zero characters).</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%firstName%</VariableName>
-                                                            <ExampleName>Arnout</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue>)</ArgumentValue>
-                                                                            <ArgumentName>Text to insert</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20021</FunctionIdentifier>
-                                                                                <FunctionName>Add at end</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at the end of the name.</FunctionDescription>
+                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
+                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
                                                                             </Base>
                                                                         </ArrayElement>
                                                                         <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue><![CDATA[ (]]></ArgumentValue>
+                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
                                                                             <ArgumentName>Text to insert</ArgumentName>
                                                                             <ArgumentType>0</ArgumentType>
                                                                             <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20020</FunctionIdentifier>
-                                                                                <FunctionName>Add at begin</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at the beginning of the name.</FunctionDescription>
+                                                                                <FunctionIdentifier>20022</FunctionIdentifier>
+                                                                                <FunctionName>Add at begin if not empty</FunctionName>
+                                                                                <FunctionDescription>Insert the specified text at begin of the name if the name is not empty.</FunctionDescription>
                                                                             </Base>
                                                                         </ArrayElement>
                                                                     </ObjectArray>
@@ -1106,16 +823,16 @@
     <HelpInfoUrl></HelpInfoUrl>
     <ScriptTimeOutSec>1492536</ScriptTimeOutSec>
     <LocalProjectFlag>FALSE</LocalProjectFlag>
-    <LocalProjectFileName>C:\Program Files\UmraService\Projects\d83c1eab-3acf-4d52-9cc0-ae78609f9a43.usp</LocalProjectFileName>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\75cd8068-3c38-42de-88f9-d99360f42ca6.usp</LocalProjectFileName>
     <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
     <Scheduler class="cUmraWndSchedulerSpec">
         <InputDataSpecificationParameter>0</InputDataSpecificationParameter>
         <Scheduler/>
     </Scheduler>
     <Base class="cUmFormNoScriptProject">
-        <ProjectName>attributes-person-activeDirectoryUser-displayname</ProjectName>
-        <DisplayName>attributes-person-activeDirectoryUser-displayname</DisplayName>
-        <UUID>r6BPY/$OS1EnA7Keg9pmDBs</UUID>
+        <ProjectName>_cfg-person-activeDirectoryUser-attribute-sn</ProjectName>
+        <DisplayName>_cfg-person-activeDirectoryUser-attribute-sn</DisplayName>
+        <UUID>oBYz1hDPe#Ei5n9kgRP#mCs</UUID>
         <ProjectComment></ProjectComment>
         <ProjectLabels/>
         <ShowInProjectsBarFlag>FALSE</ShowInProjectsBarFlag>

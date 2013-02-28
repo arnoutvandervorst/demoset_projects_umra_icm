@@ -3,22 +3,7 @@
     <Script class="cActionItemCollection">
         <Base class="cUmraObArray">
             <ObjectArray>
-                <ArrayElement class="cActionItemScriptVarious">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label>start</Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ScriptActionType>2</ScriptActionType>
-                    <ParameterNumeric>0</ParameterNumeric>
-                    <ParameterText></ParameterText>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptGoTo">
+                <ArrayElement class="cActionItemScriptExecuteProject">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
@@ -29,97 +14,43 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <GoToLabel>%namingConvention%</GoToLabel>
+                    <ProjectName>_cfg-organizationalFunction-activeDirectoryUser-attributes</ProjectName>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptVarious">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label>0</Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ScriptActionType>2</ScriptActionType>
-                    <ParameterNumeric>0</ParameterNumeric>
-                    <ParameterText></ParameterText>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptGenerateName">
+                <ArrayElement class="cActionItemScriptGenericTable">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
                             <ErrorControl>1</ErrorControl>
                             <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
-                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
-                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <NameGenerationAlgorithm class="cUgAlgorithm">
-                        <Name>sn</Name>
-                        <UserComment></UserComment>
-                        <Base class="cUmraObArray">
-                            <ObjectArray>
-                                <ArrayElement class="cUgMethodCollection">
-                                    <OutputVariable>%sn%</OutputVariable>
-                                    <CurrentMethodIndex>1</CurrentMethodIndex>
-                                    <Base class="cUmraObArray">
-                                        <ObjectArray>
-                                            <ArrayElement class="cUgMethod">
-                                                <MethodName>method1</MethodName>
-                                                <ComposerSettings class="cUgNameComposerSettings">
-                                                    <Functions class="cUgFunctionCollection">
-                                                        <Base class="cUmraObArray">
-                                                            <ObjectArray/>
-                                                        </Base>
-                                                    </Functions>
-                                                </ComposerSettings>
-                                                <Base class="cUmraObArray">
-                                                    <ObjectArray>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%middleName%</VariableName>
-                                                            <ExampleName>van der</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionNoArguments">
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
-                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
-                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%lastName%</VariableName>
-                                                            <ExampleName>Vorst</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray/>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                    </ObjectArray>
-                                                </Base>
-                                            </ArrayElement>
-                                        </ObjectArray>
-                                    </Base>
-                                </ArrayElement>
-                            </ObjectArray>
+                    <TableDefinition class="cUmraTableDefDatabaseQuery">
+                        <Base class="cUmraTableDef">
+                            <VariableName>%table_relations_organizationalHierarchy%</VariableName>
+                            <TestVariableArray class="cUmVariableArray">
+                                <Base class="cUmraObArray">
+                                    <ObjectArray/>
+                                </Base>
+                            </TestVariableArray>
                         </Base>
-                    </NameGenerationAlgorithm>
-                    <IterationByVariableFlag>FALSE</IterationByVariableFlag>
-                    <StateInitializeIterationFlag>TRUE</StateInitializeIterationFlag>
-                    <IterationVariableName></IterationVariableName>
+                        <UmraOleDb class="cUmraOleDbGeneral">
+                            <Base class="cUmraOleDb"/>
+                            <ConnectionString>%Conn_string_db_icm%</ConnectionString>
+                            <OleDbProviderType>0</OleDbProviderType>
+                        </UmraOleDb>
+                        <DatabaseQuery><![CDATA[EXEC ICMJobObjectVersionsRelationsGet 
+%placement_id%, 
+'organizationalHierarchy', 
+'person', 
+'', 
+'parent']]></DatabaseQuery>
+                        <QueryResultColumnNames/>
+                    </TableDefinition>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptGoTo">
+                <ArrayElement class="cActionItemScriptTableData">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
@@ -130,22 +61,16 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <GoToLabel>continue</GoToLabel>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptVarious">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label>P</Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ScriptActionType>2</ScriptActionType>
-                    <ParameterNumeric>0</ParameterNumeric>
-                    <ParameterText></ParameterText>
+                    <TableDataOperation>5</TableDataOperation>
+                    <TableDataVariable>%table_relations_organizationalHierarchy%</TableDataVariable>
+                    <ValueTextArgument1>%count_rows_table_relations_organizationalHierarchy%</ValueTextArgument1>
+                    <ValueTextArgument2></ValueTextArgument2>
+                    <ValueTextArgument3></ValueTextArgument3>
+                    <ValueTextArgument4></ValueTextArgument4>
+                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
+                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
+                    <ValueNumericArgument1>0</ValueNumericArgument1>
+                    <ValueNumericArgument2>0</ValueNumericArgument2>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptIfThenElse">
                     <Base class="cActionItemScript">
@@ -162,24 +87,15 @@
                         <Base class="cUmraObArray">
                             <ObjectArray>
                                 <ArrayElement class="cVariableCondition">
-                                    <InputVariableName>%lastNamePartner%</InputVariableName>
-                                    <InputVariableType>1</InputVariableType>
-                                    <OperatorIndex>100</OperatorIndex>
-                                    <OperatorVariableName></OperatorVariableName>
-                                    <OperatorArgumentValue/>
-                                    <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
-                                    <InvertResultFlag>FALSE</InvertResultFlag>
-                                </ArrayElement>
-                                <ArrayElement class="cVariableCondition">
-                                    <InputVariableName>%lastNamePartner%</InputVariableName>
-                                    <InputVariableType>1</InputVariableType>
-                                    <OperatorIndex>208</OperatorIndex>
+                                    <InputVariableName>%count_rows_table_relations_organizationalHierarchy%</InputVariableName>
+                                    <InputVariableType>2</InputVariableType>
+                                    <OperatorIndex>300</OperatorIndex>
                                     <OperatorVariableName></OperatorVariableName>
                                     <OperatorArgumentValue class="cUmDataNumeric">
                                         <Base class="cUmData" Version="1">
                                             <HiddenFlag>FALSE</HiddenFlag>
                                         </Base>
-                                        <NumericValue>1</NumericValue>
+                                        <NumericValue>0</NumericValue>
                                     </OperatorArgumentValue>
                                     <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
                                     <InvertResultFlag>FALSE</InvertResultFlag>
@@ -190,84 +106,67 @@
                         <AndVersusOrFlag>FALSE</AndVersusOrFlag>
                         <Comment></Comment>
                     </ConditionCollection>
-                    <LabelThen>B</LabelThen>
+                    <LabelThen>end</LabelThen>
                     <LabelElse></LabelElse>
                     <UseElseFlag>FALSE</UseElseFlag>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptGenerateName">
+                <ArrayElement class="cActionItemScriptTableData">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <TableDataOperation>4</TableDataOperation>
+                    <TableDataVariable>%table_relations_organizationalHierarchy%</TableDataVariable>
+                    <ValueTextArgument1>0</ValueTextArgument1>
+                    <ValueTextArgument2>3</ValueTextArgument2>
+                    <ValueTextArgument3>%person_id%</ValueTextArgument3>
+                    <ValueTextArgument4></ValueTextArgument4>
+                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
+                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
+                    <ValueNumericArgument1>0</ValueNumericArgument1>
+                    <ValueNumericArgument2>0</ValueNumericArgument2>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptGenericTable">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
                             <ErrorControl>1</ErrorControl>
                             <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
-                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
-                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <NameGenerationAlgorithm class="cUgAlgorithm">
-                        <Name>sn</Name>
-                        <UserComment></UserComment>
-                        <Base class="cUmraObArray">
-                            <ObjectArray>
-                                <ArrayElement class="cUgMethodCollection">
-                                    <OutputVariable>%sn%</OutputVariable>
-                                    <CurrentMethodIndex>0</CurrentMethodIndex>
-                                    <Base class="cUmraObArray">
-                                        <ObjectArray>
-                                            <ArrayElement class="cUgMethod">
-                                                <MethodName>method1</MethodName>
-                                                <ComposerSettings class="cUgNameComposerSettings">
-                                                    <Functions class="cUgFunctionCollection">
-                                                        <Base class="cUmraObArray">
-                                                            <ObjectArray/>
-                                                        </Base>
-                                                    </Functions>
-                                                </ComposerSettings>
-                                                <Base class="cUmraObArray">
-                                                    <ObjectArray>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%middleNamePartner%</VariableName>
-                                                            <ExampleName>de</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionNoArguments">
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
-                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
-                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%lastNamePartner%</VariableName>
-                                                            <ExampleName>Graaf</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray/>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                    </ObjectArray>
-                                                </Base>
-                                            </ArrayElement>
-                                        </ObjectArray>
-                                    </Base>
-                                </ArrayElement>
-                            </ObjectArray>
+                    <TableDefinition class="cUmraTableDefDatabaseQuery">
+                        <Base class="cUmraTableDef">
+                            <VariableName>%table_relations_link%</VariableName>
+                            <TestVariableArray class="cUmVariableArray">
+                                <Base class="cUmraObArray">
+                                    <ObjectArray/>
+                                </Base>
+                            </TestVariableArray>
                         </Base>
-                    </NameGenerationAlgorithm>
-                    <IterationByVariableFlag>FALSE</IterationByVariableFlag>
-                    <StateInitializeIterationFlag>TRUE</StateInitializeIterationFlag>
-                    <IterationVariableName></IterationVariableName>
+                        <UmraOleDb class="cUmraOleDbGeneral">
+                            <Base class="cUmraOleDb"/>
+                            <ConnectionString>%Conn_string_db_icm%</ConnectionString>
+                            <OleDbProviderType>0</OleDbProviderType>
+                        </UmraOleDb>
+                        <DatabaseQuery><![CDATA[EXEC ICMJobObjectVersionsRelationsGet 
+%person_id%, 
+'link', 
+'activeDirectoryUser', 
+'', 
+'']]></DatabaseQuery>
+                        <QueryResultColumnNames/>
+                    </TableDefinition>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptGoTo">
+                <ArrayElement class="cActionItemScriptTableData">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
@@ -278,22 +177,16 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <GoToLabel>continue</GoToLabel>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptVarious">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label>BP</Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ScriptActionType>2</ScriptActionType>
-                    <ParameterNumeric>0</ParameterNumeric>
-                    <ParameterText></ParameterText>
+                    <TableDataOperation>5</TableDataOperation>
+                    <TableDataVariable>%table_relations_link%</TableDataVariable>
+                    <ValueTextArgument1>%count_rows_table_relations_link%</ValueTextArgument1>
+                    <ValueTextArgument2></ValueTextArgument2>
+                    <ValueTextArgument3></ValueTextArgument3>
+                    <ValueTextArgument4></ValueTextArgument4>
+                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
+                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
+                    <ValueNumericArgument1>0</ValueNumericArgument1>
+                    <ValueNumericArgument2>0</ValueNumericArgument2>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptIfThenElse">
                     <Base class="cActionItemScript">
@@ -310,24 +203,15 @@
                         <Base class="cUmraObArray">
                             <ObjectArray>
                                 <ArrayElement class="cVariableCondition">
-                                    <InputVariableName>%lastNamePartner%</InputVariableName>
-                                    <InputVariableType>1</InputVariableType>
-                                    <OperatorIndex>100</OperatorIndex>
-                                    <OperatorVariableName></OperatorVariableName>
-                                    <OperatorArgumentValue/>
-                                    <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
-                                    <InvertResultFlag>FALSE</InvertResultFlag>
-                                </ArrayElement>
-                                <ArrayElement class="cVariableCondition">
-                                    <InputVariableName>%lastNamePartner%</InputVariableName>
-                                    <InputVariableType>1</InputVariableType>
-                                    <OperatorIndex>208</OperatorIndex>
+                                    <InputVariableName>%count_rows_table_relations_link%</InputVariableName>
+                                    <InputVariableType>2</InputVariableType>
+                                    <OperatorIndex>300</OperatorIndex>
                                     <OperatorVariableName></OperatorVariableName>
                                     <OperatorArgumentValue class="cUmDataNumeric">
                                         <Base class="cUmData" Version="1">
                                             <HiddenFlag>FALSE</HiddenFlag>
                                         </Base>
-                                        <NumericValue>1</NumericValue>
+                                        <NumericValue>0</NumericValue>
                                     </OperatorArgumentValue>
                                     <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
                                     <InvertResultFlag>FALSE</InvertResultFlag>
@@ -338,123 +222,290 @@
                         <AndVersusOrFlag>FALSE</AndVersusOrFlag>
                         <Comment></Comment>
                     </ConditionCollection>
-                    <LabelThen>B</LabelThen>
+                    <LabelThen>end</LabelThen>
                     <LabelElse></LabelElse>
                     <UseElseFlag>FALSE</UseElseFlag>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptGenerateName">
+                <ArrayElement class="cActionItemScriptTableData">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
-                            <ErrorControl>1</ErrorControl>
-                            <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
-                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
-                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <NameGenerationAlgorithm class="cUgAlgorithm">
-                        <Name>sn</Name>
-                        <UserComment></UserComment>
-                        <Base class="cUmraObArray">
-                            <ObjectArray>
-                                <ArrayElement class="cUgMethodCollection">
-                                    <OutputVariable>%sn%</OutputVariable>
-                                    <CurrentMethodIndex>10</CurrentMethodIndex>
-                                    <Base class="cUmraObArray">
-                                        <ObjectArray>
-                                            <ArrayElement class="cUgMethod">
-                                                <MethodName>method1</MethodName>
-                                                <ComposerSettings class="cUgNameComposerSettings">
-                                                    <Functions class="cUgFunctionCollection">
-                                                        <Base class="cUmraObArray">
-                                                            <ObjectArray/>
-                                                        </Base>
-                                                    </Functions>
-                                                </ComposerSettings>
-                                                <Base class="cUmraObArray">
-                                                    <ObjectArray>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%lastName%</VariableName>
-                                                            <ExampleName>Vorst</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionNoArguments">
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
-                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
-                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%middleNamePartner%</VariableName>
-                                                            <ExampleName>de</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionNoArguments">
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
-                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
-                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%lastNamePartner%</VariableName>
-                                                            <ExampleName>Graaf</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray/>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%middleName%</VariableName>
-                                                            <ExampleName>van der</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
-                                                                            <ArgumentName>Text to insert</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20022</FunctionIdentifier>
-                                                                                <FunctionName>Add at begin if not empty</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at begin of the name if the name is not empty.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                    </ObjectArray>
+                    <TableDataOperation>4</TableDataOperation>
+                    <TableDataVariable>%table_relations_link%</TableDataVariable>
+                    <ValueTextArgument1>0</ValueTextArgument1>
+                    <ValueTextArgument2>0</ValueTextArgument2>
+                    <ValueTextArgument3>%activeDirectoryUser_id%</ValueTextArgument3>
+                    <ValueTextArgument4></ValueTextArgument4>
+                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
+                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
+                    <ValueNumericArgument1>0</ValueNumericArgument1>
+                    <ValueNumericArgument2>0</ValueNumericArgument2>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptExecuteProject">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ProjectName>table-objectattributes-activeDirectoryUser</ProjectName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptSetVariable">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <VariableName>%distinguishedName%</VariableName>
+                    <Data class="cUmDataText">
+                        <Base class="cUmData" Version="1">
+                            <HiddenFlag>FALSE</HiddenFlag>
+                        </Base>
+                        <TextValue>CN=Kuipers\, P.J. (Piet Jan),OU=Accounts,OU=Organization,DC=trias,DC=local</TextValue>
+                    </Data>
+                    <ResolveImmediatelyFlag>FALSE</ResolveImmediatelyFlag>
+                </ArrayElement>
+                <ArrayElement class="cActionItemOperationUserAdFind">
+                    <Base class="cActionItemOperation">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                        <Explanation>Access a user account in Active Directory. The action is used always in combination with other subsequent actions. Once the user is found, an internal data structure representing the user account is is setup. This structure is stored in a variable (%UserObject%) that can be used by other actions. The action supports several methods to find the user.</Explanation>
+                        <PropertyArray class="cUmraPsPropertyArray">
+                            <Base class="cUmPropertyArray">
+                                <Base class="cUmraObArray">
+                                    <ObjectArray>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110001</Id>
+                                            <Name>Domain</Name>
+                                            <Type>1</Type>
+                                            <Description>The name of the domain (DNS or NETBIOS style, e.g. tools4ever.com or TOOLS4EVER) of the user account. The user account is specified using LDAP. To specify the user account, you have three options. 1: LDAP name (available from network tree browse operations), 2: Domain + Organizational Unit-Container + FullName (the LDAP name is composed from the individual components), 3: Domain + Username (NT-style, LDAP name is searched for). For each option, you need to specify the corresponding properties.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110002</Id>
+                                            <Name>Organizational Unit-Container</Name>
+                                            <Type>1</Type>
+                                            <Description>The name of the Organizational Unit-Container of the user account (example: Students or Students\Group1). The user account is specified using LDAP. To specify the user account, you have three options. 1: LDAP name (available from network tree browse operations), 2: Domain + Organizational Unit-Container + FullName (the LDAP name is composed from the individual components), 3: Domain + Username (NT-style, LDAP name is searched for). For each option, you need to specify the corresponding properties.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110003</Id>
+                                            <Name>Full name</Name>
+                                            <Type>1</Type>
+                                            <Description>The full name, more precisely known as the common name of the user account in the Organizational Unit-Container - Domain (example: John Williams). The user account is specified using LDAP. To specify the user account, you have three options. 1: LDAP name (available from network tree browse operations), 2: Domain + Organizational Unit-Container + FullName (the LDAP name is composed from the individual components), 3: Domain + Username (NT-style, LDAP name is searched for). For each option, you need to specify the corresponding properties.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110004</Id>
+                                            <Name>Username</Name>
+                                            <Type>1</Type>
+                                            <Description>The pre-Windows 2000 logon name of the user account (example: JWilliams). The user account is specified using LDAP. To specify the user account, you have three options. 1: LDAP name (available from network tree browse operations), 2: Domain + Organizational Unit-Container + FullName (the LDAP name is composed from the individual components), 3: Domain + Username (NT-style, LDAP name is searched for). For each option, you need to specify the corresponding properties.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110000</Id>
+                                            <Name>LDAP name</Name>
+                                            <Type>1</Type>
+                                            <Description>The full LDAP name of the user account. (example: cn=John Williams, ou=Schools, dc=Tools4ever, dc=Com). If this value is specified, it takes precendece and the values for the properties 'Domain', 'Organizational Unit-Container', 'Full name' and 'Username' are ignored and do not have to be specified.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
                                                 </Base>
-                                            </ArrayElement>
-                                        </ObjectArray>
-                                    </Base>
-                                </ArrayElement>
-                            </ObjectArray>
-                        </Base>
-                    </NameGenerationAlgorithm>
-                    <IterationByVariableFlag>FALSE</IterationByVariableFlag>
-                    <StateInitializeIterationFlag>TRUE</StateInitializeIterationFlag>
-                    <IterationVariableName></IterationVariableName>
+                                                <TextValue>%distinguishedName%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110005</Id>
+                                            <Name>Domain controller</Name>
+                                            <Type>1</Type>
+                                            <Description>Optional: The name of the domain controller, used to access to the domain, container or organizational unit where the account exists. This property can be used for any of the methods used to specify the user account. If this value is not specified, Active Directory chooses one automatically (serverless binding).</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110010</Id>
+                                            <Name>User Object</Name>
+                                            <Type>7</Type>
+                                            <Description>An internal data structure representing the user account. This property is an 'output only' property and is generated automatically when the user is found in Active Directory. This property can be used in other script actions, for instance to create an Exchange mailbox, setup group memberships or modify user attributes.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%UserObject%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110011</Id>
+                                            <Name>User Security Identifier (SID)</Name>
+                                            <Type>6</Type>
+                                            <Description>The security identifier (SID) of the user account. This property is an 'output only' property and can be determined when the user is found in Active Directory. The 'User Security Identifier' (SID) is created by the Active Directory automatically when the user account was created. The SID is used when setting permissions, for instance on home directories, Exchange mailboxes etc. The SID is stored by default in the variable %UserSid%.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%UserSid%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110014</Id>
+                                            <Name>Globally unique identifier (GUID)</Name>
+                                            <Type>6</Type>
+                                            <Description>The globally unique identifier (GUID) of the user account. This property is an 'output only' property and can be determined when the user is found in Active Directory. The 'User Security Identifier' (SID) is created by the Active Directory automatically when the user account was created. The SID is used when setting permissions, for instance on home directories, Exchange mailboxes etc. The SID is stored by default in the variable %UserGuid%.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%UserGuid%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110013</Id>
+                                            <Name>User account display name</Name>
+                                            <Type>1</Type>
+                                            <Description>The display name of the user account. This property is an 'output only' property and can be determined when the user is found in Active Directory.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%UserDisplayName%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                    </ObjectArray>
+                                </Base>
+                            </Base>
+                        </PropertyArray>
+                    </Base>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptGoTo">
+                <ArrayElement class="cActionItemOperationAdSetProperty">
+                    <Base class="cActionItemOperation">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                        <Explanation>Set the value of an attribute of an Active Directory object, for instance a user account. The attribute is specified by the LDAP display name of the attribute. For the most common properties, the LDAP name can be selected from a list.</Explanation>
+                        <PropertyArray class="cUmraPsPropertyArray">
+                            <Base class="cUmPropertyArray">
+                                <Base class="cUmraObArray">
+                                    <ObjectArray>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>120000</Id>
+                                            <Name>User Object</Name>
+                                            <Type>7</Type>
+                                            <Description>A data structure representing a user account. If you want to set the property of a user account object, you can use this property to specify the Active Directory object for this action. Use the action 'Get user (AD)' to find the user account in Active Directory and setup the variable that contains the 'User Object'.</Description>
+                                            <ExportMode>0</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%UserObject%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>120001</Id>
+                                            <Name>Active Directory Object</Name>
+                                            <Type>7</Type>
+                                            <Description>A data structure representing a Active Directory object for which an attribute must be set. This property can only be used as a input variable. Earlier in the script, another script action must have generated the value for this variable.</Description>
+                                            <ExportMode>0</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>120002</Id>
+                                            <Name>Active Directory object LDAP name</Name>
+                                            <Type>1</Type>
+                                            <Description>The full LDAP name of the target Active Directory object. This object can be any object that exists in Active Directory: users, groups, OU's. The name must start with the Active Directory provider and optionally the binding information. Examples: LDAP://server_a/cn=GroupA,dc=TOOLS4EVER,dc=com, GC://cn=User1,DC=domain,DC=com.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>120010</Id>
+                                            <Name>LDAP attribute display name</Name>
+                                            <Type>1</Type>
+                                            <Description>The LDAP name of the attribute. The name identifies the attribute of the Active Directory object. For a number of well-known attributes, the LDAP name can be selected from a list but you can specify any other valid name.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>title</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>120020</Id>
+                                            <Name>Attribute value</Name>
+                                            <Type>1</Type>
+                                            <Description>The value of the attribute. The value must tbe specified as a text value.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%title%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>120025</Id>
+                                            <Name>Skip if new value empty</Name>
+                                            <Type>3</Type>
+                                            <Description>Default value: 'No'. Specify 'Yes' to ignore this action if the new attribute value is empty. In this case, the attribute is not changed. If this property is not specified or set to 'No', the target attribute is always updated.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>120030</Id>
+                                            <Name>Multi-value flag</Name>
+                                            <Type>3</Type>
+                                            <Description>Default value: 'No'. The value contains multiple entries (multi-value).</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>120031</Id>
+                                            <Name>Append versus update multi-value flag</Name>
+                                            <Type>3</Type>
+                                            <Description>Default value: 'No'. When updating a multi-value attribute, the specified values can be appended to the the current values (property set to 'Yes') or the specified values can replace the current values (default, property set to 'No').</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                    </ObjectArray>
+                                </Base>
+                            </Base>
+                        </PropertyArray>
+                    </Base>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptExecuteProject">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
@@ -465,12 +516,12 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <GoToLabel>continue</GoToLabel>
+                    <ProjectName>_cfg-organizationalFunction-activeDirectoryGroup-attributes</ProjectName>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptVarious">
+                <ArrayElement class="cActionItemScriptGenericTable">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
-                            <Label>PB</Label>
+                            <Label></Label>
                             <ErrorControl>0</ErrorControl>
                             <ErrorControlLabel></ErrorControlLabel>
                             <ErrorVariableFlag>FALSE</ErrorVariableFlag>
@@ -478,9 +529,69 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <ScriptActionType>2</ScriptActionType>
-                    <ParameterNumeric>0</ParameterNumeric>
-                    <ParameterText></ParameterText>
+                    <TableDefinition class="cUmraTableDefLdapQuery">
+                        <Base class="cUmraTableDef">
+                            <VariableName>%table_query_ad%</VariableName>
+                            <TestVariableArray class="cUmVariableArray">
+                                <Base class="cUmraObArray">
+                                    <ObjectArray/>
+                                </Base>
+                            </TestVariableArray>
+                        </Base>
+                        <UmraLdapQueryBindingType>2</UmraLdapQueryBindingType>
+                        <BindingString>LDAP://trias.local</BindingString>
+                        <LdapQueryFilter>(&amp;(objectCategory=group)(sAMAccountName=%id%))</LdapQueryFilter>
+                        <Attributes class="cUmraTableLdapAttributes">
+                            <Base class="cUmraObArray">
+                                <ObjectArray>
+                                    <ArrayElement class="cUmraTableLdapAttribute">
+                                        <LdapName>distinguishedName</LdapName>
+                                        <DisplayName>distinguishedName</DisplayName>
+                                        <DataConversionCollection class="cUmDataConversionCollection">
+                                            <Base class="cUmraObArray">
+                                                <ObjectArray/>
+                                            </Base>
+                                        </DataConversionCollection>
+                                    </ArrayElement>
+                                </ObjectArray>
+                            </Base>
+                        </Attributes>
+                        <LdapSearchOptions class="cUmraTableLdapSearchOptions">
+                            <FlagTimeTotal>FALSE</FlagTimeTotal>
+                            <FlagTimePage>FALSE</FlagTimePage>
+                            <FlagSizeTotal>FALSE</FlagSizeTotal>
+                            <FlagSizePage>FALSE</FlagSizePage>
+                            <FlagCacheResults>TRUE</FlagCacheResults>
+                            <TimeTotalSec>120</TimeTotalSec>
+                            <TimePageSec>120</TimePageSec>
+                            <SizeTotal>1000</SizeTotal>
+                            <SizePage>500</SizePage>
+                            <ScopeOption>0</ScopeOption>
+                            <ReferralChaseOption>0</ReferralChaseOption>
+                        </LdapSearchOptions>
+                    </TableDefinition>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptTableData">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <TableDataOperation>5</TableDataOperation>
+                    <TableDataVariable>%table_query_ad%</TableDataVariable>
+                    <ValueTextArgument1>%count_rows_table_query_ad%</ValueTextArgument1>
+                    <ValueTextArgument2></ValueTextArgument2>
+                    <ValueTextArgument3></ValueTextArgument3>
+                    <ValueTextArgument4></ValueTextArgument4>
+                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
+                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
+                    <ValueNumericArgument1>0</ValueNumericArgument1>
+                    <ValueNumericArgument2>0</ValueNumericArgument2>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptIfThenElse">
                     <Base class="cActionItemScript">
@@ -497,24 +608,15 @@
                         <Base class="cUmraObArray">
                             <ObjectArray>
                                 <ArrayElement class="cVariableCondition">
-                                    <InputVariableName>%lastNamePartner%</InputVariableName>
-                                    <InputVariableType>1</InputVariableType>
-                                    <OperatorIndex>100</OperatorIndex>
-                                    <OperatorVariableName></OperatorVariableName>
-                                    <OperatorArgumentValue/>
-                                    <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
-                                    <InvertResultFlag>FALSE</InvertResultFlag>
-                                </ArrayElement>
-                                <ArrayElement class="cVariableCondition">
-                                    <InputVariableName>%lastNamePartner%</InputVariableName>
-                                    <InputVariableType>1</InputVariableType>
-                                    <OperatorIndex>208</OperatorIndex>
+                                    <InputVariableName>%count_rows_table_query_ad%</InputVariableName>
+                                    <InputVariableType>2</InputVariableType>
+                                    <OperatorIndex>300</OperatorIndex>
                                     <OperatorVariableName></OperatorVariableName>
                                     <OperatorArgumentValue class="cUmDataNumeric">
                                         <Base class="cUmData" Version="1">
                                             <HiddenFlag>FALSE</HiddenFlag>
                                         </Base>
-                                        <NumericValue>1</NumericValue>
+                                        <NumericValue>0</NumericValue>
                                     </OperatorArgumentValue>
                                     <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
                                     <InvertResultFlag>FALSE</InvertResultFlag>
@@ -525,156 +627,89 @@
                         <AndVersusOrFlag>FALSE</AndVersusOrFlag>
                         <Comment></Comment>
                     </ConditionCollection>
-                    <LabelThen>B</LabelThen>
+                    <LabelThen>end</LabelThen>
                     <LabelElse></LabelElse>
                     <UseElseFlag>FALSE</UseElseFlag>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptGenerateName">
+                <ArrayElement class="cActionItemScriptTableData">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
-                            <ErrorControl>1</ErrorControl>
-                            <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
-                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
-                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <NameGenerationAlgorithm class="cUgAlgorithm">
-                        <Name>sn</Name>
-                        <UserComment></UserComment>
-                        <Base class="cUmraObArray">
-                            <ObjectArray>
-                                <ArrayElement class="cUgMethodCollection">
-                                    <OutputVariable>%sn%</OutputVariable>
-                                    <CurrentMethodIndex>0</CurrentMethodIndex>
-                                    <Base class="cUmraObArray">
-                                        <ObjectArray>
-                                            <ArrayElement class="cUgMethod">
-                                                <MethodName>method1</MethodName>
-                                                <ComposerSettings class="cUgNameComposerSettings">
-                                                    <Functions class="cUgFunctionCollection">
-                                                        <Base class="cUmraObArray">
-                                                            <ObjectArray/>
-                                                        </Base>
-                                                    </Functions>
-                                                </ComposerSettings>
-                                                <Base class="cUmraObArray">
-                                                    <ObjectArray>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%lastNamePartner%</VariableName>
-                                                            <ExampleName>Graaf</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionNoArguments">
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
-                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
-                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%middleName%</VariableName>
-                                                            <ExampleName>van der</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionNoArguments">
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
-                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
-                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%lastName%</VariableName>
-                                                            <ExampleName>Vorst</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray/>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%middleNamePartner%</VariableName>
-                                                            <ExampleName>de</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionNoArguments">
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>10023</FunctionIdentifier>
-                                                                                <FunctionName>Add blank at end if not empty</FunctionName>
-                                                                                <FunctionDescription>Insert a blank character at the end of the name if the name is not empty (zero characters).</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue><![CDATA[, ]]></ArgumentValue>
-                                                                            <ArgumentName>Text to insert</ArgumentName>
-                                                                            <ArgumentType>0</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20022</FunctionIdentifier>
-                                                                                <FunctionName>Add at begin if not empty</FunctionName>
-                                                                                <FunctionDescription>Insert the specified text at begin of the name if the name is not empty.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                    </ObjectArray>
+                    <TableDataOperation>4</TableDataOperation>
+                    <TableDataVariable>%table_query_ad%</TableDataVariable>
+                    <ValueTextArgument1>0</ValueTextArgument1>
+                    <ValueTextArgument2>0</ValueTextArgument2>
+                    <ValueTextArgument3>%object_dn_group%</ValueTextArgument3>
+                    <ValueTextArgument4></ValueTextArgument4>
+                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
+                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
+                    <ValueNumericArgument1>0</ValueNumericArgument1>
+                    <ValueNumericArgument2>0</ValueNumericArgument2>
+                </ArrayElement>
+                <ArrayElement class="cActionItemOperationAdSetGroups">
+                    <Base class="cActionItemOperation">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                        <Explanation>Set the group memberships for Active Directory object. The Active Directory object can be any object that can become a member of the specified groups, e.g. a user, other group, contact etc. The Active Directory object can be specified by a variable or an object distinguished name.</Explanation>
+                        <PropertyArray class="cUmraPsPropertyArray">
+                            <Base class="cUmPropertyArray">
+                                <Base class="cUmraObArray">
+                                    <ObjectArray>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>126000</Id>
+                                            <Name>Active Directory Object</Name>
+                                            <Type>7</Type>
+                                            <Description>A data structure representing the Active Directory object for which the group membership is updated. To specify the object, you must use this property or property 'Active Directory LDAP name'. If you use this property you must specify a variable for which the value is generated by another action.</Description>
+                                            <ExportMode>0</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>126001</Id>
+                                            <Name>Active Directory name</Name>
+                                            <Type>1</Type>
+                                            <Description>The name of the Active Directory object for which the group membership is updated. To specify the object, you must use this property or property 'Active Directory Object'. If you use this property you must specify the object disinghuised name of the Active Directory object. Example: cn=Group123,ou=Ou32,dc=tools4ever,dc=com.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
                                                 </Base>
-                                            </ArrayElement>
-                                        </ObjectArray>
-                                    </Base>
-                                </ArrayElement>
-                            </ObjectArray>
-                        </Base>
-                    </NameGenerationAlgorithm>
-                    <IterationByVariableFlag>FALSE</IterationByVariableFlag>
-                    <StateInitializeIterationFlag>TRUE</StateInitializeIterationFlag>
-                    <IterationVariableName></IterationVariableName>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptGoTo">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
+                                                <TextValue>LDAP://%distinguishedName%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>126002</Id>
+                                            <Name>Group names (variable)</Name>
+                                            <Type>8</Type>
+                                            <Description>The names of the groups of which the Active Directory object must become a member. Each group name must be specified by its full LDAP name. The value of this property can only be specified by a multi-text variable.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>LDAP://%object_dn_group%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                    </ObjectArray>
+                                </Base>
+                            </Base>
+                        </PropertyArray>
                     </Base>
-                    <GoToLabel>continue</GoToLabel>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptVarious">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label>continue</Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ScriptActionType>2</ScriptActionType>
-                    <ParameterNumeric>0</ParameterNumeric>
-                    <ParameterText></ParameterText>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptGoTo">
                     <Base class="cActionItemScript">
@@ -703,19 +738,6 @@
                     <ScriptActionType>2</ScriptActionType>
                     <ParameterNumeric>0</ParameterNumeric>
                     <ParameterText></ParameterText>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptExecuteProject">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ProjectName>global-error-handler</ProjectName>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">
@@ -821,18 +843,18 @@
         </Base>
     </AccessSettings>
     <HelpInfoUrl></HelpInfoUrl>
-    <ScriptTimeOutSec>1492536</ScriptTimeOutSec>
+    <ScriptTimeOutSec>900</ScriptTimeOutSec>
     <LocalProjectFlag>FALSE</LocalProjectFlag>
-    <LocalProjectFileName>C:\Program Files\UmraService\Projects\75cd8068-3c38-42de-88f9-d99360f42ca6.usp</LocalProjectFileName>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\6446e55e-0bc6-402a-9008-51633ac77c3e.usp</LocalProjectFileName>
     <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
     <Scheduler class="cUmraWndSchedulerSpec">
         <InputDataSpecificationParameter>0</InputDataSpecificationParameter>
         <Scheduler/>
     </Scheduler>
     <Base class="cUmFormNoScriptProject">
-        <ProjectName>attributes-person-activeDirectoryUser-sn</ProjectName>
-        <DisplayName>attributes-person-activeDirectoryUser-sn</DisplayName>
-        <UUID>oBYz1hDPe#Ei5n9kgRP#mCs</UUID>
+        <ProjectName>_cfg-organizationalFunction-activeDirectoryUser-synchronize</ProjectName>
+        <DisplayName>_cfg-organizationalFunction-activeDirectoryUser-synchronize</DisplayName>
+        <UUID>eVuRkZ8CqAEkIE1Y6cMf+As</UUID>
         <ProjectComment></ProjectComment>
         <ProjectLabels/>
         <ShowInProjectsBarFlag>FALSE</ShowInProjectsBarFlag>
@@ -1399,11 +1421,6 @@
         <DataFileParam class="cDataFileParam">
             <Base class="cDataFileParseInfo">
                 <Separators>
-                    <TextItem>,</TextItem>
-                    <TextItem>,</TextItem>
-                    <TextItem>,</TextItem>
-                    <TextItem>,</TextItem>
-                    <TextItem>,</TextItem>
                     <TextItem>,</TextItem>
                 </Separators>
                 <TextQualifier>"</TextQualifier>

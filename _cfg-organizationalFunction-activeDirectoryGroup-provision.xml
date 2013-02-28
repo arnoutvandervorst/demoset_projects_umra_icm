@@ -3,7 +3,7 @@
     <Script class="cActionItemCollection">
         <Base class="cUmraObArray">
             <ObjectArray>
-                <ArrayElement class="cActionItemScriptSetVariable">
+                <ArrayElement class="cActionItemScriptExecuteProject">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
@@ -14,95 +14,199 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <VariableName>%Conn_string_db_icm%</VariableName>
-                    <Data class="cUmDataText">
-                        <Base class="cUmData" Version="1">
-                            <HiddenFlag>FALSE</HiddenFlag>
-                        </Base>
-                        <TextValue>Provider=SQLOLEDB.1;Password=koning;Persist Security Info=True;User ID=arnold;Initial Catalog=ICM;Data Source=t4e268.tools4ever.local\sql2008r2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DC01;Use Encryption for Data=False;Tag with column collation when possible=False</TextValue>
-                    </Data>
-                    <ResolveImmediatelyFlag>FALSE</ResolveImmediatelyFlag>
+                    <ProjectName>_cfg-organizationalFunction-activeDirectoryGroup-attributes</ProjectName>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptGenericTable">
-                    <Base class="cActionItemScript">
+                <ArrayElement class="cActionItemOperationAdGroupCreate">
+                    <Base class="cActionItemOperation">
                         <Base class="cActionItem">
                             <Label></Label>
-                            <ErrorControl>1</ErrorControl>
-                            <ErrorControlLabel>error</ErrorControlLabel>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
                             <ErrorVariableFlag>FALSE</ErrorVariableFlag>
                             <ErrorVariableName></ErrorVariableName>
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
-                    </Base>
-                    <TableDefinition class="cUmraTableDefDatabaseQuery">
-                        <Base class="cUmraTableDef">
-                            <VariableName>%table_objects%</VariableName>
-                            <TestVariableArray class="cUmVariableArray">
+                        <Explanation>Create a group in Active Directory. The group is created in a Active Directory domain, organizational unit or other container. Optionally, you can specify the domain controller on which the group is created.</Explanation>
+                        <PropertyArray class="cUmraPsPropertyArray">
+                            <Base class="cUmPropertyArray">
                                 <Base class="cUmraObArray">
-                                    <ObjectArray/>
+                                    <ObjectArray>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>125000</Id>
+                                            <Name>Domain</Name>
+                                            <Type>1</Type>
+                                            <Description>The name of the domain (DNS or NETBIOS style, e.g. tools4ever.com or TOOLS4EVER) where the group will be created. Optionally you can specify the property 'Organizational Unit-Container'. If you specify a value for this property, do not specify a value for property 'LDAP-container' since this specification takes precedence.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>125001</Id>
+                                            <Name>Organizational Unit-Container</Name>
+                                            <Type>1</Type>
+                                            <Description>The name of the Organizational Unit-Container where the group must be created (example: Students or Division_AStudents\Group1). If you specify a value for this property, you should also specify a value for the 'Domain' property.  If you specify a value for this property, do not specify a value for property 'LDAP-container' since that specification overrules this specification.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>125002</Id>
+                                            <Name>LDAP Container</Name>
+                                            <Type>1</Type>
+                                            <Description>The LDAP name of the organizational unit or container where the group must be created (example: cn=Marketing, cn=Tools4ever, cn=Com). You must specify either a value for this property or values for the properties 'Domain' and 'Organizational Unit-Container'. If values for both methods are specified, this method takes precedence.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>OU=Groups,OU=Organization,DC=trias,DC=local</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>125003</Id>
+                                            <Name>Domain (controller)</Name>
+                                            <Type>1</Type>
+                                            <Description>Optional: The name of the domain controller or domain, used to access to the domain, container or organizational unit where the group must be created. If this value is not specified or the name of a domain is specified, the application creates the group on a domain controller that is to be determined by Active Directory (serverless binding). If a domain controller is specified, the group is explicitly created on the specified controller (server binding). In both cases, Active Directory will replicate the account information to all domain controllers in the Active Directory forests and domains.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>125010</Id>
+                                            <Name>Common Name</Name>
+                                            <Type>1</Type>
+                                            <Description>The 'CommonName' corresponds with the full name of the group. This name is most common used in Windows' user interfaces when showing names.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%cn%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>125011</Id>
+                                            <Name>SAM-Account-Name</Name>
+                                            <Type>1</Type>
+                                            <Description>The pre-Windows 2000 group name without the (NETBIOS) domain name. In most cases the SAM-Account-Name is equal to the 'Common-Name' of the group. The name must be unique within the domain.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%samaccountname%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>125012</Id>
+                                            <Name>Description</Name>
+                                            <Type>1</Type>
+                                            <Description>The group comment. The field can contain a text of any length.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%description%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>125020</Id>
+                                            <Name>Local group</Name>
+                                            <Type>3</Type>
+                                            <Description>Set to 'Yes' if the group must become a (domain) local group (group scope: local). The group scope is determined by setting one of the following properties: 'Local group', 'Global group' or 'Universal group'.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>FALSE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>125021</Id>
+                                            <Name>Global group</Name>
+                                            <Type>3</Type>
+                                            <Description>Set to 'Yes' if the group must become a global group (group scope: global). The group scope is determined by setting one of the following properties: 'Local group', 'Global group' or 'Universal group'.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>TRUE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>125022</Id>
+                                            <Name>Universal group</Name>
+                                            <Type>3</Type>
+                                            <Description>Set to 'Yes' if the group must become a universal group (group scope: universal). The group scope is determined by setting one of the following properties: 'Local group', 'Global group' or 'Universal group'.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>FALSE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>125023</Id>
+                                            <Name>Security group</Name>
+                                            <Type>3</Type>
+                                            <Description>Set to 'Yes' if the group must become a security group. If this property is not specified (or set to 'No') the group becomes a distribution group.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>TRUE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>125030</Id>
+                                            <Name>No error if group already exists</Name>
+                                            <Type>3</Type>
+                                            <Description>If set to 'Yes', no error is generated when this action failes because the group already exists.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>TRUE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>125036</Id>
+                                            <Name>Group Object Distinguished Name</Name>
+                                            <Type>1</Type>
+                                            <Description>The Object Distinguished Name of the new group. This property is an 'output only' property and is generated by the application automatically. The 'Group Object Distinguished Name' is created by the Active Directory automatically when the group is created. Once the user group is created, you can store the Object Distinguished Name in a variable (%GroupODN%) and use the variable in subsequent actions.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%GroupODN%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>125035</Id>
+                                            <Name>Group Object</Name>
+                                            <Type>7</Type>
+                                            <Description>An internal data structure representing the group. This property is an 'output only' property and is generated automatically. This property can be used in other script actions, for instance to set additional attributes for the group.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%GroupObject%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                    </ObjectArray>
                                 </Base>
-                            </TestVariableArray>
-                        </Base>
-                        <UmraOleDb class="cUmraOleDbGeneral">
-                            <Base class="cUmraOleDb"/>
-                            <ConnectionString>%Conn_string_db_icm%</ConnectionString>
-                            <OleDbProviderType>0</OleDbProviderType>
-                        </UmraOleDb>
-                        <DatabaseQuery>EXEC ICMJobVersionsProcess</DatabaseQuery>
-                        <QueryResultColumnNames>
-                            <TextItem>pers_nr</TextItem>
-                            <TextItem>e_vrlt</TextItem>
-                            <TextItem>e_roepnaam</TextItem>
-                            <TextItem>vrvg_samen</TextItem>
-                            <TextItem>naam_samen</TextItem>
-                            <TextItem>oe_kort_nm</TextItem>
-                            <TextItem>oe_vol_nm</TextItem>
-                            <TextItem>indnst_dt</TextItem>
-                            <TextItem>uitdnst_dt</TextItem>
-                        </QueryResultColumnNames>
-                    </TableDefinition>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptForEach">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>1</ErrorControl>
-                            <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
+                            </Base>
+                        </PropertyArray>
                     </Base>
-                    <TableVariableName>%table_objects%</TableVariableName>
-                    <ProjectName>object</ProjectName>
-                    <ColumnVariablesMap>
-                        <TextItem>%object_id%</TextItem>
-                        <TextItem>%object_type%</TextItem>
-                        <TextItem>%object_subtype%</TextItem>
-                        <TextItem>%object_uniquekey%</TextItem>
-                        <TextItem>%object_state%</TextItem>
-                        <TextItem>%object_state_updated%</TextItem>
-                        <TextItem>%object_displayvalue%</TextItem>
-                        <TextItem>%object_displayvalue_updated%</TextItem>
-                        <TextItem>%object_islatestversion%</TextItem>
-                        <TextItem>%object_isinitialversion%</TextItem>
-                    </ColumnVariablesMap>
-                    <ReturnVariableNames/>
-                    <StopLoopOnErrorFlag>FALSE</StopLoopOnErrorFlag>
-                    <TerminationCondition class="cVariableConditionCollection">
-                        <Base class="cUmraObArray">
-                            <ObjectArray/>
-                        </Base>
-                        <InvertResultFlag>FALSE</InvertResultFlag>
-                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
-                        <Comment></Comment>
-                    </TerminationCondition>
-                    <VariableFilter class="cUmVariableFilter">
-                        <VariableFilterMode>3</VariableFilterMode>
-                        <VariableSpecification>
-                            <TextItem>%Table_objects%</TextItem>
-                        </VariableSpecification>
-                    </VariableFilter>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptGoTo">
                     <Base class="cActionItemScript">
@@ -131,30 +235,6 @@
                     <ScriptActionType>2</ScriptActionType>
                     <ParameterNumeric>0</ParameterNumeric>
                     <ParameterText></ParameterText>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptDatabaseCommand">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <SqlUpdate class="cUmraDbUpdate" Version="1">
-                        <OleDb/>
-                        <SqlCommands>
-                            <TextItem>EXEC spICMSetJobProvisioningStatus %icm_jobid%, 1</TextItem>
-                        </SqlCommands>
-                        <TestVariables class="cUmVariableArray">
-                            <Base class="cUmraObArray">
-                                <ObjectArray/>
-                            </Base>
-                        </TestVariables>
-                        <DoNotShowInLogFlag>FALSE</DoNotShowInLogFlag>
-                    </SqlUpdate>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">
@@ -262,33 +342,22 @@
     <HelpInfoUrl></HelpInfoUrl>
     <ScriptTimeOutSec>900</ScriptTimeOutSec>
     <LocalProjectFlag>FALSE</LocalProjectFlag>
-    <LocalProjectFileName>C:\Program Files\UmraService\Projects\88c751ec-db2a-4ce9-b555-53874fc0c1c1.usp</LocalProjectFileName>
-    <DisableScriptActionRamLogging>FALSE</DisableScriptActionRamLogging>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\f2f104d6-8977-4d30-bc8a-56479ab6dafd.usp</LocalProjectFileName>
+    <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
     <Scheduler class="cUmraWndSchedulerSpec">
         <InputDataSpecificationParameter>0</InputDataSpecificationParameter>
-        <Scheduler class="cUmraSchedulerOnCommand">
-            <Base class="cUmraScheduler">
-                <DayIncludeFlags>0</DayIncludeFlags>
-                <SchedulerFlags>0</SchedulerFlags>
-                <Exceptions class="cUmraSchedulerExceptions">
-                    <ExceptionMode>0</ExceptionMode>
-                    <Base class="cUmraObArray">
-                        <ObjectArray/>
-                    </Base>
-                </Exceptions>
-            </Base>
-        </Scheduler>
+        <Scheduler/>
     </Scheduler>
     <Base class="cUmFormNoScriptProject">
-        <ProjectName>versions</ProjectName>
-        <DisplayName>versions</DisplayName>
-        <UUID>$H1xIqy2pzUtVN1hPBcwBDs</UUID>
+        <ProjectName>_cfg-organizationalFunction-activeDirectoryGroup-provision</ProjectName>
+        <DisplayName>_cfg-person-activeDirectoryUser-provision</DisplayName>
+        <UUID>WTQ8yfXiw0EvKa1Raar29Ds</UUID>
         <ProjectComment></ProjectComment>
         <ProjectLabels/>
         <ShowInProjectsBarFlag>FALSE</ShowInProjectsBarFlag>
-        <UpdatePreviewFlag>FALSE</UpdatePreviewFlag>
+        <UpdatePreviewFlag>TRUE</UpdatePreviewFlag>
         <UpdatePreviewOnActivate>TRUE</UpdatePreviewOnActivate>
-        <PopupMessagesShown>0</PopupMessagesShown>
+        <PopupMessagesShown>2</PopupMessagesShown>
         <BuildNumber>1671</BuildNumber>
         <Form class="cForm">
             <Base class="cUmraObArray">
@@ -849,8 +918,6 @@
         <DataFileParam class="cDataFileParam">
             <Base class="cDataFileParseInfo">
                 <Separators>
-                    <TextItem>,</TextItem>
-                    <TextItem>,</TextItem>
                     <TextItem>,</TextItem>
                 </Separators>
                 <TextQualifier>"</TextQualifier>

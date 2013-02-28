@@ -2,7 +2,23 @@
     <InitialProject></InitialProject>
     <Script class="cActionItemCollection">
         <Base class="cUmraObArray">
-            <ObjectArray/>
+            <ObjectArray>
+                <ArrayElement class="cActionItemScriptVarious">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label>end</Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ScriptActionType>2</ScriptActionType>
+                    <ParameterNumeric>0</ParameterNumeric>
+                    <ParameterText></ParameterText>
+                </ArrayElement>
+            </ObjectArray>
         </Base>
         <ScriptInfo></ScriptInfo>
         <EmbeddedNameGenerationFlag>FALSE</EmbeddedNameGenerationFlag>
@@ -91,18 +107,18 @@
         </Base>
     </AccessSettings>
     <HelpInfoUrl></HelpInfoUrl>
-    <ScriptTimeOutSec>1492536</ScriptTimeOutSec>
+    <ScriptTimeOutSec>900</ScriptTimeOutSec>
     <LocalProjectFlag>FALSE</LocalProjectFlag>
-    <LocalProjectFileName>C:\Program Files\UmraService\Projects\72933ef9-575a-4d79-a41d-171517f77e53.usp</LocalProjectFileName>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\fcc47990-4e2e-4231-974c-e9af70bf378f.usp</LocalProjectFileName>
     <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
     <Scheduler class="cUmraWndSchedulerSpec">
         <InputDataSpecificationParameter>0</InputDataSpecificationParameter>
         <Scheduler/>
     </Scheduler>
     <Base class="cUmFormNoScriptProject">
-        <ProjectName>attributes-person-activeDirectoryUser-mail</ProjectName>
-        <DisplayName>attributes-person-activeDirectoryUser-mail</DisplayName>
-        <UUID>57zkyp1V51EpdcRFXcvfTBs</UUID>
+        <ProjectName>organization-provision</ProjectName>
+        <DisplayName>placement-provision</DisplayName>
+        <UUID>QmHx87iTxI0@M@+rw97NPCs</UUID>
         <ProjectComment></ProjectComment>
         <ProjectLabels/>
         <ShowInProjectsBarFlag>FALSE</ShowInProjectsBarFlag>
@@ -669,11 +685,6 @@
         <DataFileParam class="cDataFileParam">
             <Base class="cDataFileParseInfo">
                 <Separators>
-                    <TextItem>,</TextItem>
-                    <TextItem>,</TextItem>
-                    <TextItem>,</TextItem>
-                    <TextItem>,</TextItem>
-                    <TextItem>,</TextItem>
                     <TextItem>,</TextItem>
                 </Separators>
                 <TextQualifier>"</TextQualifier>

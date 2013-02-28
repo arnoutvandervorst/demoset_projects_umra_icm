@@ -16,7 +16,7 @@
                     </Base>
                     <TableDefinition class="cUmraTableDefDatabaseQuery">
                         <Base class="cUmraTableDef">
-                            <VariableName>%table_objectrelations_child%</VariableName>
+                            <VariableName>%table_relations_organizationalhierarchy_child%</VariableName>
                             <TestVariableArray class="cUmVariableArray">
                                 <Base class="cUmraObArray">
                                     <ObjectArray/>
@@ -29,7 +29,7 @@
                             <OleDbProviderType>0</OleDbProviderType>
                         </UmraOleDb>
                         <DatabaseQuery><![CDATA[EXEC ICMJobObjectVersionsRelationsGet %object_id%,
-'',
+'organizationalHierarchy',
 'child']]></DatabaseQuery>
                         <QueryResultColumnNames/>
                     </TableDefinition>
@@ -62,6 +62,37 @@
                         <DatabaseQuery><![CDATA[EXEC ICMJobObjectVersionsRelationsGet %object_id%,
 '',
 'parent']]></DatabaseQuery>
+                        <QueryResultColumnNames/>
+                    </TableDefinition>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptGenericTable">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>1</ErrorControl>
+                            <ErrorControlLabel>error</ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <TableDefinition class="cUmraTableDefDatabaseQuery">
+                        <Base class="cUmraTableDef">
+                            <VariableName>%table_objectrelations_link%</VariableName>
+                            <TestVariableArray class="cUmVariableArray">
+                                <Base class="cUmraObArray">
+                                    <ObjectArray/>
+                                </Base>
+                            </TestVariableArray>
+                        </Base>
+                        <UmraOleDb class="cUmraOleDbGeneral">
+                            <Base class="cUmraOleDb"/>
+                            <ConnectionString>%Conn_string_db_icm%</ConnectionString>
+                            <OleDbProviderType>0</OleDbProviderType>
+                        </UmraOleDb>
+                        <DatabaseQuery><![CDATA[EXEC ICMJobObjectVersionsRelationsGet %object_id%,
+'link',
+'']]></DatabaseQuery>
                         <QueryResultColumnNames/>
                     </TableDefinition>
                 </ArrayElement>

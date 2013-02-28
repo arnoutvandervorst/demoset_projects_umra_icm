@@ -3,8 +3,8 @@
     <Script class="cActionItemCollection">
         <Base class="cUmraObArray">
             <ObjectArray>
-                <ArrayElement class="cActionItemOperationUserAdDelete">
-                    <Base class="cActionItemOperation">
+                <ArrayElement class="cActionItemScriptExecuteProject">
+                    <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
                             <ErrorControl>0</ErrorControl>
@@ -13,30 +13,36 @@
                             <ErrorVariableName></ErrorVariableName>
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
-                        <Explanation>Delete an existing user account from Active Directory. The account is identified by a variable containing the 'User Object'. Use the action 'Get user (AD)' to find the user first.</Explanation>
-                        <PropertyArray class="cUmraPsPropertyArray">
-                            <Base class="cUmPropertyArray">
-                                <Base class="cUmraObArray">
-                                    <ObjectArray>
-                                        <ArrayElement class="cUmProperty">
-                                            <Id>170000</Id>
-                                            <Name>User Object</Name>
-                                            <Type>7</Type>
-                                            <Description>A data structure representing the user account. Use the action 'Get user (AD)' to find the user account in Active Directory and setup the variable that contains the 'User Object'.</Description>
-                                            <ExportMode>0</ExportMode>
-                                            <ExportVariable></ExportVariable>
-                                            <Value class="cUmDataText">
-                                                <Base class="cUmData" Version="1">
-                                                    <HiddenFlag>FALSE</HiddenFlag>
-                                                </Base>
-                                                <TextValue>%UserObject%</TextValue>
-                                            </Value>
-                                        </ArrayElement>
-                                    </ObjectArray>
-                                </Base>
-                            </Base>
-                        </PropertyArray>
                     </Base>
+                    <ProjectName>_cfg-organizationalFunction-activeDirectoryGroup-attributes</ProjectName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptGoTo">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <GoToLabel>end</GoToLabel>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptVarious">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label>error</Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ScriptActionType>2</ScriptActionType>
+                    <ParameterNumeric>0</ParameterNumeric>
+                    <ParameterText></ParameterText>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">
@@ -144,16 +150,16 @@
     <HelpInfoUrl></HelpInfoUrl>
     <ScriptTimeOutSec>900</ScriptTimeOutSec>
     <LocalProjectFlag>FALSE</LocalProjectFlag>
-    <LocalProjectFileName>C:\Program Files\UmraService\Projects\906b2668-f01d-4051-a236-ea24a7ac373d.usp</LocalProjectFileName>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\13d0220b-5584-4c89-9d08-9cc20de6e5ee.usp</LocalProjectFileName>
     <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
     <Scheduler class="cUmraWndSchedulerSpec">
         <InputDataSpecificationParameter>0</InputDataSpecificationParameter>
         <Scheduler/>
     </Scheduler>
     <Base class="cUmFormNoScriptProject">
-        <ProjectName>object-person-activeDirectoryUser-delete</ProjectName>
-        <DisplayName>object-person-activeDirectoryUser-update</DisplayName>
-        <UUID>pS+bGm1SMT0uybd#6T8xiDs</UUID>
+        <ProjectName>_cfg-organizationalFunction-activeDirectoryGroup-synchronize</ProjectName>
+        <DisplayName>_cfg-person-activeDirectoryUser-provision</DisplayName>
+        <UUID>#IC0TQYVJyUnIwpwNYe5uDs</UUID>
         <ProjectComment></ProjectComment>
         <ProjectLabels/>
         <ShowInProjectsBarFlag>FALSE</ShowInProjectsBarFlag>

@@ -3,345 +3,72 @@
     <Script class="cActionItemCollection">
         <Base class="cUmraObArray">
             <ObjectArray>
-                <ArrayElement class="cActionItemScriptVarious">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label>start</Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ScriptActionType>2</ScriptActionType>
-                    <ParameterNumeric>0</ParameterNumeric>
-                    <ParameterText></ParameterText>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptGenerateName">
+                <ArrayElement class="cActionItemScriptGenericTable">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
                             <ErrorControl>1</ErrorControl>
                             <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
-                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
-                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <NameGenerationAlgorithm class="cUgAlgorithm">
-                        <Name>username</Name>
-                        <UserComment></UserComment>
+                    <TableDefinition class="cUmraTableDefDatabaseQuery">
+                        <Base class="cUmraTableDef">
+                            <VariableName>%table_relations_organizationalHierarchy%</VariableName>
+                            <TestVariableArray class="cUmVariableArray">
+                                <Base class="cUmraObArray">
+                                    <ObjectArray/>
+                                </Base>
+                            </TestVariableArray>
+                        </Base>
+                        <UmraOleDb class="cUmraOleDbGeneral">
+                            <Base class="cUmraOleDb"/>
+                            <ConnectionString>%Conn_string_db_icm%</ConnectionString>
+                            <OleDbProviderType>0</OleDbProviderType>
+                        </UmraOleDb>
+                        <DatabaseQuery><![CDATA[EXEC ICMJobObjectVersionsRelationsGet 
+%placement_id%, 
+'organizationalHierarchy', 
+'', 
+'',
+'child']]></DatabaseQuery>
+                        <QueryResultColumnNames/>
+                    </TableDefinition>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptForEach">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <TableVariableName>%table_relations_organizationalHierarchy%</TableVariableName>
+                    <ProjectName>_cfg-placement-provision-child</ProjectName>
+                    <ColumnVariablesMap>
+                        <TextItem>%object_id_child%</TextItem>
+                        <TextItem>%object_displayvalue_child%</TextItem>
+                        <TextItem>%object_type_child%</TextItem>
+                    </ColumnVariablesMap>
+                    <ReturnVariableNames/>
+                    <StopLoopOnErrorFlag>FALSE</StopLoopOnErrorFlag>
+                    <TerminationCondition class="cVariableConditionCollection">
                         <Base class="cUmraObArray">
-                            <ObjectArray>
-                                <ArrayElement class="cUgMethodCollection">
-                                    <OutputVariable>%sAMAccountName%</OutputVariable>
-                                    <CurrentMethodIndex>0</CurrentMethodIndex>
-                                    <Base class="cUmraObArray">
-                                        <ObjectArray>
-                                            <ArrayElement class="cUgMethod">
-                                                <MethodName>method1</MethodName>
-                                                <ComposerSettings class="cUgNameComposerSettings">
-                                                    <Functions class="cUgFunctionCollection">
-                                                        <Base class="cUmraObArray">
-                                                            <ObjectArray>
-                                                                <ArrayElement class="cUgFunctionNoArguments">
-                                                                    <Base class="cUgFunction">
-                                                                        <FunctionIdentifier>10050</FunctionIdentifier>
-                                                                        <FunctionName>Conversion: Remove diacritical marks</FunctionName>
-                                                                        <FunctionDescription>Delete all blank and tab characters from the name.</FunctionDescription>
-                                                                    </Base>
-                                                                </ArrayElement>
-                                                                <ArrayElement class="cUgFunctionNoArguments">
-                                                                    <Base class="cUgFunction">
-                                                                        <FunctionIdentifier>10001</FunctionIdentifier>
-                                                                        <FunctionName>Case conversion: convert to lower case</FunctionName>
-                                                                        <FunctionDescription>Convert all characters of the name to lower case.</FunctionDescription>
-                                                                    </Base>
-                                                                </ArrayElement>
-                                                                <ArrayElement class="cUgFunctionSingleArgument">
-                                                                    <ArgumentValue>abcdefghjiklmnopqrstuvwxyz</ArgumentValue>
-                                                                    <ArgumentName>Characters not to delete</ArgumentName>
-                                                                    <ArgumentType>0</ArgumentType>
-                                                                    <Base class="cUgFunction">
-                                                                        <FunctionIdentifier>20045</FunctionIdentifier>
-                                                                        <FunctionName>Delete: All but the matching characters</FunctionName>
-                                                                        <FunctionDescription>Delete all characters from the name if the character is not found as one of the specified characters. Example: abcdefghijklmnopqrstuvwxyz.</FunctionDescription>
-                                                                    </Base>
-                                                                </ArrayElement>
-                                                                <ArrayElement class="cUgFunctionSingleArgument">
-                                                                    <ArgumentValue>20</ArgumentValue>
-                                                                    <ArgumentName># Characters</ArgumentName>
-                                                                    <ArgumentType>1</ArgumentType>
-                                                                    <Base class="cUgFunction">
-                                                                        <FunctionIdentifier>20010</FunctionIdentifier>
-                                                                        <FunctionName>Shorten name: Convert to first N</FunctionName>
-                                                                        <FunctionDescription>Convert the name to the first N characters of the name. If the name does not contain N characters, it is not changed.</FunctionDescription>
-                                                                    </Base>
-                                                                </ArrayElement>
-                                                            </ObjectArray>
-                                                        </Base>
-                                                    </Functions>
-                                                </ComposerSettings>
-                                                <Base class="cUmraObArray">
-                                                    <ObjectArray>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%firstName%</VariableName>
-                                                            <ExampleName>Arnout</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue>1</ArgumentValue>
-                                                                            <ArgumentName># Characters</ArgumentName>
-                                                                            <ArgumentType>1</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20010</FunctionIdentifier>
-                                                                                <FunctionName>Shorten name: Convert to first N</FunctionName>
-                                                                                <FunctionDescription>Convert the name to the first N characters of the name. If the name does not contain N characters, it is not changed.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%lastName%</VariableName>
-                                                            <ExampleName>Vorst</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray/>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                    </ObjectArray>
-                                                </Base>
-                                            </ArrayElement>
-                                            <ArrayElement class="cUgMethod">
-                                                <MethodName>method2</MethodName>
-                                                <ComposerSettings class="cUgNameComposerSettings">
-                                                    <Functions class="cUgFunctionCollection">
-                                                        <Base class="cUmraObArray">
-                                                            <ObjectArray>
-                                                                <ArrayElement class="cUgFunctionNoArguments">
-                                                                    <Base class="cUgFunction">
-                                                                        <FunctionIdentifier>10050</FunctionIdentifier>
-                                                                        <FunctionName>Conversion: Remove diacritical marks</FunctionName>
-                                                                        <FunctionDescription>Delete all blank and tab characters from the name.</FunctionDescription>
-                                                                    </Base>
-                                                                </ArrayElement>
-                                                                <ArrayElement class="cUgFunctionNoArguments">
-                                                                    <Base class="cUgFunction">
-                                                                        <FunctionIdentifier>10001</FunctionIdentifier>
-                                                                        <FunctionName>Case conversion: convert to lower case</FunctionName>
-                                                                        <FunctionDescription>Convert all characters of the name to lower case.</FunctionDescription>
-                                                                    </Base>
-                                                                </ArrayElement>
-                                                                <ArrayElement class="cUgFunctionSingleArgument">
-                                                                    <ArgumentValue>abcdefghjiklmnopqrstuvwxyz</ArgumentValue>
-                                                                    <ArgumentName>Characters not to delete</ArgumentName>
-                                                                    <ArgumentType>0</ArgumentType>
-                                                                    <Base class="cUgFunction">
-                                                                        <FunctionIdentifier>20045</FunctionIdentifier>
-                                                                        <FunctionName>Delete: All but the matching characters</FunctionName>
-                                                                        <FunctionDescription>Delete all characters from the name if the character is not found as one of the specified characters. Example: abcdefghijklmnopqrstuvwxyz.</FunctionDescription>
-                                                                    </Base>
-                                                                </ArrayElement>
-                                                                <ArrayElement class="cUgFunctionSingleArgument">
-                                                                    <ArgumentValue>20</ArgumentValue>
-                                                                    <ArgumentName># Characters</ArgumentName>
-                                                                    <ArgumentType>1</ArgumentType>
-                                                                    <Base class="cUgFunction">
-                                                                        <FunctionIdentifier>20010</FunctionIdentifier>
-                                                                        <FunctionName>Shorten name: Convert to first N</FunctionName>
-                                                                        <FunctionDescription>Convert the name to the first N characters of the name. If the name does not contain N characters, it is not changed.</FunctionDescription>
-                                                                    </Base>
-                                                                </ArrayElement>
-                                                            </ObjectArray>
-                                                        </Base>
-                                                    </Functions>
-                                                </ComposerSettings>
-                                                <Base class="cUmraObArray">
-                                                    <ObjectArray>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%firstName%</VariableName>
-                                                            <ExampleName>Arnout</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue>2</ArgumentValue>
-                                                                            <ArgumentName># Characters</ArgumentName>
-                                                                            <ArgumentType>1</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20010</FunctionIdentifier>
-                                                                                <FunctionName>Shorten name: Convert to first N</FunctionName>
-                                                                                <FunctionDescription>Convert the name to the first N characters of the name. If the name does not contain N characters, it is not changed.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%lastName%</VariableName>
-                                                            <ExampleName>Vorst</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray/>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                    </ObjectArray>
-                                                </Base>
-                                            </ArrayElement>
-                                            <ArrayElement class="cUgMethod">
-                                                <MethodName>method3</MethodName>
-                                                <ComposerSettings class="cUgNameComposerSettings">
-                                                    <Functions class="cUgFunctionCollection">
-                                                        <Base class="cUmraObArray">
-                                                            <ObjectArray>
-                                                                <ArrayElement class="cUgFunctionNoArguments">
-                                                                    <Base class="cUgFunction">
-                                                                        <FunctionIdentifier>10050</FunctionIdentifier>
-                                                                        <FunctionName>Conversion: Remove diacritical marks</FunctionName>
-                                                                        <FunctionDescription>Delete all blank and tab characters from the name.</FunctionDescription>
-                                                                    </Base>
-                                                                </ArrayElement>
-                                                                <ArrayElement class="cUgFunctionNoArguments">
-                                                                    <Base class="cUgFunction">
-                                                                        <FunctionIdentifier>10001</FunctionIdentifier>
-                                                                        <FunctionName>Case conversion: convert to lower case</FunctionName>
-                                                                        <FunctionDescription>Convert all characters of the name to lower case.</FunctionDescription>
-                                                                    </Base>
-                                                                </ArrayElement>
-                                                                <ArrayElement class="cUgFunctionSingleArgument">
-                                                                    <ArgumentValue>abcdefghjiklmnopqrstuvwxyz0123456789</ArgumentValue>
-                                                                    <ArgumentName>Characters not to delete</ArgumentName>
-                                                                    <ArgumentType>0</ArgumentType>
-                                                                    <Base class="cUgFunction">
-                                                                        <FunctionIdentifier>20045</FunctionIdentifier>
-                                                                        <FunctionName>Delete: All but the matching characters</FunctionName>
-                                                                        <FunctionDescription>Delete all characters from the name if the character is not found as one of the specified characters. Example: abcdefghijklmnopqrstuvwxyz.</FunctionDescription>
-                                                                    </Base>
-                                                                </ArrayElement>
-                                                                <ArrayElement class="cUgFunctionSingleArgument">
-                                                                    <ArgumentValue>20</ArgumentValue>
-                                                                    <ArgumentName># Characters</ArgumentName>
-                                                                    <ArgumentType>1</ArgumentType>
-                                                                    <Base class="cUgFunction">
-                                                                        <FunctionIdentifier>20010</FunctionIdentifier>
-                                                                        <FunctionName>Shorten name: Convert to first N</FunctionName>
-                                                                        <FunctionDescription>Convert the name to the first N characters of the name. If the name does not contain N characters, it is not changed.</FunctionDescription>
-                                                                    </Base>
-                                                                </ArrayElement>
-                                                            </ObjectArray>
-                                                        </Base>
-                                                    </Functions>
-                                                </ComposerSettings>
-                                                <Base class="cUmraObArray">
-                                                    <ObjectArray>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%firstName%</VariableName>
-                                                            <ExampleName>Arnout</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray>
-                                                                        <ArrayElement class="cUgFunctionSingleArgument">
-                                                                            <ArgumentValue>1</ArgumentValue>
-                                                                            <ArgumentName># Characters</ArgumentName>
-                                                                            <ArgumentType>1</ArgumentType>
-                                                                            <Base class="cUgFunction">
-                                                                                <FunctionIdentifier>20010</FunctionIdentifier>
-                                                                                <FunctionName>Shorten name: Convert to first N</FunctionName>
-                                                                                <FunctionDescription>Convert the name to the first N characters of the name. If the name does not contain N characters, it is not changed.</FunctionDescription>
-                                                                            </Base>
-                                                                        </ArrayElement>
-                                                                    </ObjectArray>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%lastName%</VariableName>
-                                                            <ExampleName>Vorst</ExampleName>
-                                                            <Functions class="cUgFunctionCollection">
-                                                                <Base class="cUmraObArray">
-                                                                    <ObjectArray/>
-                                                                </Base>
-                                                            </Functions>
-                                                            <Base class="cUgNamePart"/>
-                                                        </ArrayElement>
-                                                        <ArrayElement class="cUgNamePartIteratorIncrementor">
-                                                            <FillCharacter>0</FillCharacter>
-                                                            <StartCharacters>2</StartCharacters>
-                                                            <FixedLengthFlag>FALSE</FixedLengthFlag>
-                                                            <LimitedNumberOfIterationsFlag>FALSE</LimitedNumberOfIterationsFlag>
-                                                            <FixedLengthCharacterCount>2</FixedLengthCharacterCount>
-                                                            <MaxIterationCount>0</MaxIterationCount>
-                                                            <Base class="cUgNamePartIterator">
-                                                                <SessionIterationCounter>1</SessionIterationCounter>
-                                                                <EmptyFirstIterationFlag>FALSE</EmptyFirstIterationFlag>
-                                                                <Base class="cUgNamePart"/>
-                                                            </Base>
-                                                        </ArrayElement>
-                                                    </ObjectArray>
-                                                </Base>
-                                            </ArrayElement>
-                                        </ObjectArray>
-                                    </Base>
-                                </ArrayElement>
-                            </ObjectArray>
+                            <ObjectArray/>
                         </Base>
-                    </NameGenerationAlgorithm>
-                    <IterationByVariableFlag>FALSE</IterationByVariableFlag>
-                    <StateInitializeIterationFlag>TRUE</StateInitializeIterationFlag>
-                    <IterationVariableName></IterationVariableName>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptGoTo">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <GoToLabel>end</GoToLabel>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptVarious">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label>error</Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ScriptActionType>2</ScriptActionType>
-                    <ParameterNumeric>0</ParameterNumeric>
-                    <ParameterText></ParameterText>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptExecuteProject">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ProjectName>global-error-handler</ProjectName>
+                        <InvertResultFlag>FALSE</InvertResultFlag>
+                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
+                        <Comment></Comment>
+                    </TerminationCondition>
+                    <VariableFilter class="cUmVariableFilter">
+                        <VariableFilterMode>0</VariableFilterMode>
+                        <VariableSpecification/>
+                    </VariableFilter>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">
@@ -447,18 +174,18 @@
         </Base>
     </AccessSettings>
     <HelpInfoUrl></HelpInfoUrl>
-    <ScriptTimeOutSec>1492536</ScriptTimeOutSec>
+    <ScriptTimeOutSec>900</ScriptTimeOutSec>
     <LocalProjectFlag>FALSE</LocalProjectFlag>
-    <LocalProjectFileName>C:\Program Files\UmraService\Projects\5a05e029-82d1-4518-b765-8b175da141db.usp</LocalProjectFileName>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\d61465f0-1dde-406d-9688-296c3ad2287b.usp</LocalProjectFileName>
     <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
     <Scheduler class="cUmraWndSchedulerSpec">
         <InputDataSpecificationParameter>0</InputDataSpecificationParameter>
         <Scheduler/>
     </Scheduler>
     <Base class="cUmFormNoScriptProject">
-        <ProjectName>attributes-person-activeDirectoryUser-samaccountname</ProjectName>
-        <DisplayName>attributes-person-activeDirectoryUser-samaccountname</DisplayName>
-        <UUID>pAeBaFtgYU0t@t4FdFaQbDs</UUID>
+        <ProjectName>_cfg-placement-provision</ProjectName>
+        <DisplayName>object-person-activeDirectoryUser-create</DisplayName>
+        <UUID>wXGFW7dHtBk@ImCb6INK7Bs</UUID>
         <ProjectComment></ProjectComment>
         <ProjectLabels/>
         <ShowInProjectsBarFlag>FALSE</ShowInProjectsBarFlag>
@@ -1025,11 +752,6 @@
         <DataFileParam class="cDataFileParam">
             <Base class="cDataFileParseInfo">
                 <Separators>
-                    <TextItem>,</TextItem>
-                    <TextItem>,</TextItem>
-                    <TextItem>,</TextItem>
-                    <TextItem>,</TextItem>
-                    <TextItem>,</TextItem>
                     <TextItem>,</TextItem>
                 </Separators>
                 <TextQualifier>"</TextQualifier>

@@ -16,7 +16,7 @@
                     </Base>
                     <TableDefinition class="cUmraTableDefDatabaseQuery">
                         <Base class="cUmraTableDef">
-                            <VariableName>%table_objectattributes%</VariableName>
+                            <VariableName>%table_objectattributes_person%</VariableName>
                             <TestVariableArray class="cUmVariableArray">
                                 <Base class="cUmraObArray">
                                     <ObjectArray/>
@@ -29,7 +29,7 @@
                             <OleDbProviderType>0</OleDbProviderType>
                         </UmraOleDb>
                         <DatabaseQuery><![CDATA[EXEC ICMJobObjectVersionsAttributesGet
-%object_id%]]></DatabaseQuery>
+%person_id%]]></DatabaseQuery>
                         <QueryResultColumnNames/>
                     </TableDefinition>
                 </ArrayElement>
@@ -45,7 +45,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>initials</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -89,7 +89,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%initials%</ValueTextArgument3>
@@ -111,7 +111,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>firstName</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -155,7 +155,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%firstName%</ValueTextArgument3>
@@ -177,7 +177,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>middleName</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -221,7 +221,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%middleName%</ValueTextArgument3>
@@ -243,7 +243,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>lastName</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -287,7 +287,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%lastName%</ValueTextArgument3>
@@ -309,7 +309,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>middleNamePartner</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -353,7 +353,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%middleNamePartner%</ValueTextArgument3>
@@ -375,7 +375,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>lastNamePartner</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -419,7 +419,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%lastNamePartner%</ValueTextArgument3>
@@ -441,7 +441,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>namingConvention</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -485,7 +485,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%namingConvention%</ValueTextArgument3>
@@ -507,7 +507,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>birthday</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -551,7 +551,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%birthday%</ValueTextArgument3>
@@ -573,7 +573,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>city</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -617,7 +617,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%city%</ValueTextArgument3>
@@ -639,7 +639,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>gender</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -683,7 +683,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%gender%</ValueTextArgument3>
@@ -705,7 +705,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>houseNumber</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -749,7 +749,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%houseNumber%</ValueTextArgument3>
@@ -771,7 +771,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>houseNumberAdd</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -815,7 +815,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%houseNumberAdd%</ValueTextArgument3>
@@ -837,7 +837,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>mailBusiness</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -881,7 +881,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%mailBusiness%</ValueTextArgument3>
@@ -903,7 +903,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>mailPersonal</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -947,7 +947,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%mailPersonal%</ValueTextArgument3>
@@ -969,7 +969,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>mobileBusiness</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -1013,7 +1013,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%mobileBusiness%</ValueTextArgument3>
@@ -1035,7 +1035,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>mobilePersonal</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -1079,7 +1079,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%mobilePersonal%</ValueTextArgument3>
@@ -1101,7 +1101,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>number</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -1145,7 +1145,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%number%</ValueTextArgument3>
@@ -1167,7 +1167,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>phoneBusiness</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -1211,7 +1211,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%phoneBusiness%</ValueTextArgument3>
@@ -1233,7 +1233,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>phonePersonal</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -1277,7 +1277,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%phonePersonal%</ValueTextArgument3>
@@ -1299,7 +1299,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>street</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -1343,7 +1343,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%street%</ValueTextArgument3>
@@ -1365,7 +1365,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>streetAdd</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -1409,7 +1409,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%streetAdd%</ValueTextArgument3>
@@ -1431,7 +1431,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>zipcode</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -1475,7 +1475,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <TableDataVariable>%table_objectattributes_person%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
                     <ValueTextArgument3>%zipcode%</ValueTextArgument3>
@@ -1626,8 +1626,8 @@
         <Scheduler/>
     </Scheduler>
     <Base class="cUmFormNoScriptProject">
-        <ProjectName>table-objectattributes</ProjectName>
-        <DisplayName>table-objectattributes</DisplayName>
+        <ProjectName>table-objectattributes-person</ProjectName>
+        <DisplayName>table-objectattributes-person</DisplayName>
         <UUID>N9AuG1mHX6EkzcbQR@khFBs</UUID>
         <ProjectComment></ProjectComment>
         <ProjectLabels/>

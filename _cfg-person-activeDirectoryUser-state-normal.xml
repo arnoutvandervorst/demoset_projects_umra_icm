@@ -3,26 +3,6 @@
     <Script class="cActionItemCollection">
         <Base class="cUmraObArray">
             <ObjectArray>
-                <ArrayElement class="cActionItemScriptSetVariable">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <VariableName>%Conn_string_db_icm%</VariableName>
-                    <Data class="cUmDataText">
-                        <Base class="cUmData" Version="1">
-                            <HiddenFlag>FALSE</HiddenFlag>
-                        </Base>
-                        <TextValue>Provider=SQLOLEDB.1;Password=koning;Persist Security Info=True;User ID=arnold;Initial Catalog=ICM;Data Source=t4e268.tools4ever.local\sql2008r2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DC01;Use Encryption for Data=False;Tag with column collation when possible=False</TextValue>
-                    </Data>
-                    <ResolveImmediatelyFlag>FALSE</ResolveImmediatelyFlag>
-                </ArrayElement>
                 <ArrayElement class="cActionItemScriptGenericTable">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
@@ -36,7 +16,7 @@
                     </Base>
                     <TableDefinition class="cUmraTableDefDatabaseQuery">
                         <Base class="cUmraTableDef">
-                            <VariableName>%table_objects%</VariableName>
+                            <VariableName>%table_relations_link%</VariableName>
                             <TestVariableArray class="cUmVariableArray">
                                 <Base class="cUmraObArray">
                                     <ObjectArray/>
@@ -48,63 +28,76 @@
                             <ConnectionString>%Conn_string_db_icm%</ConnectionString>
                             <OleDbProviderType>0</OleDbProviderType>
                         </UmraOleDb>
-                        <DatabaseQuery>EXEC ICMJobVersionsProcess</DatabaseQuery>
-                        <QueryResultColumnNames>
-                            <TextItem>pers_nr</TextItem>
-                            <TextItem>e_vrlt</TextItem>
-                            <TextItem>e_roepnaam</TextItem>
-                            <TextItem>vrvg_samen</TextItem>
-                            <TextItem>naam_samen</TextItem>
-                            <TextItem>oe_kort_nm</TextItem>
-                            <TextItem>oe_vol_nm</TextItem>
-                            <TextItem>indnst_dt</TextItem>
-                            <TextItem>uitdnst_dt</TextItem>
-                        </QueryResultColumnNames>
+                        <DatabaseQuery><![CDATA[EXEC ICMJobObjectVersionsRelationsGet 
+%person_id%, 
+'link', 
+'activeDirectoryUser', 
+'', 
+'']]></DatabaseQuery>
+                        <QueryResultColumnNames/>
                     </TableDefinition>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptForEach">
+                <ArrayElement class="cActionItemScriptTableData">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
-                            <ErrorControl>1</ErrorControl>
-                            <ErrorControlLabel>error</ErrorControlLabel>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
                             <ErrorVariableFlag>FALSE</ErrorVariableFlag>
                             <ErrorVariableName></ErrorVariableName>
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <TableVariableName>%table_objects%</TableVariableName>
-                    <ProjectName>object</ProjectName>
-                    <ColumnVariablesMap>
-                        <TextItem>%object_id%</TextItem>
-                        <TextItem>%object_type%</TextItem>
-                        <TextItem>%object_subtype%</TextItem>
-                        <TextItem>%object_uniquekey%</TextItem>
-                        <TextItem>%object_state%</TextItem>
-                        <TextItem>%object_state_updated%</TextItem>
-                        <TextItem>%object_displayvalue%</TextItem>
-                        <TextItem>%object_displayvalue_updated%</TextItem>
-                        <TextItem>%object_islatestversion%</TextItem>
-                        <TextItem>%object_isinitialversion%</TextItem>
-                    </ColumnVariablesMap>
-                    <ReturnVariableNames/>
-                    <StopLoopOnErrorFlag>FALSE</StopLoopOnErrorFlag>
-                    <TerminationCondition class="cVariableConditionCollection">
+                    <TableDataOperation>5</TableDataOperation>
+                    <TableDataVariable>%table_relations_link%</TableDataVariable>
+                    <ValueTextArgument1>%count_rows_table_relations_link%</ValueTextArgument1>
+                    <ValueTextArgument2></ValueTextArgument2>
+                    <ValueTextArgument3></ValueTextArgument3>
+                    <ValueTextArgument4></ValueTextArgument4>
+                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
+                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
+                    <ValueNumericArgument1>0</ValueNumericArgument1>
+                    <ValueNumericArgument2>0</ValueNumericArgument2>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptIfThenElse">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ConditionCollection class="cVariableConditionCollection">
                         <Base class="cUmraObArray">
-                            <ObjectArray/>
+                            <ObjectArray>
+                                <ArrayElement class="cVariableCondition">
+                                    <InputVariableName>%count_rows_table_relations_link%</InputVariableName>
+                                    <InputVariableType>2</InputVariableType>
+                                    <OperatorIndex>300</OperatorIndex>
+                                    <OperatorVariableName></OperatorVariableName>
+                                    <OperatorArgumentValue class="cUmDataNumeric">
+                                        <Base class="cUmData" Version="1">
+                                            <HiddenFlag>FALSE</HiddenFlag>
+                                        </Base>
+                                        <NumericValue>0</NumericValue>
+                                    </OperatorArgumentValue>
+                                    <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
+                                    <InvertResultFlag>FALSE</InvertResultFlag>
+                                </ArrayElement>
+                            </ObjectArray>
                         </Base>
                         <InvertResultFlag>FALSE</InvertResultFlag>
                         <AndVersusOrFlag>FALSE</AndVersusOrFlag>
                         <Comment></Comment>
-                    </TerminationCondition>
-                    <VariableFilter class="cUmVariableFilter">
-                        <VariableFilterMode>3</VariableFilterMode>
-                        <VariableSpecification>
-                            <TextItem>%Table_objects%</TextItem>
-                        </VariableSpecification>
-                    </VariableFilter>
+                    </ConditionCollection>
+                    <LabelThen>end</LabelThen>
+                    <LabelElse></LabelElse>
+                    <UseElseFlag>FALSE</UseElseFlag>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptGoTo">
+                <ArrayElement class="cActionItemScriptTableData">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
@@ -115,24 +108,18 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <GoToLabel>end</GoToLabel>
+                    <TableDataOperation>4</TableDataOperation>
+                    <TableDataVariable>%table_relations_link%</TableDataVariable>
+                    <ValueTextArgument1>0</ValueTextArgument1>
+                    <ValueTextArgument2>0</ValueTextArgument2>
+                    <ValueTextArgument3>%activeDirectoryUser_id%</ValueTextArgument3>
+                    <ValueTextArgument4></ValueTextArgument4>
+                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
+                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
+                    <ValueNumericArgument1>0</ValueNumericArgument1>
+                    <ValueNumericArgument2>0</ValueNumericArgument2>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptVarious">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label>error</Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ScriptActionType>2</ScriptActionType>
-                    <ParameterNumeric>0</ParameterNumeric>
-                    <ParameterText></ParameterText>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptDatabaseCommand">
+                <ArrayElement class="cActionItemScriptExecuteProject">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
@@ -143,18 +130,292 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <SqlUpdate class="cUmraDbUpdate" Version="1">
-                        <OleDb/>
-                        <SqlCommands>
-                            <TextItem>EXEC spICMSetJobProvisioningStatus %icm_jobid%, 1</TextItem>
-                        </SqlCommands>
-                        <TestVariables class="cUmVariableArray">
-                            <Base class="cUmraObArray">
-                                <ObjectArray/>
+                    <ProjectName>table-objectattributes-activeDirectoryUser</ProjectName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptSetVariable">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <VariableName>%distinguishedName%</VariableName>
+                    <Data class="cUmDataText">
+                        <Base class="cUmData" Version="1">
+                            <HiddenFlag>FALSE</HiddenFlag>
+                        </Base>
+                        <TextValue>CN=Kuipers\, P.J. (Piet Jan),OU=Accounts,OU=Organization,DC=trias,DC=local</TextValue>
+                    </Data>
+                    <ResolveImmediatelyFlag>FALSE</ResolveImmediatelyFlag>
+                </ArrayElement>
+                <ArrayElement class="cActionItemOperationUserAdFind">
+                    <Base class="cActionItemOperation">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                        <Explanation>Access a user account in Active Directory. The action is used always in combination with other subsequent actions. Once the user is found, an internal data structure representing the user account is is setup. This structure is stored in a variable (%UserObject%) that can be used by other actions. The action supports several methods to find the user.</Explanation>
+                        <PropertyArray class="cUmraPsPropertyArray">
+                            <Base class="cUmPropertyArray">
+                                <Base class="cUmraObArray">
+                                    <ObjectArray>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110001</Id>
+                                            <Name>Domain</Name>
+                                            <Type>1</Type>
+                                            <Description>The name of the domain (DNS or NETBIOS style, e.g. tools4ever.com or TOOLS4EVER) of the user account. The user account is specified using LDAP. To specify the user account, you have three options. 1: LDAP name (available from network tree browse operations), 2: Domain + Organizational Unit-Container + FullName (the LDAP name is composed from the individual components), 3: Domain + Username (NT-style, LDAP name is searched for). For each option, you need to specify the corresponding properties.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110002</Id>
+                                            <Name>Organizational Unit-Container</Name>
+                                            <Type>1</Type>
+                                            <Description>The name of the Organizational Unit-Container of the user account (example: Students or Students\Group1). The user account is specified using LDAP. To specify the user account, you have three options. 1: LDAP name (available from network tree browse operations), 2: Domain + Organizational Unit-Container + FullName (the LDAP name is composed from the individual components), 3: Domain + Username (NT-style, LDAP name is searched for). For each option, you need to specify the corresponding properties.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110003</Id>
+                                            <Name>Full name</Name>
+                                            <Type>1</Type>
+                                            <Description>The full name, more precisely known as the common name of the user account in the Organizational Unit-Container - Domain (example: John Williams). The user account is specified using LDAP. To specify the user account, you have three options. 1: LDAP name (available from network tree browse operations), 2: Domain + Organizational Unit-Container + FullName (the LDAP name is composed from the individual components), 3: Domain + Username (NT-style, LDAP name is searched for). For each option, you need to specify the corresponding properties.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110004</Id>
+                                            <Name>Username</Name>
+                                            <Type>1</Type>
+                                            <Description>The pre-Windows 2000 logon name of the user account (example: JWilliams). The user account is specified using LDAP. To specify the user account, you have three options. 1: LDAP name (available from network tree browse operations), 2: Domain + Organizational Unit-Container + FullName (the LDAP name is composed from the individual components), 3: Domain + Username (NT-style, LDAP name is searched for). For each option, you need to specify the corresponding properties.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110000</Id>
+                                            <Name>LDAP name</Name>
+                                            <Type>1</Type>
+                                            <Description>The full LDAP name of the user account. (example: cn=John Williams, ou=Schools, dc=Tools4ever, dc=Com). If this value is specified, it takes precendece and the values for the properties 'Domain', 'Organizational Unit-Container', 'Full name' and 'Username' are ignored and do not have to be specified.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%distinguishedName%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110005</Id>
+                                            <Name>Domain controller</Name>
+                                            <Type>1</Type>
+                                            <Description>Optional: The name of the domain controller, used to access to the domain, container or organizational unit where the account exists. This property can be used for any of the methods used to specify the user account. If this value is not specified, Active Directory chooses one automatically (serverless binding).</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110010</Id>
+                                            <Name>User Object</Name>
+                                            <Type>7</Type>
+                                            <Description>An internal data structure representing the user account. This property is an 'output only' property and is generated automatically when the user is found in Active Directory. This property can be used in other script actions, for instance to create an Exchange mailbox, setup group memberships or modify user attributes.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%UserObject%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110011</Id>
+                                            <Name>User Security Identifier (SID)</Name>
+                                            <Type>6</Type>
+                                            <Description>The security identifier (SID) of the user account. This property is an 'output only' property and can be determined when the user is found in Active Directory. The 'User Security Identifier' (SID) is created by the Active Directory automatically when the user account was created. The SID is used when setting permissions, for instance on home directories, Exchange mailboxes etc. The SID is stored by default in the variable %UserSid%.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%UserSid%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110014</Id>
+                                            <Name>Globally unique identifier (GUID)</Name>
+                                            <Type>6</Type>
+                                            <Description>The globally unique identifier (GUID) of the user account. This property is an 'output only' property and can be determined when the user is found in Active Directory. The 'User Security Identifier' (SID) is created by the Active Directory automatically when the user account was created. The SID is used when setting permissions, for instance on home directories, Exchange mailboxes etc. The SID is stored by default in the variable %UserGuid%.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%UserGuid%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>110013</Id>
+                                            <Name>User account display name</Name>
+                                            <Type>1</Type>
+                                            <Description>The display name of the user account. This property is an 'output only' property and can be determined when the user is found in Active Directory.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%UserDisplayName%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                    </ObjectArray>
+                                </Base>
                             </Base>
-                        </TestVariables>
-                        <DoNotShowInLogFlag>FALSE</DoNotShowInLogFlag>
-                    </SqlUpdate>
+                        </PropertyArray>
+                    </Base>
+                </ArrayElement>
+                <ArrayElement class="cActionItemOperationUserEditLogon">
+                    <Base class="cActionItemOperation">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                        <Explanation>Edit an existing user account. The account can be an Active Directory user account, a local computer user account, Windows NT4 domain or workgroup account. The account can be identified by a variable containing the 'User Object' (Active Directory only) or the SAM account name together with the name of a domain or domain controller.</Explanation>
+                        <PropertyArray class="cUmraPsPropertyArray">
+                            <Base class="cUmPropertyArray">
+                                <Base class="cUmraObArray">
+                                    <ObjectArray>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>132000</Id>
+                                            <Name>User Object</Name>
+                                            <Type>7</Type>
+                                            <Description>A data structure representing the user account. This property can only be used for Active Directory user accounts. For other user accounts, use the properties 'Username' and 'Domain' or 'Domain controller' to specify the user account. For this property, use the action 'Get user (AD)' to find the user account in Active Directory and setup the variable that contains the 'User Object'.</Description>
+                                            <ExportMode>0</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%UserObject%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>132001</Id>
+                                            <Name>Username</Name>
+                                            <Type>1</Type>
+                                            <Description>The user name (SAM account name) of the user account. For Active Directory user accounts, you can also specify the user account with property 'User Object'. If you use this property, you must also specify property 'Domain' or 'Domain controller'.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable>%UserName%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>132002</Id>
+                                            <Name>Domain</Name>
+                                            <Type>1</Type>
+                                            <Description>The DNS or NETBIOS domain name of the user account. For Active Directory user accounts, you can also specify the user account with property 'User Object'. If you use this property, you must also specify property 'Username'. For local computer user accounts or workgroup accounts, you cannot use this property. For these accounts, use property 'Domain controller' instead.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>132003</Id>
+                                            <Name>Domain controller</Name>
+                                            <Type>1</Type>
+                                            <Description>The DNS or NETBIOS domain name of the computer that maintains the user account. For Active Directory user accounts, you can also specify the user account with property 'User Object'. If you use this property, you must also specify property 'Username'.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>132010</Id>
+                                            <Name>Password generator</Name>
+                                            <Type>1</Type>
+                                            <Description>A password can be generated automatically. The 'Password generator' specifies how the password is generated, e.g. password length, password complexity requirements, password output variable etc. When this property is specified the password is generated automatically. The generated password is stored in the specified output variable (default: %Password%).</Description>
+                                            <ExportMode>0</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>132011</Id>
+                                            <Name>Password</Name>
+                                            <Type>1</Type>
+                                            <Description>The password of the user account.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable>%Password%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>132020</Id>
+                                            <Name>User must change password at next logon</Name>
+                                            <Type>3</Type>
+                                            <Description>The password is expired. Use this property to force the user to change the password at the next logon. Note that the user can logon using the current password.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>132021</Id>
+                                            <Name>User cannot change password</Name>
+                                            <Type>3</Type>
+                                            <Description>The user cannot change password. When the user cannot change the password, only the administrator can change the password.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>132022</Id>
+                                            <Name>Password never expires</Name>
+                                            <Type>3</Type>
+                                            <Description>The password should never expire on the account. Default value: 'No' (password does expire).</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>132023</Id>
+                                            <Name>Account disabled</Name>
+                                            <Type>3</Type>
+                                            <Description>The user's account is disabled. If a user account is disabled, the account does exist but cannot be used to logon to the network.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>FALSE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>132024</Id>
+                                            <Name>Unlock the account</Name>
+                                            <Type>3</Type>
+                                            <Description>A user account is locked when the user tries to logon to the network with an incorrect password for to many times (according to the domain policy). When an account is locked, the user cannot logon, even if the correct password is specified. By unlocking the account, the user can logon again.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>TRUE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                    </ObjectArray>
+                                </Base>
+                            </Base>
+                        </PropertyArray>
+                    </Base>
+                    <PasswordGenerator class="cPasswordGenerator" Version="1">
+                        <PasswordVariableName>%Password%</PasswordVariableName>
+                        <MinLength>7</MinLength>
+                        <MaxLength>7</MaxLength>
+                        <MinLowerCase>0</MinLowerCase>
+                        <MaxLowerCase>5</MaxLowerCase>
+                        <MinUpperCase>0</MinUpperCase>
+                        <MaxUpperCase>5</MaxUpperCase>
+                        <MinNumeric>1</MinNumeric>
+                        <MaxNumeric>1</MaxNumeric>
+                        <MinSpecial>1</MinSpecial>
+                        <MaxSpecial>1</MaxSpecial>
+                        <HidePasswordVariableValueFlag>FALSE</HidePasswordVariableValueFlag>
+                    </PasswordGenerator>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">
@@ -262,33 +523,22 @@
     <HelpInfoUrl></HelpInfoUrl>
     <ScriptTimeOutSec>900</ScriptTimeOutSec>
     <LocalProjectFlag>FALSE</LocalProjectFlag>
-    <LocalProjectFileName>C:\Program Files\UmraService\Projects\88c751ec-db2a-4ce9-b555-53874fc0c1c1.usp</LocalProjectFileName>
-    <DisableScriptActionRamLogging>FALSE</DisableScriptActionRamLogging>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\4121a0ad-393e-4a38-896d-b32eab29983a.usp</LocalProjectFileName>
+    <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
     <Scheduler class="cUmraWndSchedulerSpec">
         <InputDataSpecificationParameter>0</InputDataSpecificationParameter>
-        <Scheduler class="cUmraSchedulerOnCommand">
-            <Base class="cUmraScheduler">
-                <DayIncludeFlags>0</DayIncludeFlags>
-                <SchedulerFlags>0</SchedulerFlags>
-                <Exceptions class="cUmraSchedulerExceptions">
-                    <ExceptionMode>0</ExceptionMode>
-                    <Base class="cUmraObArray">
-                        <ObjectArray/>
-                    </Base>
-                </Exceptions>
-            </Base>
-        </Scheduler>
+        <Scheduler/>
     </Scheduler>
     <Base class="cUmFormNoScriptProject">
-        <ProjectName>versions</ProjectName>
-        <DisplayName>versions</DisplayName>
-        <UUID>$H1xIqy2pzUtVN1hPBcwBDs</UUID>
+        <ProjectName>_cfg-person-activeDirectoryUser-state-normal</ProjectName>
+        <DisplayName>_cfg-person-activeDirectoryUser-provision</DisplayName>
+        <UUID>tCaIB5TO4oUitNr#rmCm6As</UUID>
         <ProjectComment></ProjectComment>
         <ProjectLabels/>
         <ShowInProjectsBarFlag>FALSE</ShowInProjectsBarFlag>
-        <UpdatePreviewFlag>FALSE</UpdatePreviewFlag>
+        <UpdatePreviewFlag>TRUE</UpdatePreviewFlag>
         <UpdatePreviewOnActivate>TRUE</UpdatePreviewOnActivate>
-        <PopupMessagesShown>0</PopupMessagesShown>
+        <PopupMessagesShown>2</PopupMessagesShown>
         <BuildNumber>1671</BuildNumber>
         <Form class="cForm">
             <Base class="cUmraObArray">
@@ -849,8 +1099,6 @@
         <DataFileParam class="cDataFileParam">
             <Base class="cDataFileParseInfo">
                 <Separators>
-                    <TextItem>,</TextItem>
-                    <TextItem>,</TextItem>
                     <TextItem>,</TextItem>
                 </Separators>
                 <TextQualifier>"</TextQualifier>
