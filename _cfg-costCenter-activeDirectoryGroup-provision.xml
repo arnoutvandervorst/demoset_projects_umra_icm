@@ -111,7 +111,7 @@
                                                 <Base class="cUmData" Version="1">
                                                     <HiddenFlag>FALSE</HiddenFlag>
                                                 </Base>
-                                                <TextValue>OU=Groups,OU=Organization,DC=trias,DC=local</TextValue>
+                                                <TextValue>%container_dn%</TextValue>
                                             </Value>
                                         </ArrayElement>
                                         <ArrayElement class="cUmProperty">
@@ -121,7 +121,12 @@
                                             <Description>Optional: The name of the domain controller or domain, used to access to the domain, container or organizational unit where the group must be created. If this value is not specified or the name of a domain is specified, the application creates the group on a domain controller that is to be determined by Active Directory (serverless binding). If a domain controller is specified, the group is explicitly created on the specified controller (server binding). In both cases, Active Directory will replicate the account information to all domain controllers in the Active Directory forests and domains.</Description>
                                             <ExportMode>1</ExportMode>
                                             <ExportVariable></ExportVariable>
-                                            <Value/>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%domaincontroller%</TextValue>
+                                            </Value>
                                         </ArrayElement>
                                         <ArrayElement class="cUmProperty">
                                             <Id>125010</Id>

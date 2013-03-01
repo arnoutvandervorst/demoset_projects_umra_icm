@@ -24,7 +24,7 @@
                             </TestVariableArray>
                         </Base>
                         <UmraLdapQueryBindingType>2</UmraLdapQueryBindingType>
-                        <BindingString>LDAP://trias.local</BindingString>
+                        <BindingString>LDAP://%domaincontroller%</BindingString>
                         <LdapQueryFilter>(&amp;(objectClass=user)(employeeID=%person_uniquekey%))</LdapQueryFilter>
                         <Attributes class="cUmraTableLdapAttributes">
                             <Base class="cUmraObArray">

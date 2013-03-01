@@ -24,7 +24,7 @@
                             </TestVariableArray>
                         </Base>
                         <UmraLdapQueryBindingType>2</UmraLdapQueryBindingType>
-                        <BindingString>LDAP://trias.local</BindingString>
+                        <BindingString>LDAP://%domaincontroller%</BindingString>
                         <LdapQueryFilter>(&amp;(objectClass=group)(employeeID=%costCenter_uniquekey%))</LdapQueryFilter>
                         <Attributes class="cUmraTableLdapAttributes">
                             <Base class="cUmraObArray">
@@ -177,7 +177,7 @@
                                                 <Base class="cUmData" Version="1">
                                                     <HiddenFlag>FALSE</HiddenFlag>
                                                 </Base>
-                                                <TextValue>%distinguishedName%</TextValue>
+                                                <TextValue>LDAP://%domaincontroller%/%distinguishedName%</TextValue>
                                             </Value>
                                         </ArrayElement>
                                         <ArrayElement class="cUmProperty">

@@ -236,7 +236,7 @@ With this action you can not create local user accounts on non domain controller
                                                 <Base class="cUmData" Version="1">
                                                     <HiddenFlag>FALSE</HiddenFlag>
                                                 </Base>
-                                                <TextValue>trias.local</TextValue>
+                                                <TextValue>%domain%</TextValue>
                                             </Value>
                                         </ArrayElement>
                                         <ArrayElement class="cUmProperty">
@@ -259,7 +259,7 @@ With this action you can not create local user accounts on non domain controller
                                                 <Base class="cUmData" Version="1">
                                                     <HiddenFlag>FALSE</HiddenFlag>
                                                 </Base>
-                                                <TextValue>OU=Accounts,OU=Organization,DC=trias,DC=local</TextValue>
+                                                <TextValue>%container_dn%</TextValue>
                                             </Value>
                                         </ArrayElement>
                                         <ArrayElement class="cUmProperty">
@@ -273,7 +273,7 @@ With this action you can not create local user accounts on non domain controller
                                                 <Base class="cUmData" Version="1">
                                                     <HiddenFlag>FALSE</HiddenFlag>
                                                 </Base>
-                                                <TextValue>DC01</TextValue>
+                                                <TextValue>%domaincontroller%</TextValue>
                                             </Value>
                                         </ArrayElement>
                                         <ArrayElement class="cUmProperty">
