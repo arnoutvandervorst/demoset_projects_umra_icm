@@ -14,7 +14,7 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <ProjectName>_cfg-organizationalFunction-synchronize</ProjectName>
+                    <ProjectName>_cfg-placement-costCenter-relation-deleted</ProjectName>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">
@@ -122,16 +122,16 @@
     <HelpInfoUrl></HelpInfoUrl>
     <ScriptTimeOutSec>900</ScriptTimeOutSec>
     <LocalProjectFlag>FALSE</LocalProjectFlag>
-    <LocalProjectFileName>C:\Program Files\UmraService\Projects\bc7a281f-c507-4a8c-9ae8-becd9f58fcd9.usp</LocalProjectFileName>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\8a66b7f0-aa0a-400a-8334-8989b9f2d7bd.usp</LocalProjectFileName>
     <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
     <Scheduler class="cUmraWndSchedulerSpec">
         <InputDataSpecificationParameter>0</InputDataSpecificationParameter>
         <Scheduler/>
     </Scheduler>
     <Base class="cUmFormNoScriptProject">
-        <ProjectName>organizationalFunction-synchronize</ProjectName>
-        <DisplayName>placement-provision</DisplayName>
-        <UUID>fgie8eQxMqkmo7bzfiF/ZDs</UUID>
+        <ProjectName>placement-costCenter-relation-deleted</ProjectName>
+        <DisplayName>placement-organizationalFunction-relation-deleted</DisplayName>
+        <UUID>wfrZKqgqKA0g0kYi5K/19Cs</UUID>
         <ProjectComment></ProjectComment>
         <ProjectLabels/>
         <ShowInProjectsBarFlag>FALSE</ShowInProjectsBarFlag>

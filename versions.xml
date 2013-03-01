@@ -74,7 +74,7 @@
                         </Base>
                     </Base>
                     <TableVariableName>%table_objects%</TableVariableName>
-                    <ProjectName>object</ProjectName>
+                    <ProjectName>object-relations</ProjectName>
                     <ColumnVariablesMap>
                         <TextItem>%object_id%</TextItem>
                         <TextItem>%object_type%</TextItem>
@@ -116,6 +116,48 @@
                         </Base>
                     </Base>
                     <GoToLabel>end</GoToLabel>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptForEach">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>1</ErrorControl>
+                            <ErrorControlLabel>error</ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <TableVariableName>%table_objects%</TableVariableName>
+                    <ProjectName>object-version</ProjectName>
+                    <ColumnVariablesMap>
+                        <TextItem>%object_id%</TextItem>
+                        <TextItem>%object_type%</TextItem>
+                        <TextItem>%object_subtype%</TextItem>
+                        <TextItem>%object_uniquekey%</TextItem>
+                        <TextItem>%object_state%</TextItem>
+                        <TextItem>%object_state_updated%</TextItem>
+                        <TextItem>%object_displayvalue%</TextItem>
+                        <TextItem>%object_displayvalue_updated%</TextItem>
+                        <TextItem>%object_islatestversion%</TextItem>
+                        <TextItem>%object_isinitialversion%</TextItem>
+                    </ColumnVariablesMap>
+                    <ReturnVariableNames/>
+                    <StopLoopOnErrorFlag>FALSE</StopLoopOnErrorFlag>
+                    <TerminationCondition class="cVariableConditionCollection">
+                        <Base class="cUmraObArray">
+                            <ObjectArray/>
+                        </Base>
+                        <InvertResultFlag>FALSE</InvertResultFlag>
+                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
+                        <Comment></Comment>
+                    </TerminationCondition>
+                    <VariableFilter class="cUmVariableFilter">
+                        <VariableFilterMode>3</VariableFilterMode>
+                        <VariableSpecification>
+                            <TextItem>%Table_objects%</TextItem>
+                        </VariableSpecification>
+                    </VariableFilter>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">

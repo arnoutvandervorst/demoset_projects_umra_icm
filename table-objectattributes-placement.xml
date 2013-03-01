@@ -29,7 +29,7 @@
                             <OleDbProviderType>0</OleDbProviderType>
                         </UmraOleDb>
                         <DatabaseQuery><![CDATA[EXEC ICMJobObjectVersionsAttributesGet
-%object_id%]]></DatabaseQuery>
+%placement_id%]]></DatabaseQuery>
                         <QueryResultColumnNames/>
                     </TableDefinition>
                 </ArrayElement>
