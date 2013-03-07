@@ -14,7 +14,7 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <ProjectName>_cfg-placement-organizationalFunction-relation-deleted</ProjectName>
+                    <ProjectName>_cfg-placement-costCenter-relation-activeDirectory-delete</ProjectName>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">

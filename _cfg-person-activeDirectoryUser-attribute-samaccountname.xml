@@ -3,6 +3,57 @@
     <Script class="cActionItemCollection">
         <Base class="cUmraObArray">
             <ObjectArray>
+                <ArrayElement class="cActionItemScriptSetVariable">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <VariableName>%lastName_10%</VariableName>
+                    <Data class="cUmDataText">
+                        <Base class="cUmData" Version="1">
+                            <HiddenFlag>FALSE</HiddenFlag>
+                        </Base>
+                        <TextValue>%lastName%</TextValue>
+                    </Data>
+                    <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptFormatVariable" Version="1">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <VariableName>%lastName_10%</VariableName>
+                    <TestName></TestName>
+                    <Functions class="cUgFunctionCollection">
+                        <Base class="cUmraObArray">
+                            <ObjectArray>
+                                <ArrayElement class="cUgFunctionSingleArgument">
+                                    <ArgumentValue>10</ArgumentValue>
+                                    <ArgumentName># Characters</ArgumentName>
+                                    <ArgumentType>1</ArgumentType>
+                                    <Base class="cUgFunction">
+                                        <FunctionIdentifier>20010</FunctionIdentifier>
+                                        <FunctionName>Shorten name: Convert to first N</FunctionName>
+                                        <FunctionDescription>Convert the name to the first N characters of the name. If the name does not contain N characters, it is not changed.</FunctionDescription>
+                                    </Base>
+                                </ArrayElement>
+                            </ObjectArray>
+                        </Base>
+                    </Functions>
+                    <HideFromLogFlag>FALSE</HideFromLogFlag>
+                </ArrayElement>
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
@@ -36,7 +87,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%sAMAccountName%</OutputVariable>
-                                    <CurrentMethodIndex>0</CurrentMethodIndex>
+                                    <CurrentMethodIndex>16</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -107,7 +158,7 @@
                                                             <Base class="cUgNamePart"/>
                                                         </ArrayElement>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%lastName%</VariableName>
+                                                            <VariableName>%lastName_10%</VariableName>
                                                             <ExampleName>Vorst</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
                                                                 <Base class="cUmraObArray">
@@ -187,7 +238,7 @@
                                                             <Base class="cUgNamePart"/>
                                                         </ArrayElement>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%lastName%</VariableName>
+                                                            <VariableName>%lastName_10%</VariableName>
                                                             <ExampleName>Vorst</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
                                                                 <Base class="cUmraObArray">
@@ -267,7 +318,7 @@
                                                             <Base class="cUgNamePart"/>
                                                         </ArrayElement>
                                                         <ArrayElement class="cUgNamePartVariable">
-                                                            <VariableName>%lastName%</VariableName>
+                                                            <VariableName>%lastName_10%</VariableName>
                                                             <ExampleName>Vorst</ExampleName>
                                                             <Functions class="cUgFunctionCollection">
                                                                 <Base class="cUmraObArray">
@@ -324,7 +375,7 @@
                         </Base>
                         <UmraLdapQueryBindingType>2</UmraLdapQueryBindingType>
                         <BindingString>LDAP://%domaincontroller%</BindingString>
-                        <LdapQueryFilter>(&amp;(objectCategory=person)(sAMAccountName=%samaccountname%))</LdapQueryFilter>
+                        <LdapQueryFilter>(&amp;(objectCategory=person)(sAMAccountName=%samaccountname%)(!employeeID=%person_uniquekey%))</LdapQueryFilter>
                         <Attributes class="cUmraTableLdapAttributes">
                             <Base class="cUmraObArray">
                                 <ObjectArray>

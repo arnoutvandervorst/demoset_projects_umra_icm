@@ -59,9 +59,8 @@
                     <ProjectName>object-relation-deleted</ProjectName>
                     <ColumnVariablesMap>
                         <TextItem>%object_id_child%</TextItem>
+                        <TextItem>%object_uniquekey_child%</TextItem>
                         <TextItem>%object_type_child%</TextItem>
-                        <TextItem>%object_id_parent%</TextItem>
-                        <TextItem>%object_type_parent%</TextItem>
                         <TextItem>%relation_type%</TextItem>
                     </ColumnVariablesMap>
                     <ReturnVariableNames/>
@@ -135,9 +134,8 @@
                     <ProjectName>object-relation-added</ProjectName>
                     <ColumnVariablesMap>
                         <TextItem>%object_id_child%</TextItem>
+                        <TextItem>%object_uniquekey_child%</TextItem>
                         <TextItem>%object_type_child%</TextItem>
-                        <TextItem>%object_id_parent%</TextItem>
-                        <TextItem>%object_type_parent%</TextItem>
                         <TextItem>%relation_type%</TextItem>
                     </ColumnVariablesMap>
                     <ReturnVariableNames/>
