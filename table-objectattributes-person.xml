@@ -1630,7 +1630,7 @@
                     </Base>
                     <TableDefinition class="cUmraTableDefDatabaseQuery">
                         <Base class="cUmraTableDef">
-                            <VariableName>%table_person_placements%</VariableName>
+                            <VariableName>%table_person_placements_active%</VariableName>
                             <TestVariableArray class="cUmVariableArray">
                                 <Base class="cUmraObArray">
                                     <ObjectArray/>
@@ -1642,12 +1642,8 @@
                             <ConnectionString>%Conn_string_db_icm%</ConnectionString>
                             <OleDbProviderType>0</OleDbProviderType>
                         </UmraOleDb>
-                        <DatabaseQuery><![CDATA[EXEC ICMJobObjectVersionsRelationsGet
-%person_id%,
-'organizationalHierarchy',
-'placement',
-'',
-'child']]></DatabaseQuery>
+                        <DatabaseQuery><![CDATA[EXEC ICMJobPersonGetPlacementListActive
+%person_id%]]></DatabaseQuery>
                         <QueryResultColumnNames>
                             <TextItem>pers_nr</TextItem>
                             <TextItem>e_vrlt</TextItem>

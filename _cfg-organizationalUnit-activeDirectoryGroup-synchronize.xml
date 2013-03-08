@@ -25,7 +25,7 @@
                         </Base>
                         <UmraLdapQueryBindingType>2</UmraLdapQueryBindingType>
                         <BindingString>LDAP://%domaincontroller%</BindingString>
-                        <LdapQueryFilter>(&amp;(objectClass=group)(employeeID=%organizationalUnit_uniquekey%))</LdapQueryFilter>
+                        <LdapQueryFilter>(&amp;(objectClass=group)(info=%organizationalUnit_uniquekey%))</LdapQueryFilter>
                         <Attributes class="cUmraTableLdapAttributes">
                             <Base class="cUmraObArray">
                                 <ObjectArray>

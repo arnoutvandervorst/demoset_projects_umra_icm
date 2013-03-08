@@ -74,7 +74,7 @@
                         </Base>
                     </Base>
                     <TableVariableName>%table_objects%</TableVariableName>
-                    <ProjectName>object-version</ProjectName>
+                    <ProjectName>object-relations</ProjectName>
                     <ColumnVariablesMap>
                         <TextItem>%object_id%</TextItem>
                         <TextItem>%object_type%</TextItem>
@@ -129,7 +129,7 @@
                         </Base>
                     </Base>
                     <TableVariableName>%table_objects%</TableVariableName>
-                    <ProjectName>object-relations</ProjectName>
+                    <ProjectName>object-version</ProjectName>
                     <ColumnVariablesMap>
                         <TextItem>%object_id%</TextItem>
                         <TextItem>%object_type%</TextItem>

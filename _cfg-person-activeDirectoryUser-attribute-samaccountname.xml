@@ -87,7 +87,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%sAMAccountName%</OutputVariable>
-                                    <CurrentMethodIndex>16</CurrentMethodIndex>
+                                    <CurrentMethodIndex>69</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">

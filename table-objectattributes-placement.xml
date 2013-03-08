@@ -46,6 +46,72 @@
                     </Base>
                     <TableDataOperation>17</TableDataOperation>
                     <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <ValueTextArgument1>isPrimary</ValueTextArgument1>
+                    <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
+                    <ValueTextArgument3>0,STRICT</ValueTextArgument3>
+                    <ValueTextArgument4></ValueTextArgument4>
+                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
+                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
+                    <ValueNumericArgument1>0</ValueNumericArgument1>
+                    <ValueNumericArgument2>0</ValueNumericArgument2>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptTableData">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <TableDataOperation>4</TableDataOperation>
+                    <TableDataVariable>%table_result_output%</TableDataVariable>
+                    <ValueTextArgument1>0</ValueTextArgument1>
+                    <ValueTextArgument2>0</ValueTextArgument2>
+                    <ValueTextArgument3>%rowindex_found%</ValueTextArgument3>
+                    <ValueTextArgument4></ValueTextArgument4>
+                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
+                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
+                    <ValueNumericArgument1>0</ValueNumericArgument1>
+                    <ValueNumericArgument2>0</ValueNumericArgument2>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptTableData">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <TableDataOperation>4</TableDataOperation>
+                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
+                    <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
+                    <ValueTextArgument2>1</ValueTextArgument2>
+                    <ValueTextArgument3>%placement_isPrimary%</ValueTextArgument3>
+                    <ValueTextArgument4></ValueTextArgument4>
+                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
+                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
+                    <ValueNumericArgument1>0</ValueNumericArgument1>
+                    <ValueNumericArgument2>0</ValueNumericArgument2>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptTableData">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <TableDataOperation>17</TableDataOperation>
+                    <TableDataVariable>%table_objectattributes%</TableDataVariable>
                     <ValueTextArgument1>employmentSequenceNumber</ValueTextArgument1>
                     <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
                     <ValueTextArgument3>0,STRICT</ValueTextArgument3>
@@ -92,7 +158,7 @@
                     <TableDataVariable>%table_objectattributes%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
-                    <ValueTextArgument3>%employmentSequenceNumber%</ValueTextArgument3>
+                    <ValueTextArgument3>%placement_employmentSequenceNumber%</ValueTextArgument3>
                     <ValueTextArgument4></ValueTextArgument4>
                     <ValueBoolArgument1>FALSE</ValueBoolArgument1>
                     <ValueBoolArgument2>FALSE</ValueBoolArgument2>
@@ -158,7 +224,7 @@
                     <TableDataVariable>%table_objectattributes%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
-                    <ValueTextArgument3>%endDate%</ValueTextArgument3>
+                    <ValueTextArgument3>%placement_endDate%</ValueTextArgument3>
                     <ValueTextArgument4></ValueTextArgument4>
                     <ValueBoolArgument1>FALSE</ValueBoolArgument1>
                     <ValueBoolArgument2>FALSE</ValueBoolArgument2>
@@ -224,7 +290,7 @@
                     <TableDataVariable>%table_objectattributes%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
-                    <ValueTextArgument3>%sequenceNumber%</ValueTextArgument3>
+                    <ValueTextArgument3>%placement_sequenceNumber%</ValueTextArgument3>
                     <ValueTextArgument4></ValueTextArgument4>
                     <ValueBoolArgument1>FALSE</ValueBoolArgument1>
                     <ValueBoolArgument2>FALSE</ValueBoolArgument2>
@@ -290,7 +356,7 @@
                     <TableDataVariable>%table_objectattributes%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
                     <ValueTextArgument2>1</ValueTextArgument2>
-                    <ValueTextArgument3>%startDate%</ValueTextArgument3>
+                    <ValueTextArgument3>%placement_startDate%</ValueTextArgument3>
                     <ValueTextArgument4></ValueTextArgument4>
                     <ValueBoolArgument1>FALSE</ValueBoolArgument1>
                     <ValueBoolArgument2>FALSE</ValueBoolArgument2>
@@ -353,8 +419,8 @@
                         </Base>
                     </Base>
                     <TableDataOperation>5</TableDataOperation>
-                    <TableDataVariable>%table_relations%</TableDataVariable>
-                    <ValueTextArgument1>%count_rows_table_relations%</ValueTextArgument1>
+                    <TableDataVariable>%table_placement_person%</TableDataVariable>
+                    <ValueTextArgument1>%count_rows_table_placement_person%</ValueTextArgument1>
                     <ValueTextArgument2></ValueTextArgument2>
                     <ValueTextArgument3></ValueTextArgument3>
                     <ValueTextArgument4></ValueTextArgument4>
@@ -378,7 +444,7 @@
                         <Base class="cUmraObArray">
                             <ObjectArray>
                                 <ArrayElement class="cVariableCondition">
-                                    <InputVariableName>%count_rows_table_relations%</InputVariableName>
+                                    <InputVariableName>%count_rows_table_placement_person%</InputVariableName>
                                     <InputVariableType>2</InputVariableType>
                                     <OperatorIndex>300</OperatorIndex>
                                     <OperatorVariableName></OperatorVariableName>
@@ -413,7 +479,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_relations%</TableDataVariable>
+                    <TableDataVariable>%table_placement_person%</TableDataVariable>
                     <ValueTextArgument1>0</ValueTextArgument1>
                     <ValueTextArgument2>4</ValueTextArgument2>
                     <ValueTextArgument3>%placement_person_id%</ValueTextArgument3>
@@ -435,7 +501,7 @@
                         </Base>
                     </Base>
                     <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_relations%</TableDataVariable>
+                    <TableDataVariable>%table_placement_person%</TableDataVariable>
                     <ValueTextArgument1>0</ValueTextArgument1>
                     <ValueTextArgument2>5</ValueTextArgument2>
                     <ValueTextArgument3>%placement_person_uniquekey%</ValueTextArgument3>
