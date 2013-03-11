@@ -139,7 +139,6 @@
                         <TextItem>%object_id%</TextItem>
                         <TextItem>%object_state%</TextItem>
                         <TextItem>%object_uniquekey%</TextItem>
-                        <TextItem>%object_operation%</TextItem>
                     </ExportFields>
                     <FieldSeparator>;</FieldSeparator>
                     <EncloseCharacter>"</EncloseCharacter>

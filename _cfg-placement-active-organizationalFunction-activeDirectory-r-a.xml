@@ -652,32 +652,6 @@
                     <ParameterNumeric>0</ParameterNumeric>
                     <ParameterText></ParameterText>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptExportVariables">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ExportFields>
-                        <TextItem>%TimeStamp%</TextItem>
-                        <TextItem>%object_id%</TextItem>
-                        <TextItem>%object_uniquekey%</TextItem>
-                        <TextItem>%object_type%</TextItem>
-                        <TextItem>%distinguishedName_person%</TextItem>
-                        <TextItem>%distinguishedName_organizationalFunction%</TextItem>
-                    </ExportFields>
-                    <FieldSeparator>,</FieldSeparator>
-                    <EncloseCharacter>"</EncloseCharacter>
-                    <ExportFileName>%UmraPath%\Log\%UmraProjectName%.txt</ExportFileName>
-                    <ValueSeparator>,</ValueSeparator>
-                    <ExportMode>1</ExportMode>
-                    <UnicodeFormatFlag>FALSE</UnicodeFormatFlag>
-                </ArrayElement>
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">

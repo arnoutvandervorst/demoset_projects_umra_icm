@@ -116,8 +116,8 @@
         <Scheduler/>
     </Scheduler>
     <Base class="cUmFormNoScriptProject">
-        <ProjectName>_cfg-person-placement-relation-deleted</ProjectName>
-        <DisplayName>_cfg-person-placement-relation-deleted</DisplayName>
+        <ProjectName>_cfg-person-normal-placement-r-d</ProjectName>
+        <DisplayName>_cfg-person-normal-placement-r-d</DisplayName>
         <UUID>DFbyKocr3UUuT9iJgEV42As</UUID>
         <ProjectComment></ProjectComment>
         <ProjectLabels/>

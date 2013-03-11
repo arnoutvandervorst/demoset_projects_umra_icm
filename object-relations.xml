@@ -61,6 +61,7 @@
                         <TextItem>%object_id_child%</TextItem>
                         <TextItem>%object_uniquekey_child%</TextItem>
                         <TextItem>%object_type_child%</TextItem>
+                        <TextItem>%object_state_child%</TextItem>
                         <TextItem>%relation_type%</TextItem>
                     </ColumnVariablesMap>
                     <ReturnVariableNames/>
@@ -136,6 +137,7 @@
                         <TextItem>%object_id_child%</TextItem>
                         <TextItem>%object_uniquekey_child%</TextItem>
                         <TextItem>%object_type_child%</TextItem>
+                        <TextItem>%object_state_child%</TextItem>
                         <TextItem>%relation_type%</TextItem>
                     </ColumnVariablesMap>
                     <ReturnVariableNames/>
