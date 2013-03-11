@@ -109,16 +109,16 @@
     <HelpInfoUrl></HelpInfoUrl>
     <ScriptTimeOutSec>900</ScriptTimeOutSec>
     <LocalProjectFlag>FALSE</LocalProjectFlag>
-    <LocalProjectFileName>C:\Program Files\UmraService\Projects\ba5e75e1-c4ff-4e55-9468-a25ed7615e75.usp</LocalProjectFileName>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\eda09f30-09ec-4bb7-a245-bbd8d6ceb5e5.usp</LocalProjectFileName>
     <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
     <Scheduler class="cUmraWndSchedulerSpec">
         <InputDataSpecificationParameter>0</InputDataSpecificationParameter>
         <Scheduler/>
     </Scheduler>
     <Base class="cUmFormNoScriptProject">
-        <ProjectName>_cfg-person-placement-relation-added</ProjectName>
-        <DisplayName>_cfg-person-placement-relation-added</DisplayName>
-        <UUID>hXnX6+PxV5E@oJqXXHmX1Bs</UUID>
+        <ProjectName>_cfg-placement-inactive-organization-r-a</ProjectName>
+        <DisplayName>_cfg-placement-active-organization-r-a</DisplayName>
+        <UUID>w8JotzeC3ukoFt#2W7ct@Ds</UUID>
         <ProjectComment></ProjectComment>
         <ProjectLabels/>
         <ShowInProjectsBarFlag>FALSE</ShowInProjectsBarFlag>

@@ -63,6 +63,63 @@
                     </Data>
                     <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
                 </ArrayElement>
+                <ArrayElement class="cActionItemScriptConditionalVariable">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <InputVariable>%object_isinitialversion%</InputVariable>
+                    <OutputVariable>%object_operation%</OutputVariable>
+                    <InputOutputValues class="cNameValueCollection">
+                        <Base class="cUmraObArray">
+                            <ObjectArray>
+                                <ArrayElement class="cNameValue">
+                                    <Name>Yes</Name>
+                                    <Value>p</Value>
+                                </ArrayElement>
+                                <ArrayElement class="cNameValue">
+                                    <Name>No</Name>
+                                    <Value>s</Value>
+                                </ArrayElement>
+                            </ObjectArray>
+                        </Base>
+                    </InputOutputValues>
+                    <DefaultOutputValue></DefaultOutputValue>
+                    <CaseSensitiveCompareFlag>FALSE</CaseSensitiveCompareFlag>
+                    <UseDefaultValueIfNotFoundFlag>FALSE</UseDefaultValueIfNotFoundFlag>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptExportVariables">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ExportFields>
+                        <TextItem>%TimeStamp%</TextItem>
+                        <TextItem>%object_id%</TextItem>
+                        <TextItem>%object_state%</TextItem>
+                        <TextItem>%object_uniquekey%</TextItem>
+                        <TextItem>%object_displayvalue%</TextItem>
+                        <TextItem>%object_operation%</TextItem>
+                    </ExportFields>
+                    <FieldSeparator>;</FieldSeparator>
+                    <EncloseCharacter>"</EncloseCharacter>
+                    <ExportFileName>%UmraPath%\Log\%object_type%-%object_state%-%object_operation%.txt</ExportFileName>
+                    <ValueSeparator>,</ValueSeparator>
+                    <ExportMode>1</ExportMode>
+                    <UnicodeFormatFlag>FALSE</UnicodeFormatFlag>
+                </ArrayElement>
                 <ArrayElement class="cActionItemScriptExecuteProject">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
@@ -74,7 +131,7 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <ProjectName>%object_type%</ProjectName>
+                    <ProjectName>_cfg-%object_type%-%object_state%-%object_operation%</ProjectName>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptGoTo">
                     <Base class="cActionItemScript">
