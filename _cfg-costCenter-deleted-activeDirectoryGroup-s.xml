@@ -38,7 +38,7 @@
                         </Base>
                         <UmraLdapQueryBindingType>2</UmraLdapQueryBindingType>
                         <BindingString>LDAP://%domaincontroller%</BindingString>
-                        <LdapQueryFilter>(&amp;(objectClass=user)(employeeID=%person_uniquekey%))</LdapQueryFilter>
+                        <LdapQueryFilter>(&amp;(objectClass=group)(info=%costCenter_uniquekey%))</LdapQueryFilter>
                         <Attributes class="cUmraTableLdapAttributes">
                             <Base class="cUmraObArray">
                                 <ObjectArray>
@@ -151,123 +151,7 @@
                     <ValueNumericArgument1>0</ValueNumericArgument1>
                     <ValueNumericArgument2>0</ValueNumericArgument2>
                 </ArrayElement>
-                <ArrayElement class="cActionItemOperationUserAdFind">
-                    <Base class="cActionItemOperation">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>1</ErrorControl>
-                            <ErrorControlLabel>end</ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                        <Explanation>Access a user account in Active Directory. The action is used always in combination with other subsequent actions. Once the user is found, an internal data structure representing the user account is is setup. This structure is stored in a variable (%UserObject%) that can be used by other actions. The action supports several methods to find the user.</Explanation>
-                        <PropertyArray class="cUmraPsPropertyArray">
-                            <Base class="cUmPropertyArray">
-                                <Base class="cUmraObArray">
-                                    <ObjectArray>
-                                        <ArrayElement class="cUmProperty">
-                                            <Id>110001</Id>
-                                            <Name>Domain</Name>
-                                            <Type>1</Type>
-                                            <Description>The name of the domain (DNS or NETBIOS style, e.g. tools4ever.com or TOOLS4EVER) of the user account. The user account is specified using LDAP. To specify the user account, you have three options. 1: LDAP name (available from network tree browse operations), 2: Domain + Organizational Unit-Container + FullName (the LDAP name is composed from the individual components), 3: Domain + Username (NT-style, LDAP name is searched for). For each option, you need to specify the corresponding properties.</Description>
-                                            <ExportMode>1</ExportMode>
-                                            <ExportVariable></ExportVariable>
-                                            <Value/>
-                                        </ArrayElement>
-                                        <ArrayElement class="cUmProperty">
-                                            <Id>110002</Id>
-                                            <Name>Organizational Unit-Container</Name>
-                                            <Type>1</Type>
-                                            <Description>The name of the Organizational Unit-Container of the user account (example: Students or Students\Group1). The user account is specified using LDAP. To specify the user account, you have three options. 1: LDAP name (available from network tree browse operations), 2: Domain + Organizational Unit-Container + FullName (the LDAP name is composed from the individual components), 3: Domain + Username (NT-style, LDAP name is searched for). For each option, you need to specify the corresponding properties.</Description>
-                                            <ExportMode>1</ExportMode>
-                                            <ExportVariable></ExportVariable>
-                                            <Value/>
-                                        </ArrayElement>
-                                        <ArrayElement class="cUmProperty">
-                                            <Id>110003</Id>
-                                            <Name>Full name</Name>
-                                            <Type>1</Type>
-                                            <Description>The full name, more precisely known as the common name of the user account in the Organizational Unit-Container - Domain (example: John Williams). The user account is specified using LDAP. To specify the user account, you have three options. 1: LDAP name (available from network tree browse operations), 2: Domain + Organizational Unit-Container + FullName (the LDAP name is composed from the individual components), 3: Domain + Username (NT-style, LDAP name is searched for). For each option, you need to specify the corresponding properties.</Description>
-                                            <ExportMode>1</ExportMode>
-                                            <ExportVariable></ExportVariable>
-                                            <Value/>
-                                        </ArrayElement>
-                                        <ArrayElement class="cUmProperty">
-                                            <Id>110004</Id>
-                                            <Name>Username</Name>
-                                            <Type>1</Type>
-                                            <Description>The pre-Windows 2000 logon name of the user account (example: JWilliams). The user account is specified using LDAP. To specify the user account, you have three options. 1: LDAP name (available from network tree browse operations), 2: Domain + Organizational Unit-Container + FullName (the LDAP name is composed from the individual components), 3: Domain + Username (NT-style, LDAP name is searched for). For each option, you need to specify the corresponding properties.</Description>
-                                            <ExportMode>1</ExportMode>
-                                            <ExportVariable></ExportVariable>
-                                            <Value/>
-                                        </ArrayElement>
-                                        <ArrayElement class="cUmProperty">
-                                            <Id>110000</Id>
-                                            <Name>LDAP name</Name>
-                                            <Type>1</Type>
-                                            <Description>The full LDAP name of the user account. (example: cn=John Williams, ou=Schools, dc=Tools4ever, dc=Com). If this value is specified, it takes precendece and the values for the properties 'Domain', 'Organizational Unit-Container', 'Full name' and 'Username' are ignored and do not have to be specified.</Description>
-                                            <ExportMode>1</ExportMode>
-                                            <ExportVariable></ExportVariable>
-                                            <Value class="cUmDataText">
-                                                <Base class="cUmData" Version="1">
-                                                    <HiddenFlag>FALSE</HiddenFlag>
-                                                </Base>
-                                                <TextValue>%distinguishedName%</TextValue>
-                                            </Value>
-                                        </ArrayElement>
-                                        <ArrayElement class="cUmProperty">
-                                            <Id>110005</Id>
-                                            <Name>Domain controller</Name>
-                                            <Type>1</Type>
-                                            <Description>Optional: The name of the domain controller, used to access to the domain, container or organizational unit where the account exists. This property can be used for any of the methods used to specify the user account. If this value is not specified, Active Directory chooses one automatically (serverless binding).</Description>
-                                            <ExportMode>1</ExportMode>
-                                            <ExportVariable></ExportVariable>
-                                            <Value/>
-                                        </ArrayElement>
-                                        <ArrayElement class="cUmProperty">
-                                            <Id>110010</Id>
-                                            <Name>User Object</Name>
-                                            <Type>7</Type>
-                                            <Description>An internal data structure representing the user account. This property is an 'output only' property and is generated automatically when the user is found in Active Directory. This property can be used in other script actions, for instance to create an Exchange mailbox, setup group memberships or modify user attributes.</Description>
-                                            <ExportMode>4097</ExportMode>
-                                            <ExportVariable>%UserObject%</ExportVariable>
-                                            <Value/>
-                                        </ArrayElement>
-                                        <ArrayElement class="cUmProperty">
-                                            <Id>110011</Id>
-                                            <Name>User Security Identifier (SID)</Name>
-                                            <Type>6</Type>
-                                            <Description>The security identifier (SID) of the user account. This property is an 'output only' property and can be determined when the user is found in Active Directory. The 'User Security Identifier' (SID) is created by the Active Directory automatically when the user account was created. The SID is used when setting permissions, for instance on home directories, Exchange mailboxes etc. The SID is stored by default in the variable %UserSid%.</Description>
-                                            <ExportMode>4097</ExportMode>
-                                            <ExportVariable>%UserSid%</ExportVariable>
-                                            <Value/>
-                                        </ArrayElement>
-                                        <ArrayElement class="cUmProperty">
-                                            <Id>110014</Id>
-                                            <Name>Globally unique identifier (GUID)</Name>
-                                            <Type>6</Type>
-                                            <Description>The globally unique identifier (GUID) of the user account. This property is an 'output only' property and can be determined when the user is found in Active Directory. The 'User Security Identifier' (SID) is created by the Active Directory automatically when the user account was created. The SID is used when setting permissions, for instance on home directories, Exchange mailboxes etc. The SID is stored by default in the variable %UserGuid%.</Description>
-                                            <ExportMode>4097</ExportMode>
-                                            <ExportVariable>%UserGuid%</ExportVariable>
-                                            <Value/>
-                                        </ArrayElement>
-                                        <ArrayElement class="cUmProperty">
-                                            <Id>110013</Id>
-                                            <Name>User account display name</Name>
-                                            <Type>1</Type>
-                                            <Description>The display name of the user account. This property is an 'output only' property and can be determined when the user is found in Active Directory.</Description>
-                                            <ExportMode>4097</ExportMode>
-                                            <ExportVariable>%UserDisplayName%</ExportVariable>
-                                            <Value/>
-                                        </ArrayElement>
-                                    </ObjectArray>
-                                </Base>
-                            </Base>
-                        </PropertyArray>
-                    </Base>
-                </ArrayElement>
-                <ArrayElement class="cActionItemOperationUserAdDelete">
+                <ArrayElement class="cActionItemOperationAdGetObject">
                     <Base class="cActionItemOperation">
                         <Base class="cActionItem">
                             <Label></Label>
@@ -277,24 +161,149 @@
                             <ErrorVariableName></ErrorVariableName>
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
-                        <Explanation>Delete an existing user account from Active Directory. The account is identified by a variable containing the 'User Object'. Use the action 'Get user (AD)' to find the user first.</Explanation>
+                        <Explanation>Access an object in Active Directory. The action is used always in combination with other subsequent actions. Once the object is found, an internal data structure representing the object is setup. This structure is stored in a variable (%ActiveDirectoryObject%) that can be used by other actions.</Explanation>
                         <PropertyArray class="cUmraPsPropertyArray">
                             <Base class="cUmPropertyArray">
                                 <Base class="cUmraObArray">
                                     <ObjectArray>
                                         <ArrayElement class="cUmProperty">
-                                            <Id>170000</Id>
-                                            <Name>User Object</Name>
+                                            <Id>127000</Id>
+                                            <Name>LDAP name</Name>
+                                            <Type>1</Type>
+                                            <Description>The full LDAP name of the Active Directory object. (example: LDAP://SERVER_A/cn=John Williams, ou=Schools, dc=Tools4ever, dc=Com).</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>LDAP://%domaincontroller%/%distinguishedName%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>127010</Id>
+                                            <Name>Active Directory object</Name>
                                             <Type>7</Type>
-                                            <Description>A data structure representing the user account. Use the action 'Get user (AD)' to find the user account in Active Directory and setup the variable that contains the 'User Object'.</Description>
+                                            <Description>An internal data structure representing the object. This property is an 'output only' property and is generated automatically when the object is found in Active Directory. This property can be used in other script actions.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%ActiveDirectoryObject%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>127020</Id>
+                                            <Name>Relative name (output)</Name>
+                                            <Type>1</Type>
+                                            <Description>The object's relative name. Example: 'CN=GroupA'. This property is an 'output only' property.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>127021</Id>
+                                            <Name>Class name (output)</Name>
+                                            <Type>1</Type>
+                                            <Description>The name of the object Schema class. Example: 'user'. This property is an 'output only' property.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>127022</Id>
+                                            <Name>Active Directory path (output)</Name>
+                                            <Type>1</Type>
+                                            <Description>The Active Directory path of this object. The string uniquely identifies this object in a network environment. The object can always be retrieved using this path. This property is an 'output only' property.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>127023</Id>
+                                            <Name>Parent AD path (output)</Name>
+                                            <Type>1</Type>
+                                            <Description>The Active Directory path the parent container that contains this object. This property is an 'output only' property.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>127024</Id>
+                                            <Name>Schema AD path (output)</Name>
+                                            <Type>1</Type>
+                                            <Description>The Active Directory path of the Schema class object of this object. This property is an 'output only' property.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>127025</Id>
+                                            <Name>Unique object identifier (output)</Name>
+                                            <Type>1</Type>
+                                            <Description>The globally unique identifier of the object. This property is an 'output only' property.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>127026</Id>
+                                            <Name>SID (output)</Name>
+                                            <Type>6</Type>
+                                            <Description>The SID (security identifier) of the object. An error is generated if this property is specified an the Active Directory object has no SID. This property is an 'output only' property.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                    </ObjectArray>
+                                </Base>
+                            </Base>
+                        </PropertyArray>
+                    </Base>
+                </ArrayElement>
+                <ArrayElement class="cActionItemOperationAdDeleteObject">
+                    <Base class="cActionItemOperation">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                        <Explanation>Delete an existing object from Active Directory. The object can be a group, user, OU etc. The object is specified by either a variable, LDAP name or SAM account name.</Explanation>
+                        <PropertyArray class="cUmraPsPropertyArray">
+                            <Base class="cUmPropertyArray">
+                                <Base class="cUmraObArray">
+                                    <ObjectArray>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>140000</Id>
+                                            <Name>Active Directory Object</Name>
+                                            <Type>7</Type>
+                                            <Description>A data structure representing the object. This property can only be specified by a variable of which the value is obtained in a previously executed script action, typically 'Get object (AD)'. The object to delete must be specified by one of the properties (1) Active Directory Object, (2) LDAP name or (3) SAM account name.</Description>
                                             <ExportMode>0</ExportMode>
                                             <ExportVariable></ExportVariable>
                                             <Value class="cUmDataText">
                                                 <Base class="cUmData" Version="1">
                                                     <HiddenFlag>FALSE</HiddenFlag>
                                                 </Base>
-                                                <TextValue>%UserObject%</TextValue>
+                                                <TextValue>%ActiveDirectoryObject%</TextValue>
                                             </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>140001</Id>
+                                            <Name>LDAP name</Name>
+                                            <Type>1</Type>
+                                            <Description>The LDAP name of the object to be deleted. Example: LDAP:://DC_1/CN=GroupA,OU=Students,DC=domain,DC=com. The object to delete must be specified by one of the properties (1) Active Directory Object, (2) LDAP name or (3) SAM account name.</Description>
+                                            <ExportMode>0</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>140002</Id>
+                                            <Name>SAM account name</Name>
+                                            <Type>1</Type>
+                                            <Description>The SAM account name of the object to be deleted. Example: DOMAIN_45\GroupA. The object to delete must be specified by one of the properties (1) Active Directory Object, (2) LDAP name or (3) SAM account name.</Description>
+                                            <ExportMode>0</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
                                         </ArrayElement>
                                     </ObjectArray>
                                 </Base>
@@ -408,16 +417,16 @@
     <HelpInfoUrl></HelpInfoUrl>
     <ScriptTimeOutSec>900</ScriptTimeOutSec>
     <LocalProjectFlag>FALSE</LocalProjectFlag>
-    <LocalProjectFileName>C:\Program Files\UmraService\Projects\95713d57-03b4-49bd-a245-5614a6fcbcdd.usp</LocalProjectFileName>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\58c6b6da-eb46-475f-8f61-c482d3aab06c.usp</LocalProjectFileName>
     <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
     <Scheduler class="cUmraWndSchedulerSpec">
         <InputDataSpecificationParameter>0</InputDataSpecificationParameter>
         <Scheduler/>
     </Scheduler>
     <Base class="cUmFormNoScriptProject">
-        <ProjectName>_cfg-person-deleted-activeDirectoryUser-s</ProjectName>
-        <DisplayName>_cfg-person-deleted-activeDirectoryUser-s</DisplayName>
-        <UUID>X1TcVS7A9mkoFZFFmyPvdDs</UUID>
+        <ProjectName>_cfg-costCenter-deleted-activeDirectoryGroup-s</ProjectName>
+        <DisplayName>_cfg-costCenter-normal-activeDirectoryGroup-s</DisplayName>
+        <UUID>abrxYZ06fd0jhR$gTrK$$Bs</UUID>
         <ProjectComment></ProjectComment>
         <ProjectLabels/>
         <ShowInProjectsBarFlag>FALSE</ShowInProjectsBarFlag>

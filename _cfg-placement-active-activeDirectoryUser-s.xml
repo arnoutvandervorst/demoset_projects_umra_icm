@@ -16,12 +16,25 @@
                     </Base>
                     <ProjectName>_cfg-activeDirectory</ProjectName>
                 </ArrayElement>
+                <ArrayElement class="cActionItemScriptExecuteProject">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>1</ErrorControl>
+                            <ErrorControlLabel>end</ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ProjectName>table-objectattributes-placement</ProjectName>
+                </ArrayElement>
                 <ArrayElement class="cActionItemScriptGenericTable">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorControl>1</ErrorControl>
+                            <ErrorControlLabel>end</ErrorControlLabel>
                             <ErrorVariableFlag>FALSE</ErrorVariableFlag>
                             <ErrorVariableName></ErrorVariableName>
                             <ErrorVariableContents></ErrorVariableContents>
@@ -38,7 +51,7 @@
                         </Base>
                         <UmraLdapQueryBindingType>2</UmraLdapQueryBindingType>
                         <BindingString>LDAP://%domaincontroller%</BindingString>
-                        <LdapQueryFilter>(&amp;(objectClass=user)(employeeID=%person_uniquekey%))</LdapQueryFilter>
+                        <LdapQueryFilter>(&amp;(objectClass=user)(employeeID=%placement_person_uniquekey%))</LdapQueryFilter>
                         <Attributes class="cUmraTableLdapAttributes">
                             <Base class="cUmraObArray">
                                 <ObjectArray>
@@ -144,19 +157,32 @@
                     <TableDataVariable>%table_query_ad%</TableDataVariable>
                     <ValueTextArgument1>0</ValueTextArgument1>
                     <ValueTextArgument2>0</ValueTextArgument2>
-                    <ValueTextArgument3>%distinguishedName%</ValueTextArgument3>
+                    <ValueTextArgument3>%distinguishedName_person%</ValueTextArgument3>
                     <ValueTextArgument4></ValueTextArgument4>
                     <ValueBoolArgument1>FALSE</ValueBoolArgument1>
                     <ValueBoolArgument2>FALSE</ValueBoolArgument2>
                     <ValueNumericArgument1>0</ValueNumericArgument1>
                     <ValueNumericArgument2>0</ValueNumericArgument2>
                 </ArrayElement>
-                <ArrayElement class="cActionItemOperationUserAdFind">
-                    <Base class="cActionItemOperation">
+                <ArrayElement class="cActionItemScriptExecuteProject">
+                    <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
                             <ErrorControl>1</ErrorControl>
                             <ErrorControlLabel>end</ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ProjectName>_cfg-placement-active-activeDirectoryUser-attributes</ProjectName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemOperationUserAdFind">
+                    <Base class="cActionItemOperation">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
                             <ErrorVariableFlag>FALSE</ErrorVariableFlag>
                             <ErrorVariableName></ErrorVariableName>
                             <ErrorVariableContents></ErrorVariableContents>
@@ -213,7 +239,7 @@
                                                 <Base class="cUmData" Version="1">
                                                     <HiddenFlag>FALSE</HiddenFlag>
                                                 </Base>
-                                                <TextValue>%distinguishedName%</TextValue>
+                                                <TextValue>%distinguishedName_person%</TextValue>
                                             </Value>
                                         </ArrayElement>
                                         <ArrayElement class="cUmProperty">
@@ -223,7 +249,12 @@
                                             <Description>Optional: The name of the domain controller, used to access to the domain, container or organizational unit where the account exists. This property can be used for any of the methods used to specify the user account. If this value is not specified, Active Directory chooses one automatically (serverless binding).</Description>
                                             <ExportMode>1</ExportMode>
                                             <ExportVariable></ExportVariable>
-                                            <Value/>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%domaincontroller%</TextValue>
+                                            </Value>
                                         </ArrayElement>
                                         <ArrayElement class="cUmProperty">
                                             <Id>110010</Id>
@@ -267,7 +298,7 @@
                         </PropertyArray>
                     </Base>
                 </ArrayElement>
-                <ArrayElement class="cActionItemOperationUserAdDelete">
+                <ArrayElement class="cActionItemOperationAdSetProperty">
                     <Base class="cActionItemOperation">
                         <Base class="cActionItem">
                             <Label></Label>
@@ -277,16 +308,16 @@
                             <ErrorVariableName></ErrorVariableName>
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
-                        <Explanation>Delete an existing user account from Active Directory. The account is identified by a variable containing the 'User Object'. Use the action 'Get user (AD)' to find the user first.</Explanation>
+                        <Explanation>Set the value of an attribute of an Active Directory object, for instance a user account. The attribute is specified by the LDAP display name of the attribute. For the most common properties, the LDAP name can be selected from a list.</Explanation>
                         <PropertyArray class="cUmraPsPropertyArray">
                             <Base class="cUmPropertyArray">
                                 <Base class="cUmraObArray">
                                     <ObjectArray>
                                         <ArrayElement class="cUmProperty">
-                                            <Id>170000</Id>
+                                            <Id>120000</Id>
                                             <Name>User Object</Name>
                                             <Type>7</Type>
-                                            <Description>A data structure representing the user account. Use the action 'Get user (AD)' to find the user account in Active Directory and setup the variable that contains the 'User Object'.</Description>
+                                            <Description>A data structure representing a user account. If you want to set the property of a user account object, you can use this property to specify the Active Directory object for this action. Use the action 'Get user (AD)' to find the user account in Active Directory and setup the variable that contains the 'User Object'.</Description>
                                             <ExportMode>0</ExportMode>
                                             <ExportVariable></ExportVariable>
                                             <Value class="cUmDataText">
@@ -295,6 +326,79 @@
                                                 </Base>
                                                 <TextValue>%UserObject%</TextValue>
                                             </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>120001</Id>
+                                            <Name>Active Directory Object</Name>
+                                            <Type>7</Type>
+                                            <Description>A data structure representing a Active Directory object for which an attribute must be set. This property can only be used as a input variable. Earlier in the script, another script action must have generated the value for this variable.</Description>
+                                            <ExportMode>0</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>120002</Id>
+                                            <Name>Active Directory object LDAP name</Name>
+                                            <Type>1</Type>
+                                            <Description>The full LDAP name of the target Active Directory object. This object can be any object that exists in Active Directory: users, groups, OU's. The name must start with the Active Directory provider and optionally the binding information. Examples: LDAP://server_a/cn=GroupA,dc=TOOLS4EVER,dc=com, GC://cn=User1,DC=domain,DC=com.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>120010</Id>
+                                            <Name>LDAP attribute display name</Name>
+                                            <Type>1</Type>
+                                            <Description>The LDAP name of the attribute. The name identifies the attribute of the Active Directory object. For a number of well-known attributes, the LDAP name can be selected from a list but you can specify any other valid name.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>description</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>120020</Id>
+                                            <Name>Attribute value</Name>
+                                            <Type>1</Type>
+                                            <Description>The value of the attribute. The value must tbe specified as a text value.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%description%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>120025</Id>
+                                            <Name>Skip if new value empty</Name>
+                                            <Type>3</Type>
+                                            <Description>Default value: 'No'. Specify 'Yes' to ignore this action if the new attribute value is empty. In this case, the attribute is not changed. If this property is not specified or set to 'No', the target attribute is always updated.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>120030</Id>
+                                            <Name>Multi-value flag</Name>
+                                            <Type>3</Type>
+                                            <Description>Default value: 'No'. The value contains multiple entries (multi-value).</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>120031</Id>
+                                            <Name>Append versus update multi-value flag</Name>
+                                            <Type>3</Type>
+                                            <Description>Default value: 'No'. When updating a multi-value attribute, the specified values can be appended to the the current values (property set to 'Yes') or the specified values can replace the current values (default, property set to 'No').</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value/>
                                         </ArrayElement>
                                     </ObjectArray>
                                 </Base>
@@ -408,16 +512,16 @@
     <HelpInfoUrl></HelpInfoUrl>
     <ScriptTimeOutSec>900</ScriptTimeOutSec>
     <LocalProjectFlag>FALSE</LocalProjectFlag>
-    <LocalProjectFileName>C:\Program Files\UmraService\Projects\95713d57-03b4-49bd-a245-5614a6fcbcdd.usp</LocalProjectFileName>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\7962f1de-46a4-4157-a4ac-622fd145c6ae.usp</LocalProjectFileName>
     <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
     <Scheduler class="cUmraWndSchedulerSpec">
         <InputDataSpecificationParameter>0</InputDataSpecificationParameter>
         <Scheduler/>
     </Scheduler>
     <Base class="cUmFormNoScriptProject">
-        <ProjectName>_cfg-person-deleted-activeDirectoryUser-s</ProjectName>
-        <DisplayName>_cfg-person-deleted-activeDirectoryUser-s</DisplayName>
-        <UUID>X1TcVS7A9mkoFZFFmyPvdDs</UUID>
+        <ProjectName>_cfg-placement-active-activeDirectoryUser-s</ProjectName>
+        <DisplayName>_cfg-placement-active-costCenter-activeDirectory-r-a</DisplayName>
+        <UUID>eHvY5RqRXFEp$K2#RXkxuCs</UUID>
         <ProjectComment></ProjectComment>
         <ProjectLabels/>
         <ShowInProjectsBarFlag>FALSE</ShowInProjectsBarFlag>
