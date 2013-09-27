@@ -3,37 +3,428 @@
     <Script class="cActionItemCollection">
         <Base class="cUmraObArray">
             <ObjectArray>
-                <ArrayElement class="cActionItemScriptGenericTable">
+                <ArrayElement class="cActionItemScriptExecuteProject">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ProjectName>global-init-ad</ProjectName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptVarious">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label>start</Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ScriptActionType>2</ScriptActionType>
+                    <ParameterNumeric>0</ParameterNumeric>
+                    <ParameterText></ParameterText>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptGenerateName">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
                             <ErrorControl>1</ErrorControl>
                             <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
+                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
+                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
+                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
                         </Base>
                     </Base>
-                    <TableDefinition class="cUmraTableDefDatabaseQuery">
-                        <Base class="cUmraTableDef">
-                            <VariableName>%table_objectattributes_location%</VariableName>
-                            <TestVariableArray class="cUmVariableArray">
+                    <NameGenerationAlgorithm class="cUgAlgorithm">
+                        <Name>username</Name>
+                        <UserComment></UserComment>
+                        <Base class="cUmraObArray">
+                            <ObjectArray>
+                                <ArrayElement class="cUgMethodCollection">
+                                    <OutputVariable>%sAMAccountName%</OutputVariable>
+                                    <CurrentMethodIndex>0</CurrentMethodIndex>
+                                    <Base class="cUmraObArray">
+                                        <ObjectArray>
+                                            <ArrayElement class="cUgMethod">
+                                                <MethodName>method1</MethodName>
+                                                <ComposerSettings class="cUgNameComposerSettings">
+                                                    <Functions class="cUgFunctionCollection">
+                                                        <Base class="cUmraObArray">
+                                                            <ObjectArray>
+                                                                <ArrayElement class="cUgFunctionNoArguments">
+                                                                    <Base class="cUgFunction">
+                                                                        <FunctionIdentifier>10050</FunctionIdentifier>
+                                                                        <FunctionName>Conversion: Remove diacritical marks</FunctionName>
+                                                                        <FunctionDescription>Delete all blank and tab characters from the name.</FunctionDescription>
+                                                                    </Base>
+                                                                </ArrayElement>
+                                                                <ArrayElement class="cUgFunctionNoArguments">
+                                                                    <Base class="cUgFunction">
+                                                                        <FunctionIdentifier>10001</FunctionIdentifier>
+                                                                        <FunctionName>Case conversion: convert to lower case</FunctionName>
+                                                                        <FunctionDescription>Convert all characters of the name to lower case.</FunctionDescription>
+                                                                    </Base>
+                                                                </ArrayElement>
+                                                                <ArrayElement class="cUgFunctionSingleArgument">
+                                                                    <ArgumentValue>abcdefghjiklmnopqrstuvwxyz</ArgumentValue>
+                                                                    <ArgumentName>Characters not to delete</ArgumentName>
+                                                                    <ArgumentType>0</ArgumentType>
+                                                                    <Base class="cUgFunction">
+                                                                        <FunctionIdentifier>20045</FunctionIdentifier>
+                                                                        <FunctionName>Delete: All but the matching characters</FunctionName>
+                                                                        <FunctionDescription>Delete all characters from the name if the character is not found as one of the specified characters. Example: abcdefghijklmnopqrstuvwxyz.</FunctionDescription>
+                                                                    </Base>
+                                                                </ArrayElement>
+                                                                <ArrayElement class="cUgFunctionSingleArgument">
+                                                                    <ArgumentValue>20</ArgumentValue>
+                                                                    <ArgumentName># Characters</ArgumentName>
+                                                                    <ArgumentType>1</ArgumentType>
+                                                                    <Base class="cUgFunction">
+                                                                        <FunctionIdentifier>20010</FunctionIdentifier>
+                                                                        <FunctionName>Shorten name: Convert to first N</FunctionName>
+                                                                        <FunctionDescription>Convert the name to the first N characters of the name. If the name does not contain N characters, it is not changed.</FunctionDescription>
+                                                                    </Base>
+                                                                </ArrayElement>
+                                                            </ObjectArray>
+                                                        </Base>
+                                                    </Functions>
+                                                </ComposerSettings>
+                                                <Base class="cUmraObArray">
+                                                    <ObjectArray>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%firstname%</VariableName>
+                                                            <ExampleName>Arnout</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>1</ArgumentValue>
+                                                                            <ArgumentName># Characters</ArgumentName>
+                                                                            <ArgumentType>1</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20010</FunctionIdentifier>
+                                                                                <FunctionName>Shorten name: Convert to first N</FunctionName>
+                                                                                <FunctionDescription>Convert the name to the first N characters of the name. If the name does not contain N characters, it is not changed.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%lastname_birth%</VariableName>
+                                                            <ExampleName>Vorst</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray/>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                    </ObjectArray>
+                                                </Base>
+                                            </ArrayElement>
+                                            <ArrayElement class="cUgMethod">
+                                                <MethodName>method2</MethodName>
+                                                <ComposerSettings class="cUgNameComposerSettings">
+                                                    <Functions class="cUgFunctionCollection">
+                                                        <Base class="cUmraObArray">
+                                                            <ObjectArray>
+                                                                <ArrayElement class="cUgFunctionNoArguments">
+                                                                    <Base class="cUgFunction">
+                                                                        <FunctionIdentifier>10050</FunctionIdentifier>
+                                                                        <FunctionName>Conversion: Remove diacritical marks</FunctionName>
+                                                                        <FunctionDescription>Delete all blank and tab characters from the name.</FunctionDescription>
+                                                                    </Base>
+                                                                </ArrayElement>
+                                                                <ArrayElement class="cUgFunctionNoArguments">
+                                                                    <Base class="cUgFunction">
+                                                                        <FunctionIdentifier>10001</FunctionIdentifier>
+                                                                        <FunctionName>Case conversion: convert to lower case</FunctionName>
+                                                                        <FunctionDescription>Convert all characters of the name to lower case.</FunctionDescription>
+                                                                    </Base>
+                                                                </ArrayElement>
+                                                                <ArrayElement class="cUgFunctionSingleArgument">
+                                                                    <ArgumentValue>abcdefghjiklmnopqrstuvwxyz</ArgumentValue>
+                                                                    <ArgumentName>Characters not to delete</ArgumentName>
+                                                                    <ArgumentType>0</ArgumentType>
+                                                                    <Base class="cUgFunction">
+                                                                        <FunctionIdentifier>20045</FunctionIdentifier>
+                                                                        <FunctionName>Delete: All but the matching characters</FunctionName>
+                                                                        <FunctionDescription>Delete all characters from the name if the character is not found as one of the specified characters. Example: abcdefghijklmnopqrstuvwxyz.</FunctionDescription>
+                                                                    </Base>
+                                                                </ArrayElement>
+                                                                <ArrayElement class="cUgFunctionSingleArgument">
+                                                                    <ArgumentValue>20</ArgumentValue>
+                                                                    <ArgumentName># Characters</ArgumentName>
+                                                                    <ArgumentType>1</ArgumentType>
+                                                                    <Base class="cUgFunction">
+                                                                        <FunctionIdentifier>20010</FunctionIdentifier>
+                                                                        <FunctionName>Shorten name: Convert to first N</FunctionName>
+                                                                        <FunctionDescription>Convert the name to the first N characters of the name. If the name does not contain N characters, it is not changed.</FunctionDescription>
+                                                                    </Base>
+                                                                </ArrayElement>
+                                                            </ObjectArray>
+                                                        </Base>
+                                                    </Functions>
+                                                </ComposerSettings>
+                                                <Base class="cUmraObArray">
+                                                    <ObjectArray>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%firstname%</VariableName>
+                                                            <ExampleName>Arnout</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>2</ArgumentValue>
+                                                                            <ArgumentName># Characters</ArgumentName>
+                                                                            <ArgumentType>1</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20010</FunctionIdentifier>
+                                                                                <FunctionName>Shorten name: Convert to first N</FunctionName>
+                                                                                <FunctionDescription>Convert the name to the first N characters of the name. If the name does not contain N characters, it is not changed.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%lastname_birth%</VariableName>
+                                                            <ExampleName>Vorst</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray/>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                    </ObjectArray>
+                                                </Base>
+                                            </ArrayElement>
+                                            <ArrayElement class="cUgMethod">
+                                                <MethodName>method3</MethodName>
+                                                <ComposerSettings class="cUgNameComposerSettings">
+                                                    <Functions class="cUgFunctionCollection">
+                                                        <Base class="cUmraObArray">
+                                                            <ObjectArray>
+                                                                <ArrayElement class="cUgFunctionNoArguments">
+                                                                    <Base class="cUgFunction">
+                                                                        <FunctionIdentifier>10050</FunctionIdentifier>
+                                                                        <FunctionName>Conversion: Remove diacritical marks</FunctionName>
+                                                                        <FunctionDescription>Delete all blank and tab characters from the name.</FunctionDescription>
+                                                                    </Base>
+                                                                </ArrayElement>
+                                                                <ArrayElement class="cUgFunctionNoArguments">
+                                                                    <Base class="cUgFunction">
+                                                                        <FunctionIdentifier>10001</FunctionIdentifier>
+                                                                        <FunctionName>Case conversion: convert to lower case</FunctionName>
+                                                                        <FunctionDescription>Convert all characters of the name to lower case.</FunctionDescription>
+                                                                    </Base>
+                                                                </ArrayElement>
+                                                                <ArrayElement class="cUgFunctionSingleArgument">
+                                                                    <ArgumentValue>abcdefghjiklmnopqrstuvwxyz0123456789</ArgumentValue>
+                                                                    <ArgumentName>Characters not to delete</ArgumentName>
+                                                                    <ArgumentType>0</ArgumentType>
+                                                                    <Base class="cUgFunction">
+                                                                        <FunctionIdentifier>20045</FunctionIdentifier>
+                                                                        <FunctionName>Delete: All but the matching characters</FunctionName>
+                                                                        <FunctionDescription>Delete all characters from the name if the character is not found as one of the specified characters. Example: abcdefghijklmnopqrstuvwxyz.</FunctionDescription>
+                                                                    </Base>
+                                                                </ArrayElement>
+                                                                <ArrayElement class="cUgFunctionSingleArgument">
+                                                                    <ArgumentValue>20</ArgumentValue>
+                                                                    <ArgumentName># Characters</ArgumentName>
+                                                                    <ArgumentType>1</ArgumentType>
+                                                                    <Base class="cUgFunction">
+                                                                        <FunctionIdentifier>20010</FunctionIdentifier>
+                                                                        <FunctionName>Shorten name: Convert to first N</FunctionName>
+                                                                        <FunctionDescription>Convert the name to the first N characters of the name. If the name does not contain N characters, it is not changed.</FunctionDescription>
+                                                                    </Base>
+                                                                </ArrayElement>
+                                                            </ObjectArray>
+                                                        </Base>
+                                                    </Functions>
+                                                </ComposerSettings>
+                                                <Base class="cUmraObArray">
+                                                    <ObjectArray>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%firstname%</VariableName>
+                                                            <ExampleName>Arnout</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray>
+                                                                        <ArrayElement class="cUgFunctionSingleArgument">
+                                                                            <ArgumentValue>1</ArgumentValue>
+                                                                            <ArgumentName># Characters</ArgumentName>
+                                                                            <ArgumentType>1</ArgumentType>
+                                                                            <Base class="cUgFunction">
+                                                                                <FunctionIdentifier>20010</FunctionIdentifier>
+                                                                                <FunctionName>Shorten name: Convert to first N</FunctionName>
+                                                                                <FunctionDescription>Convert the name to the first N characters of the name. If the name does not contain N characters, it is not changed.</FunctionDescription>
+                                                                            </Base>
+                                                                        </ArrayElement>
+                                                                    </ObjectArray>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartVariable">
+                                                            <VariableName>%lastname_birth%</VariableName>
+                                                            <ExampleName>Vorst</ExampleName>
+                                                            <Functions class="cUgFunctionCollection">
+                                                                <Base class="cUmraObArray">
+                                                                    <ObjectArray/>
+                                                                </Base>
+                                                            </Functions>
+                                                            <Base class="cUgNamePart"/>
+                                                        </ArrayElement>
+                                                        <ArrayElement class="cUgNamePartIteratorIncrementor">
+                                                            <FillCharacter>0</FillCharacter>
+                                                            <StartCharacters>2</StartCharacters>
+                                                            <FixedLengthFlag>FALSE</FixedLengthFlag>
+                                                            <LimitedNumberOfIterationsFlag>FALSE</LimitedNumberOfIterationsFlag>
+                                                            <FixedLengthCharacterCount>2</FixedLengthCharacterCount>
+                                                            <MaxIterationCount>0</MaxIterationCount>
+                                                            <Base class="cUgNamePartIterator">
+                                                                <SessionIterationCounter>1</SessionIterationCounter>
+                                                                <EmptyFirstIterationFlag>FALSE</EmptyFirstIterationFlag>
+                                                                <Base class="cUgNamePart"/>
+                                                            </Base>
+                                                        </ArrayElement>
+                                                    </ObjectArray>
+                                                </Base>
+                                            </ArrayElement>
+                                        </ObjectArray>
+                                    </Base>
+                                </ArrayElement>
+                            </ObjectArray>
+                        </Base>
+                    </NameGenerationAlgorithm>
+                    <IterationByVariableFlag>FALSE</IterationByVariableFlag>
+                    <StateInitializeIterationFlag>TRUE</StateInitializeIterationFlag>
+                    <IterationVariableName></IterationVariableName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemOperationAdSearchObject">
+                    <Base class="cActionItemOperation">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>1</ErrorControl>
+                            <ErrorControlLabel>error</ErrorControlLabel>
+                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
+                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
+                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                        </Base>
+                        <Explanation>Searches the Active Directory for one or more objects. For each object found, the object distinguished name is returned. For the search, you need to specify the environment (LDAP, GC, domain, ou, etc.) and the LDAP search string.</Explanation>
+                        <PropertyArray class="cUmraPsPropertyArray">
+                            <Base class="cUmPropertyArray">
                                 <Base class="cUmraObArray">
-                                    <ObjectArray/>
+                                    <ObjectArray>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>140000</Id>
+                                            <Name>Search environment</Name>
+                                            <Type>1</Type>
+                                            <Description>The search is performed in one of three possible environment: LDAP, GC or any other object. To search the entire Active Directory environment accessible from the local computer, specify the word LDAP (1). To search in the Global Catalog, specify the word GC (2). To search in any other environment, specify the LDAP binding string to access the object (3). Example: To search in a specify domain: LDAP://domain or LDAP://host. To search in a specific OU: LDAP://domaincontroller/OU=students,DC=domain,DC=com.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>%Binding_ldap%</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>140010</Id>
+                                            <Name>LDAP search Filter</Name>
+                                            <Type>1</Type>
+                                            <Description>The LDAP search filter according to RFC 2254. Example, to find user accounts with a specific description field 1234:  (&amp;(objectClass=user) (&amp;(description=1234))</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>(&amp;(objectCategory=person) (sAMAccountName=%sAMAccountName%) (!%name_attribute_external_key_activeDirectoryUser%=%object_uniquekey%))</TextValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>140021</Id>
+                                            <Name>Error if nothing found</Name>
+                                            <Type>3</Type>
+                                            <Description>Generate an error for this script action if no matching objects are found.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>FALSE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>140020</Id>
+                                            <Name>Error if multiple found</Name>
+                                            <Type>3</Type>
+                                            <Description>Generate an error for this script action if multiple matching objects are found.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>FALSE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>140022</Id>
+                                            <Name>Search in child objects</Name>
+                                            <Type>3</Type>
+                                            <Description>Search in the specified environment and child objects, for example child domains.</Description>
+                                            <ExportMode>1</ExportMode>
+                                            <ExportVariable></ExportVariable>
+                                            <Value class="cUmDataBool">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <BoolValue>TRUE</BoolValue>
+                                            </Value>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>140030</Id>
+                                            <Name>Number of objects found</Name>
+                                            <Type>2</Type>
+                                            <Description>The number of matching objects found. This property is an 'output only' property and is generated by the application automatically. By default, the value for this property is stored in variable %SearchResultCount%.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%Count_rows_search_result%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                        <ArrayElement class="cUmProperty">
+                                            <Id>140031</Id>
+                                            <Name>Object distinguished names</Name>
+                                            <Type>8</Type>
+                                            <Description>The distinguished names of the matching objects. This property is an 'output only' property and is generated by the application automatically. By default, the value for this property is stored in variable %SearchResults%.</Description>
+                                            <ExportMode>4097</ExportMode>
+                                            <ExportVariable>%SearchResults%</ExportVariable>
+                                            <Value/>
+                                        </ArrayElement>
+                                    </ObjectArray>
                                 </Base>
-                            </TestVariableArray>
-                        </Base>
-                        <UmraOleDb class="cUmraOleDbGeneral">
-                            <Base class="cUmraOleDb"/>
-                            <ConnectionString>%Conn_string_db_iamvault%</ConnectionString>
-                            <OleDbProviderType>0</OleDbProviderType>
-                        </UmraOleDb>
-                        <DatabaseQuery><![CDATA[EXEC ICMJobObjectVersionsAttributesGet
-%location_id%]]></DatabaseQuery>
-                        <QueryResultColumnNames/>
-                    </TableDefinition>
+                            </Base>
+                        </PropertyArray>
+                    </Base>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
+                <ArrayElement class="cActionItemScriptIfThenElse">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
@@ -44,654 +435,32 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>id</ValueTextArgument1>
-                    <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
-                    <ValueTextArgument3>1,STRICT</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
+                    <ConditionCollection class="cVariableConditionCollection">
+                        <Base class="cUmraObArray">
+                            <ObjectArray>
+                                <ArrayElement class="cVariableCondition">
+                                    <InputVariableName>%Count_rows_search_result%</InputVariableName>
+                                    <InputVariableType>2</InputVariableType>
+                                    <OperatorIndex>300</OperatorIndex>
+                                    <OperatorVariableName></OperatorVariableName>
+                                    <OperatorArgumentValue class="cUmDataNumeric">
+                                        <Base class="cUmData" Version="1">
+                                            <HiddenFlag>FALSE</HiddenFlag>
+                                        </Base>
+                                        <NumericValue>0</NumericValue>
+                                    </OperatorArgumentValue>
+                                    <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
+                                    <InvertResultFlag>TRUE</InvertResultFlag>
+                                </ArrayElement>
+                            </ObjectArray>
                         </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_result_output%</TableDataVariable>
-                    <ValueTextArgument1>0</ValueTextArgument1>
-                    <ValueTextArgument2>0</ValueTextArgument2>
-                    <ValueTextArgument3>%rowindex_found%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
-                    <ValueTextArgument2>3</ValueTextArgument2>
-                    <ValueTextArgument3>%id%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>name</ValueTextArgument1>
-                    <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
-                    <ValueTextArgument3>1,STRICT</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_result_output%</TableDataVariable>
-                    <ValueTextArgument1>0</ValueTextArgument1>
-                    <ValueTextArgument2>0</ValueTextArgument2>
-                    <ValueTextArgument3>%rowindex_found%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
-                    <ValueTextArgument2>3</ValueTextArgument2>
-                    <ValueTextArgument3>%name%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>code</ValueTextArgument1>
-                    <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
-                    <ValueTextArgument3>1,STRICT</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_result_output%</TableDataVariable>
-                    <ValueTextArgument1>0</ValueTextArgument1>
-                    <ValueTextArgument2>0</ValueTextArgument2>
-                    <ValueTextArgument3>%rowindex_found%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
-                    <ValueTextArgument2>3</ValueTextArgument2>
-                    <ValueTextArgument3>%code%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>mail</ValueTextArgument1>
-                    <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
-                    <ValueTextArgument3>1,STRICT</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_result_output%</TableDataVariable>
-                    <ValueTextArgument1>0</ValueTextArgument1>
-                    <ValueTextArgument2>0</ValueTextArgument2>
-                    <ValueTextArgument3>%rowindex_found%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
-                    <ValueTextArgument2>3</ValueTextArgument2>
-                    <ValueTextArgument3>%mail%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>facsimileTelephoneNumber</ValueTextArgument1>
-                    <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
-                    <ValueTextArgument3>1,STRICT</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_result_output%</TableDataVariable>
-                    <ValueTextArgument1>0</ValueTextArgument1>
-                    <ValueTextArgument2>0</ValueTextArgument2>
-                    <ValueTextArgument3>%rowindex_found%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
-                    <ValueTextArgument2>3</ValueTextArgument2>
-                    <ValueTextArgument3>%facsimileTelephoneNumber%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>phoneBusiness</ValueTextArgument1>
-                    <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
-                    <ValueTextArgument3>1,STRICT</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_result_output%</TableDataVariable>
-                    <ValueTextArgument1>0</ValueTextArgument1>
-                    <ValueTextArgument2>0</ValueTextArgument2>
-                    <ValueTextArgument3>%rowindex_found%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
-                    <ValueTextArgument2>3</ValueTextArgument2>
-                    <ValueTextArgument3>%phoneBusiness%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>houseNumber</ValueTextArgument1>
-                    <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
-                    <ValueTextArgument3>1,STRICT</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_result_output%</TableDataVariable>
-                    <ValueTextArgument1>0</ValueTextArgument1>
-                    <ValueTextArgument2>0</ValueTextArgument2>
-                    <ValueTextArgument3>%rowindex_found%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
-                    <ValueTextArgument2>3</ValueTextArgument2>
-                    <ValueTextArgument3>%houseNumber%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>city</ValueTextArgument1>
-                    <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
-                    <ValueTextArgument3>1,STRICT</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_result_output%</TableDataVariable>
-                    <ValueTextArgument1>0</ValueTextArgument1>
-                    <ValueTextArgument2>0</ValueTextArgument2>
-                    <ValueTextArgument3>%rowindex_found%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
-                    <ValueTextArgument2>3</ValueTextArgument2>
-                    <ValueTextArgument3>%city%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>postalCode</ValueTextArgument1>
-                    <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
-                    <ValueTextArgument3>1,STRICT</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_result_output%</TableDataVariable>
-                    <ValueTextArgument1>0</ValueTextArgument1>
-                    <ValueTextArgument2>0</ValueTextArgument2>
-                    <ValueTextArgument3>%rowindex_found%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
-                    <ValueTextArgument2>3</ValueTextArgument2>
-                    <ValueTextArgument3>%postalCode%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>17</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>street</ValueTextArgument1>
-                    <ValueTextArgument2>%table_result_output%</ValueTextArgument2>
-                    <ValueTextArgument3>1,STRICT</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_result_output%</TableDataVariable>
-                    <ValueTextArgument1>0</ValueTextArgument1>
-                    <ValueTextArgument2>0</ValueTextArgument2>
-                    <ValueTextArgument3>%rowindex_found%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptTableData">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDataOperation>4</TableDataOperation>
-                    <TableDataVariable>%table_objectattributes_location%</TableDataVariable>
-                    <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
-                    <ValueTextArgument2>3</ValueTextArgument2>
-                    <ValueTextArgument3>%street%</ValueTextArgument3>
-                    <ValueTextArgument4></ValueTextArgument4>
-                    <ValueBoolArgument1>FALSE</ValueBoolArgument1>
-                    <ValueBoolArgument2>FALSE</ValueBoolArgument2>
-                    <ValueNumericArgument1>0</ValueNumericArgument1>
-                    <ValueNumericArgument2>0</ValueNumericArgument2>
+                        <InvertResultFlag>FALSE</InvertResultFlag>
+                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
+                        <Comment></Comment>
+                    </ConditionCollection>
+                    <LabelThen>start</LabelThen>
+                    <LabelElse></LabelElse>
+                    <UseElseFlag>FALSE</UseElseFlag>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptGoTo">
                     <Base class="cActionItemScript">
@@ -720,6 +489,19 @@
                     <ScriptActionType>2</ScriptActionType>
                     <ParameterNumeric>0</ParameterNumeric>
                     <ParameterText></ParameterText>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptExecuteProject">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ProjectName>global-error-handler</ProjectName>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">
@@ -825,18 +607,18 @@
         </Base>
     </AccessSettings>
     <HelpInfoUrl></HelpInfoUrl>
-    <ScriptTimeOutSec>900</ScriptTimeOutSec>
+    <ScriptTimeOutSec>1492536</ScriptTimeOutSec>
     <LocalProjectFlag>FALSE</LocalProjectFlag>
-    <LocalProjectFileName>C:\Program Files\UmraService\Projects\3e83791c-d8b0-46f9-bdae-3f53ed2c737c.usp</LocalProjectFileName>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\5c81aceb-257f-40e0-b51a-651fddf029cd.usp</LocalProjectFileName>
     <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
     <Scheduler class="cUmraWndSchedulerSpec">
         <InputDataSpecificationParameter>0</InputDataSpecificationParameter>
         <Scheduler/>
     </Scheduler>
     <Base class="cUmFormNoScriptProject">
-        <ProjectName>table-objectattributes-location</ProjectName>
-        <DisplayName>table-objectattributes-person</DisplayName>
-        <UUID>ck3g+A#25bUvu+zUtzyc8Bs</UUID>
+        <ProjectName>_cfg-activeDirectoryUser-names-samaccountname</ProjectName>
+        <DisplayName>_cfg-activeDirectoryUser-names-samaccountname</DisplayName>
+        <UUID>rzagc9XJgDUtaU2HdDfKNDs</UUID>
         <ProjectComment></ProjectComment>
         <ProjectLabels/>
         <ShowInProjectsBarFlag>FALSE</ShowInProjectsBarFlag>
@@ -1403,6 +1185,11 @@
         <DataFileParam class="cDataFileParam">
             <Base class="cDataFileParseInfo">
                 <Separators>
+                    <TextItem>,</TextItem>
+                    <TextItem>,</TextItem>
+                    <TextItem>,</TextItem>
+                    <TextItem>,</TextItem>
+                    <TextItem>,</TextItem>
                     <TextItem>,</TextItem>
                 </Separators>
                 <TextQualifier>"</TextQualifier>
