@@ -1072,7 +1072,7 @@
                             <ConnectionString>%Conn_string_db_iamvault%</ConnectionString>
                             <OleDbProviderType>0</OleDbProviderType>
                         </UmraOleDb>
-                        <DatabaseQuery>EXEC ICMJobObjectVersionsRelationsGet %object_id%,'','','','parent'</DatabaseQuery>
+                        <DatabaseQuery>EXEC ICMJobObjectVersionsRelationsGet %object_id%,'','','','parent',''</DatabaseQuery>
                         <QueryResultColumnNames>
                             <TextItem>pers_nr</TextItem>
                             <TextItem>e_vrlt</TextItem>
@@ -1100,7 +1100,7 @@
                     <TableDataOperation>4</TableDataOperation>
                     <TableDataVariable>%table_placement_relations_parent%</TableDataVariable>
                     <ValueTextArgument1>0</ValueTextArgument1>
-                    <ValueTextArgument2>5</ValueTextArgument2>
+                    <ValueTextArgument2>6</ValueTextArgument2>
                     <ValueTextArgument3>%placement_parent_uniquekey%</ValueTextArgument3>
                     <ValueTextArgument4></ValueTextArgument4>
                     <ValueBoolArgument1>FALSE</ValueBoolArgument1>
@@ -1133,7 +1133,7 @@
                             <ConnectionString>%Conn_string_db_iamvault%</ConnectionString>
                             <OleDbProviderType>0</OleDbProviderType>
                         </UmraOleDb>
-                        <DatabaseQuery>EXEC ICMJobObjectVersionsRelationsGet %object_id%,'','','','child'</DatabaseQuery>
+                        <DatabaseQuery>EXEC ICMJobObjectVersionsRelationsGet %object_id%,'','','','child',''</DatabaseQuery>
                         <QueryResultColumnNames>
                             <TextItem>pers_nr</TextItem>
                             <TextItem>e_vrlt</TextItem>
