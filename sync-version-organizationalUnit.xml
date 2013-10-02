@@ -144,6 +144,44 @@
                     <ParameterNumeric>0</ParameterNumeric>
                     <ParameterText></ParameterText>
                 </ArrayElement>
+                <ArrayElement class="cActionItemScriptIfThenElse">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ConditionCollection class="cVariableConditionCollection">
+                        <Base class="cUmraObArray">
+                            <ObjectArray>
+                                <ArrayElement class="cVariableCondition">
+                                    <InputVariableName>%object_state_p%</InputVariableName>
+                                    <InputVariableType>1</InputVariableType>
+                                    <OperatorIndex>203</OperatorIndex>
+                                    <OperatorVariableName>%object_state%</OperatorVariableName>
+                                    <OperatorArgumentValue class="cUmDataText">
+                                        <Base class="cUmData" Version="1">
+                                            <HiddenFlag>FALSE</HiddenFlag>
+                                        </Base>
+                                        <TextValue></TextValue>
+                                    </OperatorArgumentValue>
+                                    <UseOperatorVariableNameFlag>TRUE</UseOperatorVariableNameFlag>
+                                    <InvertResultFlag>TRUE</InvertResultFlag>
+                                </ArrayElement>
+                            </ObjectArray>
+                        </Base>
+                        <InvertResultFlag>FALSE</InvertResultFlag>
+                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
+                        <Comment></Comment>
+                    </ConditionCollection>
+                    <LabelThen>end</LabelThen>
+                    <LabelElse></LabelElse>
+                    <UseElseFlag>FALSE</UseElseFlag>
+                </ArrayElement>
                 <ArrayElement class="cActionItemScriptSetVariable">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
@@ -329,6 +367,44 @@
                     <ScriptActionType>2</ScriptActionType>
                     <ParameterNumeric>0</ParameterNumeric>
                     <ParameterText></ParameterText>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptIfThenElse">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ConditionCollection class="cVariableConditionCollection">
+                        <Base class="cUmraObArray">
+                            <ObjectArray>
+                                <ArrayElement class="cVariableCondition">
+                                    <InputVariableName>%object_state_s%</InputVariableName>
+                                    <InputVariableType>1</InputVariableType>
+                                    <OperatorIndex>203</OperatorIndex>
+                                    <OperatorVariableName>%object_state%</OperatorVariableName>
+                                    <OperatorArgumentValue class="cUmDataText">
+                                        <Base class="cUmData" Version="1">
+                                            <HiddenFlag>FALSE</HiddenFlag>
+                                        </Base>
+                                        <TextValue></TextValue>
+                                    </OperatorArgumentValue>
+                                    <UseOperatorVariableNameFlag>TRUE</UseOperatorVariableNameFlag>
+                                    <InvertResultFlag>TRUE</InvertResultFlag>
+                                </ArrayElement>
+                            </ObjectArray>
+                        </Base>
+                        <InvertResultFlag>FALSE</InvertResultFlag>
+                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
+                        <Comment></Comment>
+                    </ConditionCollection>
+                    <LabelThen>end</LabelThen>
+                    <LabelElse></LabelElse>
+                    <UseElseFlag>FALSE</UseElseFlag>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptTableData">
                     <Base class="cActionItemScript">

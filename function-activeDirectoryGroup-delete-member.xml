@@ -143,57 +143,6 @@
                     </Base>
                     <ProjectName>global-init-ad</ProjectName>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptExecuteProject">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ProjectName>global-get-activedirectoryobject</ProjectName>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptIfThenElse">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ConditionCollection class="cVariableConditionCollection">
-                        <Base class="cUmraObArray">
-                            <ObjectArray>
-                                <ArrayElement class="cVariableCondition">
-                                    <InputVariableName>%Count_errors%</InputVariableName>
-                                    <InputVariableType>2</InputVariableType>
-                                    <OperatorIndex>300</OperatorIndex>
-                                    <OperatorVariableName></OperatorVariableName>
-                                    <OperatorArgumentValue class="cUmDataNumeric">
-                                        <Base class="cUmData" Version="1">
-                                            <HiddenFlag>FALSE</HiddenFlag>
-                                        </Base>
-                                        <NumericValue>0</NumericValue>
-                                    </OperatorArgumentValue>
-                                    <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
-                                    <InvertResultFlag>TRUE</InvertResultFlag>
-                                </ArrayElement>
-                            </ObjectArray>
-                        </Base>
-                        <InvertResultFlag>FALSE</InvertResultFlag>
-                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
-                        <Comment></Comment>
-                    </ConditionCollection>
-                    <LabelThen>end</LabelThen>
-                    <LabelElse></LabelElse>
-                    <UseElseFlag>FALSE</UseElseFlag>
-                </ArrayElement>
                 <ArrayElement class="cActionItemOperationAdRemoveSpecificGroupMembership">
                     <Base class="cActionItemOperation">
                         <Base class="cActionItem">
@@ -216,7 +165,12 @@
                                             <Description>The full LDAP name of the group from which the membership must be updated (example: LDAP://DC_A/CN=Students,DC=domain,DC=com). To specify the group, specify one of the following properties: 'Group name (LDAP)', 'Group name (SAM account name)', 'Group object'.</Description>
                                             <ExportMode>1</ExportMode>
                                             <ExportVariable></ExportVariable>
-                                            <Value/>
+                                            <Value class="cUmDataText">
+                                                <Base class="cUmData" Version="1">
+                                                    <HiddenFlag>FALSE</HiddenFlag>
+                                                </Base>
+                                                <TextValue>LDAP://%domaincontroller%/%object_dn%</TextValue>
+                                            </Value>
                                         </ArrayElement>
                                         <ArrayElement class="cUmProperty">
                                             <Id>134001</Id>
@@ -234,12 +188,7 @@
                                             <Description>A data structure representing the group. The property is used to identify the group and can only be generated as a variable by a previous script action. To specify the group, specify one of the following properties: 'Group name (LDAP)', 'Group name (SAM account name)', 'Group object'.</Description>
                                             <ExportMode>1</ExportMode>
                                             <ExportVariable></ExportVariable>
-                                            <Value class="cUmDataText">
-                                                <Base class="cUmData" Version="1">
-                                                    <HiddenFlag>FALSE</HiddenFlag>
-                                                </Base>
-                                                <TextValue>LDAP://%domaincontroller%/%object_dn%</TextValue>
-                                            </Value>
+                                            <Value/>
                                         </ArrayElement>
                                         <ArrayElement class="cUmProperty">
                                             <Id>134003</Id>

@@ -3,6 +3,66 @@
     <Script class="cActionItemCollection">
         <Base class="cUmraObArray">
             <ObjectArray>
+                <ArrayElement class="cActionItemScriptSetVariable">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <VariableName>%object_id_%object_type%%</VariableName>
+                    <Data class="cUmDataText">
+                        <Base class="cUmData" Version="1">
+                            <HiddenFlag>FALSE</HiddenFlag>
+                        </Base>
+                        <TextValue>%object_id%</TextValue>
+                    </Data>
+                    <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptSetVariable">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <VariableName>%object_state_%object_type%%</VariableName>
+                    <Data class="cUmDataText">
+                        <Base class="cUmData" Version="1">
+                            <HiddenFlag>FALSE</HiddenFlag>
+                        </Base>
+                        <TextValue>%object_state%</TextValue>
+                    </Data>
+                    <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptSetVariable">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <VariableName>%object_uniquekey_%object_type%%</VariableName>
+                    <Data class="cUmDataText">
+                        <Base class="cUmData" Version="1">
+                            <HiddenFlag>FALSE</HiddenFlag>
+                        </Base>
+                        <TextValue>%object_uniquekey%</TextValue>
+                    </Data>
+                    <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
+                </ArrayElement>
                 <ArrayElement class="cActionItemScriptConditionalVariable">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
@@ -34,46 +94,7 @@
                     <CaseSensitiveCompareFlag>FALSE</CaseSensitiveCompareFlag>
                     <UseDefaultValueIfNotFoundFlag>FALSE</UseDefaultValueIfNotFoundFlag>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptGenericTable">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>1</ErrorControl>
-                            <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDefinition class="cUmraTableDefDatabaseQuery">
-                        <Base class="cUmraTableDef">
-                            <VariableName>%table_object_relations_added%</VariableName>
-                            <TestVariableArray class="cUmVariableArray">
-                                <Base class="cUmraObArray">
-                                    <ObjectArray/>
-                                </Base>
-                            </TestVariableArray>
-                        </Base>
-                        <UmraOleDb class="cUmraOleDbGeneral">
-                            <Base class="cUmraOleDb"/>
-                            <ConnectionString>%Conn_string_db_iamvault%</ConnectionString>
-                            <OleDbProviderType>0</OleDbProviderType>
-                        </UmraOleDb>
-                        <DatabaseQuery>EXEC ICMJobObjectVersionsRelationsAddedGet %object_id%,''</DatabaseQuery>
-                        <QueryResultColumnNames>
-                            <TextItem>pers_nr</TextItem>
-                            <TextItem>e_vrlt</TextItem>
-                            <TextItem>e_roepnaam</TextItem>
-                            <TextItem>vrvg_samen</TextItem>
-                            <TextItem>naam_samen</TextItem>
-                            <TextItem>oe_kort_nm</TextItem>
-                            <TextItem>oe_vol_nm</TextItem>
-                            <TextItem>indnst_dt</TextItem>
-                            <TextItem>uitdnst_dt</TextItem>
-                        </QueryResultColumnNames>
-                    </TableDefinition>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptForEach">
+                <ArrayElement class="cActionItemScriptExecuteProject">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
                             <Label></Label>
@@ -84,131 +105,7 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <TableVariableName>%table_object_relations_added%</TableVariableName>
-                    <ProjectName>sync-version-object-r-a</ProjectName>
-                    <ColumnVariablesMap>
-                        <TextItem>%relation_object_id%</TextItem>
-                        <TextItem>%relation_object_uniquekey%</TextItem>
-                        <TextItem>%relation_object_type%</TextItem>
-                        <TextItem>%relation_object_state%</TextItem>
-                        <TextItem>%relation_type%</TextItem>
-                    </ColumnVariablesMap>
-                    <ReturnVariableNames/>
-                    <StopLoopOnErrorFlag>TRUE</StopLoopOnErrorFlag>
-                    <TerminationCondition class="cVariableConditionCollection">
-                        <Base class="cUmraObArray">
-                            <ObjectArray/>
-                        </Base>
-                        <InvertResultFlag>FALSE</InvertResultFlag>
-                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
-                        <Comment></Comment>
-                    </TerminationCondition>
-                    <VariableFilter class="cUmVariableFilter">
-                        <VariableFilterMode>0</VariableFilterMode>
-                        <VariableSpecification/>
-                    </VariableFilter>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptGenericTable">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>1</ErrorControl>
-                            <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableDefinition class="cUmraTableDefDatabaseQuery">
-                        <Base class="cUmraTableDef">
-                            <VariableName>%table_object_relations_deleted%</VariableName>
-                            <TestVariableArray class="cUmVariableArray">
-                                <Base class="cUmraObArray">
-                                    <ObjectArray/>
-                                </Base>
-                            </TestVariableArray>
-                        </Base>
-                        <UmraOleDb class="cUmraOleDbGeneral">
-                            <Base class="cUmraOleDb"/>
-                            <ConnectionString>%Conn_string_db_iamvault%</ConnectionString>
-                            <OleDbProviderType>0</OleDbProviderType>
-                        </UmraOleDb>
-                        <DatabaseQuery>EXEC ICMJobObjectVersionsRelationsDeletedGet %object_id%,''</DatabaseQuery>
-                        <QueryResultColumnNames>
-                            <TextItem>pers_nr</TextItem>
-                            <TextItem>e_vrlt</TextItem>
-                            <TextItem>e_roepnaam</TextItem>
-                            <TextItem>vrvg_samen</TextItem>
-                            <TextItem>naam_samen</TextItem>
-                            <TextItem>oe_kort_nm</TextItem>
-                            <TextItem>oe_vol_nm</TextItem>
-                            <TextItem>indnst_dt</TextItem>
-                            <TextItem>uitdnst_dt</TextItem>
-                        </QueryResultColumnNames>
-                    </TableDefinition>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptForEach">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <TableVariableName>%table_object_relations_deleted%</TableVariableName>
-                    <ProjectName>sync-version-object-r-d</ProjectName>
-                    <ColumnVariablesMap>
-                        <TextItem>%relation_object_id%</TextItem>
-                        <TextItem>%relation_object_uniquekey%</TextItem>
-                        <TextItem>%relation_object_type%</TextItem>
-                        <TextItem>%relation_object_state%</TextItem>
-                        <TextItem>%relation_type%</TextItem>
-                    </ColumnVariablesMap>
-                    <ReturnVariableNames/>
-                    <StopLoopOnErrorFlag>TRUE</StopLoopOnErrorFlag>
-                    <TerminationCondition class="cVariableConditionCollection">
-                        <Base class="cUmraObArray">
-                            <ObjectArray/>
-                        </Base>
-                        <InvertResultFlag>FALSE</InvertResultFlag>
-                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
-                        <Comment></Comment>
-                    </TerminationCondition>
-                    <VariableFilter class="cUmVariableFilter">
-                        <VariableFilterMode>0</VariableFilterMode>
-                        <VariableSpecification/>
-                    </VariableFilter>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptGoTo">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <GoToLabel>end</GoToLabel>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptVarious">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label>error</Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ScriptActionType>2</ScriptActionType>
-                    <ParameterNumeric>0</ParameterNumeric>
-                    <ParameterText></ParameterText>
+                    <ProjectName>sync-version-%object_type%-r</ProjectName>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">

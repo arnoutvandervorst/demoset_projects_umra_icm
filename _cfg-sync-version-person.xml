@@ -23,6 +23,46 @@
                     </Data>
                     <ResolveImmediatelyFlag>FALSE</ResolveImmediatelyFlag>
                 </ArrayElement>
+                <ArrayElement class="cActionItemScriptSetVariable">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <VariableName>%object_state_p%</VariableName>
+                    <Data class="cUmDataText">
+                        <Base class="cUmData" Version="1">
+                            <HiddenFlag>FALSE</HiddenFlag>
+                        </Base>
+                        <TextValue>normal</TextValue>
+                    </Data>
+                    <ResolveImmediatelyFlag>FALSE</ResolveImmediatelyFlag>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptSetVariable">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <VariableName>%object_state_s%</VariableName>
+                    <Data class="cUmDataText">
+                        <Base class="cUmData" Version="1">
+                            <HiddenFlag>FALSE</HiddenFlag>
+                        </Base>
+                        <TextValue>normal,inactive,disabled</TextValue>
+                    </Data>
+                    <ResolveImmediatelyFlag>FALSE</ResolveImmediatelyFlag>
+                </ArrayElement>
             </ObjectArray>
         </Base>
         <ScriptInfo></ScriptInfo>
@@ -114,7 +154,7 @@
     <HelpInfoUrl></HelpInfoUrl>
     <ScriptTimeOutSec>1492536</ScriptTimeOutSec>
     <LocalProjectFlag>FALSE</LocalProjectFlag>
-    <LocalProjectFileName>C:\Program Files\UmraService\Projects\48f30e09-b0a7-4a6b-a468-023bc40bbaec.usp</LocalProjectFileName>
+    <LocalProjectFileName>C:\Program Files\UmraService\Projects\e26f4998-d832-4e09-a9ed-2e61bb1182e3.usp</LocalProjectFileName>
     <DisableScriptActionRamLogging>TRUE</DisableScriptActionRamLogging>
     <Scheduler class="cUmraWndSchedulerSpec">
         <InputDataSpecificationParameter>0</InputDataSpecificationParameter>

@@ -34,7 +34,20 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <ProjectName>table-objectattributes-person</ProjectName>
+                    <ProjectName>table-person-attributes</ProjectName>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptExecuteProject">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ProjectName>table-person-placements</ProjectName>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptTableData">
                     <Base class="cActionItemScript">

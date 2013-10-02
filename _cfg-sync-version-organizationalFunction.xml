@@ -23,6 +23,46 @@
                     </Data>
                     <ResolveImmediatelyFlag>FALSE</ResolveImmediatelyFlag>
                 </ArrayElement>
+                <ArrayElement class="cActionItemScriptSetVariable">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <VariableName>%object_state_p%</VariableName>
+                    <Data class="cUmDataText">
+                        <Base class="cUmData" Version="1">
+                            <HiddenFlag>FALSE</HiddenFlag>
+                        </Base>
+                        <TextValue>normal</TextValue>
+                    </Data>
+                    <ResolveImmediatelyFlag>FALSE</ResolveImmediatelyFlag>
+                </ArrayElement>
+                <ArrayElement class="cActionItemScriptSetVariable">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <VariableName>%object_state_s%</VariableName>
+                    <Data class="cUmDataText">
+                        <Base class="cUmData" Version="1">
+                            <HiddenFlag>FALSE</HiddenFlag>
+                        </Base>
+                        <TextValue>normal,inactive,disabled</TextValue>
+                    </Data>
+                    <ResolveImmediatelyFlag>FALSE</ResolveImmediatelyFlag>
+                </ArrayElement>
             </ObjectArray>
         </Base>
         <ScriptInfo></ScriptInfo>

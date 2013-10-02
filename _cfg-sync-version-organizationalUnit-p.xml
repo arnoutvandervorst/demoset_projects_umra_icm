@@ -34,7 +34,7 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <ProjectName>table-objectattributes-organizationalUnit</ProjectName>
+                    <ProjectName>table-organizationalUnit-attributes</ProjectName>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptTableData">
                     <Base class="cActionItemScript">

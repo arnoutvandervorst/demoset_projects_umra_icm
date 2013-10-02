@@ -3,6 +3,26 @@
     <Script class="cActionItemCollection">
         <Base class="cUmraObArray">
             <ObjectArray>
+                <ArrayElement class="cActionItemScriptSetVariable">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <VariableName>%object_id_%object_type%%</VariableName>
+                    <Data class="cUmDataText">
+                        <Base class="cUmData" Version="1">
+                            <HiddenFlag>FALSE</HiddenFlag>
+                        </Base>
+                        <TextValue>%object_id%</TextValue>
+                    </Data>
+                    <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
+                </ArrayElement>
                 <ArrayElement class="cActionItemScriptConditionalVariable">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
@@ -50,7 +70,7 @@
                         <Base class="cUmData" Version="1">
                             <HiddenFlag>FALSE</HiddenFlag>
                         </Base>
-                        <TextValue>Starting task: sync version for %object_id% (%object_type%)</TextValue>
+                        <TextValue>Starting task: sync version</TextValue>
                     </Data>
                     <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
                 </ArrayElement>
@@ -154,7 +174,7 @@
                         <Base class="cUmData" Version="1">
                             <HiddenFlag>FALSE</HiddenFlag>
                         </Base>
-                        <TextValue>Completed task: sync version for %object_id% (%object_type%)</TextValue>
+                        <TextValue>Completed task: sync version</TextValue>
                     </Data>
                     <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
                 </ArrayElement>
@@ -229,7 +249,7 @@
                         <Base class="cUmData" Version="1">
                             <HiddenFlag>FALSE</HiddenFlag>
                         </Base>
-                        <TextValue>Sync version marked processed for: %object_id% (%object_type%)</TextValue>
+                        <TextValue>Sync version marked processed</TextValue>
                     </Data>
                     <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
                 </ArrayElement>
@@ -274,26 +294,6 @@
                     <ParameterNumeric>0</ParameterNumeric>
                     <ParameterText></ParameterText>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptSetVariable">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <VariableName>%log_message%</VariableName>
-                    <Data class="cUmDataText">
-                        <Base class="cUmData" Version="1">
-                            <HiddenFlag>FALSE</HiddenFlag>
-                        </Base>
-                        <TextValue>Error in task: sync version for %object_id% (%object_type%)</TextValue>
-                    </Data>
-                    <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
-                </ArrayElement>
                 <ArrayElement class="cActionItemScriptExecuteProject">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
@@ -305,7 +305,7 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <ProjectName>object-version-log-add</ProjectName>
+                    <ProjectName>global-error-handler</ProjectName>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">

@@ -77,7 +77,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%sn%</OutputVariable>
-                                    <CurrentMethodIndex>116</CurrentMethodIndex>
+                                    <CurrentMethodIndex>0</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -225,7 +225,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%sn%</OutputVariable>
-                                    <CurrentMethodIndex>91764584</CurrentMethodIndex>
+                                    <CurrentMethodIndex>114</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -373,7 +373,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%sn%</OutputVariable>
-                                    <CurrentMethodIndex>90449712</CurrentMethodIndex>
+                                    <CurrentMethodIndex>0</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">

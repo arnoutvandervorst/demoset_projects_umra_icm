@@ -34,7 +34,7 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <ProjectName>table-objectattributes-costCenter</ProjectName>
+                    <ProjectName>table-costCenter-attributes</ProjectName>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptTableData">
                     <Base class="cActionItemScript">
