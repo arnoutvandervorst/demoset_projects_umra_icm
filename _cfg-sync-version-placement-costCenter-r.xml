@@ -29,26 +29,6 @@
                     </Base>
                     <ProjectName>table-placement-person</ProjectName>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptSetVariable">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <VariableName>%person_id%</VariableName>
-                    <Data class="cUmDataText">
-                        <Base class="cUmData" Version="1">
-                            <HiddenFlag>FALSE</HiddenFlag>
-                        </Base>
-                        <TextValue>%placement_person_object_id%</TextValue>
-                    </Data>
-                    <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
-                </ArrayElement>
                 <ArrayElement class="cActionItemScriptExecuteProject">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
@@ -104,7 +84,7 @@
                         </Base>
                         <UmraLdapQueryBindingType>2</UmraLdapQueryBindingType>
                         <BindingString>LDAP://%domaincontroller%</BindingString>
-                        <LdapQueryFilter>(&amp;(objectCategory=group)(%name_attribute_external_key_activeDirectoryGroup%=%costCenter_uniquekey%))</LdapQueryFilter>
+                        <LdapQueryFilter>(&amp;(objectCategory=group)(%name_attribute_external_key_activeDirectoryGroup%=%object_uniquekey_costCenter%))</LdapQueryFilter>
                         <Attributes class="cUmraTableLdapAttributes">
                             <Base class="cUmraObArray">
                                 <ObjectArray>
@@ -191,7 +171,7 @@
                         <AndVersusOrFlag>FALSE</AndVersusOrFlag>
                         <Comment></Comment>
                     </ConditionCollection>
-                    <LabelThen>error</LabelThen>
+                    <LabelThen>end</LabelThen>
                     <LabelElse></LabelElse>
                     <UseElseFlag>FALSE</UseElseFlag>
                 </ArrayElement>
@@ -259,7 +239,7 @@
                         </Base>
                         <UmraLdapQueryBindingType>2</UmraLdapQueryBindingType>
                         <BindingString>LDAP://%domaincontroller%</BindingString>
-                        <LdapQueryFilter>(&amp;(objectCategory=user)(%name_attribute_external_key_activeDirectoryUser%=%placement_person_uniquekey%))</LdapQueryFilter>
+                        <LdapQueryFilter>(&amp;(objectCategory=user)(%name_attribute_external_key_activeDirectoryUser%=%object_uniquekey_person%))</LdapQueryFilter>
                         <Attributes class="cUmraTableLdapAttributes">
                             <Base class="cUmraObArray">
                                 <ObjectArray>
@@ -346,7 +326,7 @@
                         <AndVersusOrFlag>FALSE</AndVersusOrFlag>
                         <Comment></Comment>
                     </ConditionCollection>
-                    <LabelThen>error</LabelThen>
+                    <LabelThen>end</LabelThen>
                     <LabelElse></LabelElse>
                     <UseElseFlag>FALSE</UseElseFlag>
                 </ArrayElement>
