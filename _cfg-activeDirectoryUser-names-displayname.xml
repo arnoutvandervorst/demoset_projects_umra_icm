@@ -3,32 +3,6 @@
     <Script class="cActionItemCollection">
         <Base class="cUmraObArray">
             <ObjectArray>
-                <ArrayElement class="cActionItemScriptExecuteProject">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ProjectName>global-init-ad</ProjectName>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptExecuteProject">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ProjectName>global-init-user-config</ProjectName>
-                </ArrayElement>
                 <ArrayElement class="cActionItemScriptVarious">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
@@ -90,7 +64,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%displayName%</OutputVariable>
-                                    <CurrentMethodIndex>69</CurrentMethodIndex>
+                                    <CurrentMethodIndex>7602293</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -311,7 +285,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%displayName%</OutputVariable>
-                                    <CurrentMethodIndex>4097</CurrentMethodIndex>
+                                    <CurrentMethodIndex>1</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -791,7 +765,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%displayName%</OutputVariable>
-                                    <CurrentMethodIndex>90423280</CurrentMethodIndex>
+                                    <CurrentMethodIndex>87051872</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">

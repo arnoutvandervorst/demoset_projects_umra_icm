@@ -86,6 +86,45 @@
                     <ValueNumericArgument1>0</ValueNumericArgument1>
                     <ValueNumericArgument2>0</ValueNumericArgument2>
                 </ArrayElement>
+                <ArrayElement class="cActionItemScriptGenericTable">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>1</ErrorControl>
+                            <ErrorControlLabel>error</ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <TableDefinition class="cUmraTableDefDatabaseQuery">
+                        <Base class="cUmraTableDef">
+                            <VariableName>%table_placement_person_tree%</VariableName>
+                            <TestVariableArray class="cUmVariableArray">
+                                <Base class="cUmraObArray">
+                                    <ObjectArray/>
+                                </Base>
+                            </TestVariableArray>
+                        </Base>
+                        <UmraOleDb class="cUmraOleDbGeneral">
+                            <Base class="cUmraOleDb"/>
+                            <ConnectionString>%Conn_string_db_iamvault%</ConnectionString>
+                            <OleDbProviderType>0</OleDbProviderType>
+                        </UmraOleDb>
+                        <DatabaseQuery>EXEC ICMJobObjectVersionsSimilarObjectChildsGet %object_id_placement%,'active'</DatabaseQuery>
+                        <QueryResultColumnNames>
+                            <TextItem>pers_nr</TextItem>
+                            <TextItem>e_vrlt</TextItem>
+                            <TextItem>e_roepnaam</TextItem>
+                            <TextItem>vrvg_samen</TextItem>
+                            <TextItem>naam_samen</TextItem>
+                            <TextItem>oe_kort_nm</TextItem>
+                            <TextItem>oe_vol_nm</TextItem>
+                            <TextItem>indnst_dt</TextItem>
+                            <TextItem>uitdnst_dt</TextItem>
+                        </QueryResultColumnNames>
+                    </TableDefinition>
+                </ArrayElement>
                 <ArrayElement class="cActionItemScriptGoTo">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">

@@ -41,7 +41,7 @@
                             <ConnectionString>%Conn_string_db_iamvault%</ConnectionString>
                             <OleDbProviderType>0</OleDbProviderType>
                         </UmraOleDb>
-                        <DatabaseQuery>EXEC ICMJobVersionsProcess</DatabaseQuery>
+                        <DatabaseQuery>EXEC ICMJobObjectVersionsProcess</DatabaseQuery>
                         <QueryResultColumnNames>
                             <TextItem>pers_nr</TextItem>
                             <TextItem>e_vrlt</TextItem>
@@ -131,7 +131,7 @@
                         </Base>
                     </Base>
                     <TableVariableName>%table_objects%</TableVariableName>
-                    <ProjectName>sync-version-object-r</ProjectName>
+                    <ProjectName>sync-version-object-relations</ProjectName>
                     <ColumnVariablesMap>
                         <TextItem>%object_id%</TextItem>
                         <TextItem>%object_type%</TextItem>

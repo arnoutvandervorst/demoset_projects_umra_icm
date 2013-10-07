@@ -3,6 +3,53 @@
     <Script class="cActionItemCollection">
         <Base class="cUmraObArray">
             <ObjectArray>
+                <ArrayElement class="cActionItemScriptIfThenElse">
+                    <Base class="cActionItemScript">
+                        <Base class="cActionItem">
+                            <Label></Label>
+                            <ErrorControl>0</ErrorControl>
+                            <ErrorControlLabel></ErrorControlLabel>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
+                        </Base>
+                    </Base>
+                    <ConditionCollection class="cVariableConditionCollection">
+                        <Base class="cUmraObArray">
+                            <ObjectArray>
+                                <ArrayElement class="cVariableCondition">
+                                    <InputVariableName>%activeDirectoryGroup_dn%</InputVariableName>
+                                    <InputVariableType>1</InputVariableType>
+                                    <OperatorIndex>100</OperatorIndex>
+                                    <OperatorVariableName></OperatorVariableName>
+                                    <OperatorArgumentValue/>
+                                    <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
+                                    <InvertResultFlag>FALSE</InvertResultFlag>
+                                </ArrayElement>
+                                <ArrayElement class="cVariableCondition">
+                                    <InputVariableName>%activeDirectoryGroup_dn%</InputVariableName>
+                                    <InputVariableType>1</InputVariableType>
+                                    <OperatorIndex>208</OperatorIndex>
+                                    <OperatorVariableName></OperatorVariableName>
+                                    <OperatorArgumentValue class="cUmDataNumeric">
+                                        <Base class="cUmData" Version="1">
+                                            <HiddenFlag>FALSE</HiddenFlag>
+                                        </Base>
+                                        <NumericValue>1</NumericValue>
+                                    </OperatorArgumentValue>
+                                    <UseOperatorVariableNameFlag>FALSE</UseOperatorVariableNameFlag>
+                                    <InvertResultFlag>FALSE</InvertResultFlag>
+                                </ArrayElement>
+                            </ObjectArray>
+                        </Base>
+                        <InvertResultFlag>FALSE</InvertResultFlag>
+                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
+                        <Comment></Comment>
+                    </ConditionCollection>
+                    <LabelThen>end</LabelThen>
+                    <LabelElse></LabelElse>
+                    <UseElseFlag>FALSE</UseElseFlag>
+                </ArrayElement>
                 <ArrayElement class="cActionItemScriptSetVariable">
                     <Base class="cActionItemScript">
                         <Base class="cActionItem">
@@ -19,7 +66,7 @@
                         <Base class="cUmData" Version="1">
                             <HiddenFlag>FALSE</HiddenFlag>
                         </Base>
-                        <TextValue>Starting task: set attribute on activeDirectoryGroup object (%object_dn%, %attribute_name%, %attribute_value%)</TextValue>
+                        <TextValue>Starting task: set attribute on activeDirectoryGroup object (%activeDirectoryGroup_dn%, %attribute_name%, %attribute_value%)</TextValue>
                     </Data>
                     <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
                 </ArrayElement>
@@ -140,7 +187,7 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <ProjectName>global-get-activedirectoryobject</ProjectName>
+                    <ProjectName>global-get-activeDirectoryGroup</ProjectName>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptIfThenElse">
                     <Base class="cActionItemScript">
@@ -476,7 +523,7 @@
                         <Base class="cUmData" Version="1">
                             <HiddenFlag>FALSE</HiddenFlag>
                         </Base>
-                        <TextValue>Completed task: set attribute on activeDirectoryGroup (%object_dn%, %attribute_name%, %attribute_value%)</TextValue>
+                        <TextValue>Completed task: set attribute on activeDirectoryGroup (%activeDirectoryGroup_dn%, %attribute_name%, %attribute_value%)</TextValue>
                     </Data>
                     <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
                 </ArrayElement>
@@ -537,7 +584,7 @@
                         <Base class="cUmData" Version="1">
                             <HiddenFlag>FALSE</HiddenFlag>
                         </Base>
-                        <TextValue>Error in task: set attribute on activeDirectoryGroup (%object_dn%, %attribute_name%, %attribute_value%)</TextValue>
+                        <TextValue>Error in task: set attribute on activeDirectoryGroup (%activeDirectoryGroup_dn%, %attribute_name%, %attribute_value%)</TextValue>
                     </Data>
                     <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
                 </ArrayElement>

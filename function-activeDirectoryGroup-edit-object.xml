@@ -19,7 +19,7 @@
                         <Base class="cUmData" Version="1">
                             <HiddenFlag>FALSE</HiddenFlag>
                         </Base>
-                        <TextValue>Starting task: edit activeDirectoryGroup object (%object_dn%)</TextValue>
+                        <TextValue>Starting task: edit activeDirectoryGroup object (%activeDirectoryGroup_dn%)</TextValue>
                     </Data>
                     <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
                 </ArrayElement>
@@ -47,7 +47,7 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <ProjectName>global-get-activedirectoryobject</ProjectName>
+                    <ProjectName>global-get-activeDirectoryGroup</ProjectName>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptIfThenElse">
                     <Base class="cActionItemScript">
@@ -413,7 +413,7 @@
                     <TableDataVariable>%table_query_ad%</TableDataVariable>
                     <ValueTextArgument1>0</ValueTextArgument1>
                     <ValueTextArgument2>0</ValueTextArgument2>
-                    <ValueTextArgument3>%object_dn%</ValueTextArgument3>
+                    <ValueTextArgument3>%activeDirectoryGroup_dn%</ValueTextArgument3>
                     <ValueTextArgument4></ValueTextArgument4>
                     <ValueBoolArgument1>FALSE</ValueBoolArgument1>
                     <ValueBoolArgument2>FALSE</ValueBoolArgument2>
@@ -436,7 +436,7 @@
                         <Base class="cUmData" Version="1">
                             <HiddenFlag>FALSE</HiddenFlag>
                         </Base>
-                        <TextValue>Completed task: edit activeDirectoryGroup object (%object_dn%)</TextValue>
+                        <TextValue>Completed task: edit activeDirectoryGroup object (%activeDirectoryGroup_dn%)</TextValue>
                     </Data>
                     <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
                 </ArrayElement>
