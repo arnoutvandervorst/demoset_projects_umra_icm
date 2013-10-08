@@ -102,7 +102,9 @@
                         <TextItem>%object_islatestversion%</TextItem>
                         <TextItem>%object_isinitialversion%</TextItem>
                     </ColumnVariablesMap>
-                    <ReturnVariableNames/>
+                    <ReturnVariableNames>
+                        <TextItem>%count_errors%</TextItem>
+                    </ReturnVariableNames>
                     <StopLoopOnErrorFlag>FALSE</StopLoopOnErrorFlag>
                     <TerminationCondition class="cVariableConditionCollection">
                         <Base class="cUmraObArray">
@@ -144,7 +146,9 @@
                         <TextItem>%object_islatestversion%</TextItem>
                         <TextItem>%object_isinitialversion%</TextItem>
                     </ColumnVariablesMap>
-                    <ReturnVariableNames/>
+                    <ReturnVariableNames>
+                        <TextItem>%count_errors%</TextItem>
+                    </ReturnVariableNames>
                     <StopLoopOnErrorFlag>FALSE</StopLoopOnErrorFlag>
                     <TerminationCondition class="cVariableConditionCollection">
                         <Base class="cUmraObArray">

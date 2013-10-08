@@ -91,7 +91,9 @@
                         <TextItem>%attribute_name%</TextItem>
                         <TextItem>%attribute_value%</TextItem>
                     </ColumnVariablesMap>
-                    <ReturnVariableNames/>
+                    <ReturnVariableNames>
+                        <TextItem>%count_errors%</TextItem>
+                    </ReturnVariableNames>
                     <StopLoopOnErrorFlag>TRUE</StopLoopOnErrorFlag>
                     <TerminationCondition class="cVariableConditionCollection">
                         <Base class="cUmraObArray">
