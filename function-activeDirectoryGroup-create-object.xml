@@ -745,7 +745,7 @@
                         <Base class="cUmData" Version="1">
                             <HiddenFlag>FALSE</HiddenFlag>
                         </Base>
-                        <TextValue>Error executing task: could not bind to %container_dn% to create activeDirectoryGroup object</TextValue>
+                        <TextValue>Error executing task: cannot bind to %container_dn% to create activeDirectoryGroup object</TextValue>
                     </Data>
                     <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
                 </ArrayElement>
@@ -826,7 +826,7 @@
                         <Base class="cUmData" Version="1">
                             <HiddenFlag>FALSE</HiddenFlag>
                         </Base>
-                        <TextValue>Error executing task: %sAMAccountName% already exists, could not create activeDirectoryGroup object</TextValue>
+                        <TextValue>Error executing task: %sAMAccountName% already exists, cannot create activeDirectoryGroup object</TextValue>
                     </Data>
                     <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
                 </ArrayElement>
@@ -907,7 +907,7 @@
                         <Base class="cUmData" Version="1">
                             <HiddenFlag>FALSE</HiddenFlag>
                         </Base>
-                        <TextValue>Error executing task: %cn% already exists in %container_dn%, could not create activeDirectoryGroup object</TextValue>
+                        <TextValue>Error executing task: %cn% already exists in %container_dn%, cannot create activeDirectoryGroup object</TextValue>
                     </Data>
                     <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
                 </ArrayElement>

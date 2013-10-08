@@ -1105,7 +1105,7 @@ With this action you can not create local user accounts on non domain controller
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%sAMAccountName%</OutputVariable>
-                                    <CurrentMethodIndex>90391600</CurrentMethodIndex>
+                                    <CurrentMethodIndex>0</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -1236,7 +1236,7 @@ With this action you can not create local user accounts on non domain controller
                                 </ArrayElement>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%FullName%</OutputVariable>
-                                    <CurrentMethodIndex>90389264</CurrentMethodIndex>
+                                    <CurrentMethodIndex>0</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -1478,7 +1478,7 @@ With this action you can not create local user accounts on non domain controller
                         <Base class="cUmData" Version="1">
                             <HiddenFlag>FALSE</HiddenFlag>
                         </Base>
-                        <TextValue>Error executing task: %sAMAccountName% already exists, could not create activeDirectoryUser object</TextValue>
+                        <TextValue>Error executing task: %sAMAccountName% already exists, cannot create activeDirectoryUser object</TextValue>
                     </Data>
                     <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
                 </ArrayElement>
@@ -1559,7 +1559,7 @@ With this action you can not create local user accounts on non domain controller
                         <Base class="cUmData" Version="1">
                             <HiddenFlag>FALSE</HiddenFlag>
                         </Base>
-                        <TextValue>Error executing task: %cn% already exists in %container_dn%, could not create activeDirectoryUser object</TextValue>
+                        <TextValue>Error executing task: %cn% already exists in %container_dn%, cannot create activeDirectoryUser object</TextValue>
                     </Data>
                     <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
                 </ArrayElement>
