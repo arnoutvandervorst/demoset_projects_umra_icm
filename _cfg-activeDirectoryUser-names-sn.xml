@@ -52,9 +52,9 @@
                             <Label></Label>
                             <ErrorControl>1</ErrorControl>
                             <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
-                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
-                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
                     <NameGenerationAlgorithm class="cUgAlgorithm">
@@ -64,7 +64,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%sn%</OutputVariable>
-                                    <CurrentMethodIndex>114</CurrentMethodIndex>
+                                    <CurrentMethodIndex>7602293</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -200,9 +200,9 @@
                             <Label></Label>
                             <ErrorControl>1</ErrorControl>
                             <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
-                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
-                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
                     <NameGenerationAlgorithm class="cUgAlgorithm">
@@ -212,7 +212,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%sn%</OutputVariable>
-                                    <CurrentMethodIndex>90641584</CurrentMethodIndex>
+                                    <CurrentMethodIndex>0</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -348,9 +348,9 @@
                             <Label></Label>
                             <ErrorControl>1</ErrorControl>
                             <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
-                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
-                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
                     <NameGenerationAlgorithm class="cUgAlgorithm">
@@ -360,7 +360,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%sn%</OutputVariable>
-                                    <CurrentMethodIndex>0</CurrentMethodIndex>
+                                    <CurrentMethodIndex>90634184</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -535,9 +535,9 @@
                             <Label></Label>
                             <ErrorControl>1</ErrorControl>
                             <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
-                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
-                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
                     <NameGenerationAlgorithm class="cUgAlgorithm">
@@ -547,7 +547,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%sn%</OutputVariable>
-                                    <CurrentMethodIndex>90396016</CurrentMethodIndex>
+                                    <CurrentMethodIndex>4097</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">

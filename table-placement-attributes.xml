@@ -372,7 +372,7 @@
                     <TableDataOperation>4</TableDataOperation>
                     <TableDataVariable>%table_objectattributes%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
-                    <ValueTextArgument2>4</ValueTextArgument2>
+                    <ValueTextArgument2>5</ValueTextArgument2>
                     <ValueTextArgument3>%placement_isPrimary_status%</ValueTextArgument3>
                     <ValueTextArgument4></ValueTextArgument4>
                     <ValueBoolArgument1>FALSE</ValueBoolArgument1>
@@ -535,7 +535,7 @@
                     <TableDataOperation>4</TableDataOperation>
                     <TableDataVariable>%table_objectattributes%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
-                    <ValueTextArgument2>4</ValueTextArgument2>
+                    <ValueTextArgument2>5</ValueTextArgument2>
                     <ValueTextArgument3>%placement_employmentSequenceNumber_status%</ValueTextArgument3>
                     <ValueTextArgument4></ValueTextArgument4>
                     <ValueBoolArgument1>FALSE</ValueBoolArgument1>
@@ -698,7 +698,7 @@
                     <TableDataOperation>4</TableDataOperation>
                     <TableDataVariable>%table_objectattributes%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
-                    <ValueTextArgument2>4</ValueTextArgument2>
+                    <ValueTextArgument2>5</ValueTextArgument2>
                     <ValueTextArgument3>%placement_endDate_status%</ValueTextArgument3>
                     <ValueTextArgument4></ValueTextArgument4>
                     <ValueBoolArgument1>FALSE</ValueBoolArgument1>
@@ -861,7 +861,7 @@
                     <TableDataOperation>4</TableDataOperation>
                     <TableDataVariable>%table_objectattributes%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
-                    <ValueTextArgument2>4</ValueTextArgument2>
+                    <ValueTextArgument2>5</ValueTextArgument2>
                     <ValueTextArgument3>%placement_sequenceNumber_status%</ValueTextArgument3>
                     <ValueTextArgument4></ValueTextArgument4>
                     <ValueBoolArgument1>FALSE</ValueBoolArgument1>
@@ -1024,7 +1024,7 @@
                     <TableDataOperation>4</TableDataOperation>
                     <TableDataVariable>%table_objectattributes%</TableDataVariable>
                     <ValueTextArgument1>%rowindex_found%</ValueTextArgument1>
-                    <ValueTextArgument2>4</ValueTextArgument2>
+                    <ValueTextArgument2>5</ValueTextArgument2>
                     <ValueTextArgument3>%placement_startDate_status%</ValueTextArgument3>
                     <ValueTextArgument4></ValueTextArgument4>
                     <ValueBoolArgument1>FALSE</ValueBoolArgument1>

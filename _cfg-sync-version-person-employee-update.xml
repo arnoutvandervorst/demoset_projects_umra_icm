@@ -208,7 +208,7 @@
                             <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
-                    <ProjectName>_cfg-sync-version-person-update-names</ProjectName>
+                    <ProjectName>_cfg-sync-version-person-employee-update-names</ProjectName>
                 </ArrayElement>
                 <ArrayElement class="cActionItemScriptTableData">
                     <Base class="cActionItemScript">

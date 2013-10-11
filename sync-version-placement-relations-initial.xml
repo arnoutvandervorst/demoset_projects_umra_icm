@@ -122,12 +122,13 @@
                         </Base>
                     </Base>
                     <TableVariableName>%table_placement_relations%</TableVariableName>
-                    <ProjectName>sync-version-placement-child-relation-initial-added</ProjectName>
+                    <ProjectName>sync-version-placement-child-relation-initial-a</ProjectName>
                     <ColumnVariablesMap>
                         <TextItem>%object_id_child%</TextItem>
                         <TextItem>%object_uniquekey_child%</TextItem>
                         <TextItem>%object_displayvalue_child%</TextItem>
                         <TextItem>%object_type_child%</TextItem>
+                        <TextItem>%object_subtype_child%</TextItem>
                         <TextItem>%object_state_child%</TextItem>
                     </ColumnVariablesMap>
                     <ReturnVariableNames/>

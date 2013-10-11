@@ -284,12 +284,13 @@
                         </Base>
                     </Base>
                     <TableVariableName>%table_placement_relations_deleted%</TableVariableName>
-                    <ProjectName>sync-version-placement-child-relation-update-deleted</ProjectName>
+                    <ProjectName>sync-version-placement-child-relation-update-d</ProjectName>
                     <ColumnVariablesMap>
                         <TextItem>%object_id_child%</TextItem>
                         <TextItem>%object_uniquekey_child%</TextItem>
                         <TextItem>%object_displayvalue_child%</TextItem>
                         <TextItem>%object_type_child%</TextItem>
+                        <TextItem>%object_subtype_child%</TextItem>
                         <TextItem>%object_state_child%</TextItem>
                         <TextItem>%relation_type%</TextItem>
                     </ColumnVariablesMap>
@@ -320,12 +321,13 @@
                         </Base>
                     </Base>
                     <TableVariableName>%table_placement_relations_added%</TableVariableName>
-                    <ProjectName>sync-version-placement-child-relation-update-added</ProjectName>
+                    <ProjectName>sync-version-placement-child-relation-update-a</ProjectName>
                     <ColumnVariablesMap>
                         <TextItem>%object_id_child%</TextItem>
                         <TextItem>%object_uniquekey_child%</TextItem>
                         <TextItem>%object_displayvalue_child%</TextItem>
                         <TextItem>%object_type_child%</TextItem>
+                        <TextItem>%object_subtype_child%</TextItem>
                         <TextItem>%object_state_child%</TextItem>
                         <TextItem>%relation_type%</TextItem>
                     </ColumnVariablesMap>
@@ -423,6 +425,7 @@
                         <TextItem>%object_uniquekey_child%</TextItem>
                         <TextItem>%object_displayvalue_child%</TextItem>
                         <TextItem>%object_type_child%</TextItem>
+                        <TextItem>%object_subtype_child%</TextItem>
                         <TextItem>%object_state_child%</TextItem>
                         <TextItem>%relation_type%</TextItem>
                     </ColumnVariablesMap>
@@ -560,12 +563,13 @@
                         </Base>
                     </Base>
                     <TableVariableName>%table_placement_relations%</TableVariableName>
-                    <ProjectName>sync-version-placement-child-relation-update-deleted</ProjectName>
+                    <ProjectName>sync-version-placement-child-relation-update-d</ProjectName>
                     <ColumnVariablesMap>
                         <TextItem>%object_id_child%</TextItem>
                         <TextItem>%object_uniquekey_child%</TextItem>
                         <TextItem>%object_displayvalue_child%</TextItem>
                         <TextItem>%object_type_child%</TextItem>
+                        <TextItem>%object_subtype_child%</TextItem>
                         <TextItem>%object_state_child%</TextItem>
                         <TextItem>%relation_type%</TextItem>
                     </ColumnVariablesMap>

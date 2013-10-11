@@ -65,44 +65,6 @@
                         <Base class="cUmraObArray">
                             <ObjectArray>
                                 <ArrayElement class="cVariableCondition">
-                                    <InputVariableName>%activeDirectoryUser_dn%</InputVariableName>
-                                    <InputVariableType>1</InputVariableType>
-                                    <OperatorIndex>201</OperatorIndex>
-                                    <OperatorVariableName>%Object_dn_user_cache_get%</OperatorVariableName>
-                                    <OperatorArgumentValue class="cUmDataText">
-                                        <Base class="cUmData" Version="1">
-                                            <HiddenFlag>FALSE</HiddenFlag>
-                                        </Base>
-                                        <TextValue></TextValue>
-                                    </OperatorArgumentValue>
-                                    <UseOperatorVariableNameFlag>TRUE</UseOperatorVariableNameFlag>
-                                    <InvertResultFlag>TRUE</InvertResultFlag>
-                                </ArrayElement>
-                            </ObjectArray>
-                        </Base>
-                        <InvertResultFlag>FALSE</InvertResultFlag>
-                        <AndVersusOrFlag>FALSE</AndVersusOrFlag>
-                        <Comment></Comment>
-                    </ConditionCollection>
-                    <LabelThen>get</LabelThen>
-                    <LabelElse></LabelElse>
-                    <UseElseFlag>FALSE</UseElseFlag>
-                </ArrayElement>
-                <ArrayElement class="cActionItemScriptIfThenElse">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ConditionCollection class="cVariableConditionCollection">
-                        <Base class="cUmraObArray">
-                            <ObjectArray>
-                                <ArrayElement class="cVariableCondition">
                                     <InputVariableName>%UserObject%</InputVariableName>
                                     <InputVariableType>1</InputVariableType>
                                     <OperatorIndex>100</OperatorIndex>
@@ -150,28 +112,15 @@
                     <ParameterNumeric>0</ParameterNumeric>
                     <ParameterText></ParameterText>
                 </ArrayElement>
-                <ArrayElement class="cActionItemScriptExecuteProject">
-                    <Base class="cActionItemScript">
-                        <Base class="cActionItem">
-                            <Label></Label>
-                            <ErrorControl>0</ErrorControl>
-                            <ErrorControlLabel></ErrorControlLabel>
-                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
-                            <ErrorVariableName></ErrorVariableName>
-                            <ErrorVariableContents></ErrorVariableContents>
-                        </Base>
-                    </Base>
-                    <ProjectName>global-init-ad</ProjectName>
-                </ArrayElement>
                 <ArrayElement class="cActionItemOperationUserAdFind">
                     <Base class="cActionItemOperation">
                         <Base class="cActionItem">
                             <Label></Label>
                             <ErrorControl>1</ErrorControl>
                             <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
-                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
-                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                         <Explanation>Access a user account in Active Directory. The action is used always in combination with other subsequent actions. Once the user is found, an internal data structure representing the user account is is setup. This structure is stored in a variable (%UserObject%) that can be used by other actions. The action supports several methods to find the user.</Explanation>
                         <PropertyArray class="cUmraPsPropertyArray">
@@ -465,7 +414,7 @@
                         <Base class="cUmData" Version="1">
                             <HiddenFlag>FALSE</HiddenFlag>
                         </Base>
-                        <TextValue>Error in task: Get activeDirectoryUser (%activeDirectoryUser_dn%)</TextValue>
+                        <TextValue>Error getting activeDirectoryUser (%activeDirectoryUser_dn%)</TextValue>
                     </Data>
                     <ResolveImmediatelyFlag>TRUE</ResolveImmediatelyFlag>
                 </ArrayElement>

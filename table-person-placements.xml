@@ -48,7 +48,7 @@
                             <ConnectionString>%Conn_string_db_iamvault%</ConnectionString>
                             <OleDbProviderType>0</OleDbProviderType>
                         </UmraOleDb>
-                        <DatabaseQuery>EXEC ICMJobObjectVersionsRelationsGet %object_id_person%,'','placement','','child',''</DatabaseQuery>
+                        <DatabaseQuery>EXEC ICMJobObjectVersionsRelationsGet %object_id_person%,'','placement','','child'</DatabaseQuery>
                         <QueryResultColumnNames>
                             <TextItem>pers_nr</TextItem>
                             <TextItem>e_vrlt</TextItem>

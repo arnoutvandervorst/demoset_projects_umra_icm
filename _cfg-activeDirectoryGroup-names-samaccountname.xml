@@ -37,9 +37,9 @@
                             <Label></Label>
                             <ErrorControl>1</ErrorControl>
                             <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
-                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
-                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                     </Base>
                     <NameGenerationAlgorithm class="cUgAlgorithm">
@@ -49,7 +49,7 @@
                             <ObjectArray>
                                 <ArrayElement class="cUgMethodCollection">
                                     <OutputVariable>%sAMAccountName%</OutputVariable>
-                                    <CurrentMethodIndex>1</CurrentMethodIndex>
+                                    <CurrentMethodIndex>0</CurrentMethodIndex>
                                     <Base class="cUmraObArray">
                                         <ObjectArray>
                                             <ArrayElement class="cUgMethod">
@@ -179,9 +179,9 @@
                             <Label></Label>
                             <ErrorControl>1</ErrorControl>
                             <ErrorControlLabel>error</ErrorControlLabel>
-                            <ErrorVariableFlag>TRUE</ErrorVariableFlag>
-                            <ErrorVariableName>%Status_operation%</ErrorVariableName>
-                            <ErrorVariableContents>%RES_status_operation_generic%</ErrorVariableContents>
+                            <ErrorVariableFlag>FALSE</ErrorVariableFlag>
+                            <ErrorVariableName></ErrorVariableName>
+                            <ErrorVariableContents></ErrorVariableContents>
                         </Base>
                         <Explanation>Searches the Active Directory for one or more objects. For each object found, the object distinguished name is returned. For the search, you need to specify the environment (LDAP, GC, domain, ou, etc.) and the LDAP search string.</Explanation>
                         <PropertyArray class="cUmraPsPropertyArray">
